@@ -418,4 +418,16 @@
     padding: 20px;
     margin: 0 auto;
   }
-  
+  /* footer */
+  .footer{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .footer-top{
+    display: flex;
+    justify-content: space-around;
+  }
+  .left-side{}
+  .right-side{
+    
+  }
