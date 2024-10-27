@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch Mộc Châu - Mai Châu</title>
+    <link rel="stylesheet" href="detail-tour.css" />
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            // Remove active class from all tabs and hide content
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and show corresponding content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Default to open the first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab').click();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Du Lịch Mộc Châu - Mai Châu</h1>
+    </section>
+
+    <!-- Tour Details -->
+    <div class="tour-details">
+        <div class="tour-image">
+            <img src="https://mia.vn/media/uploads/blog-du-lich/mua-hoa-man-moc-chau-thumb-1699828352.jpg" alt="Tour Image">
+        </div>
+        <div class="tour-info">
+            <h2 class="tour-title">Du Lịch Mộc Châu - Mai Châu</h2>
+            <p class="tour-location">QUẢNG NINH-MỘC CHÂU</p>
+            <p>Thời gian: 3 ngày 2 đêm</p>
+            <p>Phương tiện: Di chuyển bằng ô tô</p>
+            <div class="tour-price">Giá từ 9.439.000 VND</div>
+            <a href="#" class="btn-book">Đặt Tour Ngay</a>
+        </div>
+    </div>
+
+    <!-- New Table Section -->
+    <table class="tour-table">
+        <thead>
+            <tr>
+                <th>Khởi Hành</th>
+                <th>Mã Tour</th>
+                <th>Giá</th>
+                <th>Giá Trẻ Em</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>09/11/2024</td>
+                <td>STN084-2024-03163</td>
+                <td>9.439.000 VND</td>
+                <td>6.700.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>23/11/2024</td>
+                <td>STN084-2024-03161</td>
+                <td>9.439.000 VND</td>
+                <td>6.700.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>07/12/2024</td>
+                <td>STN084-2024-03162</td>
+                <td>9.439.000 VND</td>
+                <td>6.700.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>21/12/2024</td>
+                <td>STN084-2024-03166</td>
+                <td>9.439.000 VND</td>
+                <td>6.700.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'chuong-trinh')">Chương trình Tour</div>
+            <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
+            <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
+        </div>
+        <div id="chuong-trinh" class="tab-content active">
+            <p>Ngày 1: HẠ LONG – MỘC CHÂU (≈ 380 km)   (Ăn  trưa, chiều) (Ăn trưa, chiều)<br>
+                05.00   Xe và hướng dẫn viên lữ hành Saigontourist đón Quý khách tại điểm đón tại Hạ Long khởi hành đi Mộc Châu – Hòa Bình<br>
+                07.00   Quý khách dừng chân ăn sáng tự túc<br>
+                07.30   Đoàn tiếp tục khởi hành đi Mộc Châu.<br>
+                11.15   Ăn trưa tại Hòa Bình<br>
+                12.30   Tiếp tục khởi hành, trên đường đoàn vượt Dốc Cun, ngắm Đèo Thung Khe.<br>
+                15.00   Quý khách tham quan và chụp ảnh tại Đồi chè thị trấn Nông Trường Mộc Châu.<br>
+                16.00   Quý khách đến với Thung lũng mận Nà Ka – thung lũng mận rộng và đẹp nhất Mộc Châu. Quý khách chụp ảnh với cả trăm ha được phủ màu trắng muốt của bạt ngàn hoa mận<br>
+                Lưu ý: Hoa mận dễ bị ảnh hưởng bởi điều kiện thời tiết bên ngoài mà nở sớm hay muộn. Đây là trường hợp bất khả kháng nằm ngoài quyền kiểm soát và điều hành của lữ hành Saigontourist .<br>
+                17.30   Quý khách nhận phòng khách sạn.<br>
+                18.30   Đoàn ăn tối tại khách sạn.<br>
+                Buổi tối tự do khám phá thị trấn nông trường Mộc Châu. Nghỉ đêm tại khách sạn</p>
+            <p>Ngày 2:  KHÁM PHÁ MỘC CHÂU (Ăn sáng, trưa, chiều)<br>
+                07.00   Ăn sáng tại khách sạn.<br>
+                08.00   Quý khách tham quan thác Dải Yếm - thác nước đẹp và hũng vỹ nhất tại Mộc Châu. Sau đó đoàn tiếp tục khám phá chiếc cầu kính tình yêu Mộc Châu - cây cầu kính nghệ thuật kèm biểu tượng tình yêu duy nhất tại Việt Nam cũng như trên thế giới.<br>
+                Xe đưa Quý khách về chợ địa phương, mua sắm quà tặng, sản vật địa phương.<br>
+                11.45   Quý khách ăn trưa tại nhà hàng.<br>
+                14.00   Đoàn tiếp tục khám phá thiên đường hoa Happy Land với hàng trăm loài hoa đẹp, tựa như Đà Lạt thu nhỏ của miền bắc.<br>
+                17.30   Quý khách dùng bữa tốiBuổi tối tự do khám phá thị trấn Mộc Châu. Nghỉ đêm tại khách sạn</p>
+            <p>Ngày 3: MỘC CHÂU – MAI CHÂU – HẠ LONG<br>
+                06.00   Ăn sáng tại khách sạn. Trả phòng<br>
+                09.00   Xe đưa quý khách đến Bản Lác – Thung lũng Mai Châu xinh đẹp và thơ mộng; khám phá, tìm hiểu nét sinh hoạt văn hoá đặc sắc của đồng bào dân tộc Thái trắng tỉnh Hoà Bình, thăm các cơ sở sản xuất hàng thổ cẩm mỹ nghệ…<br>
+                12.00   Quý khách ăn trưa tại bản Lác<br>
+                13.00   Đoàn khởi hành về Hạ Long.<br>
+                18.00   Quý khách dùng bữa tối tại Hạ Long. Kết thúc chương trình./. <br></p>
+            
+
+        </div>
+        <div id="chinh-sach" class="tab-content">
+            <p>Giá tour bao gồm:<br>
+                Xe máy lạnh phục vụ đoàn theo hành trình tour, lái xe nhiệt tình kinh nghiệm.<br>
+                02 đêm nghỉ tại khách sạn. Tiêu chuẩn 2 khách/phòng ( Khách lẻ nam/nữ nghỉ extrabed)<br>
+                Các bữa ăn chính trong chương trình: 05 bữa tiêu chuẩn trung bình 150.000 vnđ/suất/bữa; 01 bữa tối ngày về tiêu chuẩn 200.000 vnđ/suất<br>
+                Ăn sáng tại khách sạn<br>
+                Vé tham quan vào tất cả các điểm tham quan có trong chương trình:<br>
+                Vé tham quan và xe điện tham quan bản Lác<br>
+                Vườn hoa Happy Land<br>
+                Thác Dải Yếm<br>
+                Thung lũng mận Nà Ka<br>
+                Cầu Kính Mộc Châu<br>
+                Hướng dẫn viên suốt tuyến.<br>
+                Thuế VAT và phí dịch vụ</p>
+            <p>* Vé trẻ em: <br>
+                Trẻ em từ 5 tuổi trở xuống         : miễn phí, tất cả các dịch vụ cha mẹ tự lo<br>
+                Trẻ em từ 6 đến 11 tuổi             : 50% giá tour (ngủ chung giường với cha mẹ);<br>
+                Trẻ em từ 12 tuổi trở lên            : 100% giá tour<br>
+                
+                * Giá tour bao gồm:  <br>
+                - Chi phí xe máy lạnh phục vụ theo chương trình.<br>
+                - Chi phí khách sạn theo tiêu chuẩn 2 khách/phòng. Lẻ khách ngủ giường phụ hoặc chịu chi phí phụ thu phòng đơn:<br>
+                - Chi phí ăn – uống theo chương trình.<br>
+                - Phí tham quan theo chương trình<br>
+                - Chi phí Hướng dẫn viên tiếng Việt.<br>
+                * Quà tặng: Nón, nước suối, khăn lạnh<br>
+                 
+                * Giá tour không bao gồm: <br>
+                - Chi phí tham quan - ăn uống ngoài chương trình, giặt ủi, điện thoại và các chi phí cá nhân khác.<br>
+                - Chi phí phụ thu phòng đơn: <br>
+                
+                
+                
+                * Ghi chú khác:<br>
+                - Công ty xuất hóa đơn cho du khách có nhu cầu (Trong thời hạn 7 ngày sau khi kết thúc chương trình du lịch). Du khách được chọn một trong những chương trình khuyến mãi dành cho khách lẻ định kỳ (Nếu có).<br>
+                - Quý khách có mặt tại điểm đón trước 15 phút. Trong trường hợp đến trễ khi xe đã khởi hành; Không làm thủ tục đúng giờ (khi hãng hàng không đã đóng quầy, kết thúc chấp nhận hành khách); Không lên máy bay trước giờ đóng cửa lên máy bay, hoặc hủy tour không báo trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi hành</p>
+        </div>
+        <div id="thu-tuc" class="tab-content">
+           
+    </div>
+    <footer>
+        <p>&copy; 2024 Saigontourist | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch Mùa Lúa Chín Khám Phá Pù Luông</title>
+    <link rel="stylesheet" href="detail-tour.css" />
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            // Remove active class from all tabs and hide content
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and show corresponding content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Default to open the first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab').click();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Du Lịch Mùa Lúa Chín Khám Phá Pù Luông</h1>
+    </section>
+
+    <!-- Tour Details -->
+    <div class="tour-details">
+        <div class="tour-image">
+            <img src="https://farwego.vn/uploads/0000/55/2021/06/10/pu-luong-lua-xanh-2.jpg" alt="Tour Image">
+        </div>
+        <div class="tour-info">
+            <h2 class="tour-title">Du Lịch Mùa Lúa Chín Khám Phá Pù Luông</h2>
+            <p class="tour-location">Hà Nội - Thanh Hoá</p>
+            <p>Thời gian: 2 ngày 1 đêm</p>
+            <p>Phương tiện: Ô tô + Xe máy</p>
+            <div class="tour-price">Giá từ 2.599.000VND/khách</div>
+            <a href="#" class="btn-book">Đặt Tour Ngay</a>
+        </div>
+    </div>
+
+    <!-- New Table Section -->
+    <table class="tour-table">
+        <thead>
+            <tr>
+                <th>Khởi Hành</th>
+                <th>Mã Tour</th>
+                <th>Giá</th>
+                <th>Giá Trẻ Em</th>
+                <th>Giá Em Bé</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>09/11/2024</td>
+                <td>STN084-2024-09866</td>
+                <td>2.599.000 VND</td>
+                <td>2.599.000 VND</td>
+                <td>2.599.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>16/11/2024</td>
+                <td>STN084-2024-09867</td>
+                <td>2.599.000 VND</td>
+                <td>2.599.000 VND</td>
+                <td>2.599.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+          
+
+        </tbody>
+    </table>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'chuong-trinh')">Chương trình Tour</div>
+            <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
+            <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
+        </div>
+        <div id="chuong-trinh" class="tab-content active">
+            
+            <p>Ngày 1:HÀ NỘI – PÙ LUÔNG(Ăn trưa, tối)<br>
+                07h00: Xe đón đoàn tại Nhà Hát Lớn, Hà Nội khởi hành đi Pù Luông. Trên hành trình 4.5 giờ quý khách sẽ dừng chân nghỉ ngơi tại Hòa Bình, thuộc địa phận rừng Cúc Phương khoảng 20-30 phút.<br>
+                11h30: Quý khách dùng bữa trưa tại nhà hàng Đặc sản Pù Luông. Thưởng thức những món ngon bản địa, và chiêm ngưỡng cảnh quan của bản Đôn, tâm chấn của Pù Luông từ trên cao. Kết thúc bữa ăn.<br>
+                Quý khách nhận phòng, nghỉ ngơi và tự do khám phá.<br>
+                Buổi chiều: Xe sẽ đưa quý khách đi thăm quan làng Ban Công. Đi bộ dọc suối Chàm thơ mộng và cùng nhau chiêm ngưỡng những Guồng nước khổng lồ.<br>
+                Sải bước thêm chúng ta tới đập Chiềng Lâu và trải nghiệm chèo bè. Một trong những hoạt động yêu thích của du khách, nhẹ nhàng, thư thái và thú vị trên những chiếc bè đơn sơ được làm từ tre, một điểm đặc sắc của Pù Luông.<br>
+                Sau đó quý khách sẽ đi thăm làng mạc, trải nghiệm đi qua cầu treo và xe sẽ đón ở đường lớn, đưa về khách sạn nghỉ ngơi. Sau bữa tối quý khách tự do nghỉ ngơi tại khách sạn. Nghỉ đêm tại Pù Luông.</p>
+            <p>Ngày 2:PÙ LUÔNG – HÀ NỘI (Ăn sáng)<br>
+                Buổi sáng: Thức dậy trong một bầu không khí mát mẻ. Chẳng cần đi đâu xa, ngay tại Pù Luông chúng ta cũng có thể “mặt chạm tới mây”.<br>
+                Bữa sáng đã sẵn sàng và hành trình tham quan sẽ được bắt đầu từ 8h30. Ngay tại trung tâm bản Đôn, quý khách sẽ tản bộ trên cung đường biểu tượng của Pù Luông với mênh mông ruộng bậc thang, xen kẽ những mái nhà sản mộc mạc.<br>
+                Mùa lúa đơm bông làm ta xao xuyên, và mùa “vàng” sẽ làm quý khách lầm tưởng đang ở Mù Cang Chải.<br>
+                Trên hành trình, quý khách sẽ được ngắm nhìn bản Ươi từ trên cao và đi xuống bản Lặn, được mệnh danh là “Đại bản doanh của tộc người Thái ở Pù Luông” - bản còn nguyên sơ với 100 hộ dân bản địa.<br>
+                Cảnh nhà đơn sơ, những con người bình dị sẽ là một vé trở về với tuổi thơ của biết bao cô, chú, anh chị 8-9x. Tìm hiểu đời sống và hoạt động dệt vải thổ cẩm nơi đây cũng thật thú vị và ý nghĩa.<br>
+                Xe sẽ đón chúng ta về khách sạn, trả phòng và tự do vãn cảnh, quý khách tự túc bữa ăn trưa. 13:30 Limousine sẽ khởi hành về Hà Nội và kết thúc hành trình lúc 7h tối.</p>
+           
+        </div>
+        <div id="chinh-sach" class="tab-content">                       
+            <p>* Vé trẻ em: <br>
+                - Trẻ em dưới 2 tuổi: thu 500.000đ/ trẻ. Gia đình tự lo cho bé ăn ngủ<br>
+                - Trẻ em từ 2 đến dưới 6 tuổi: : tiêu chuẩn gồm Vé máy bay. Gia đình tự lo cho bé ăn ngủ và phí tham quan Hai người lớn chỉ được kèm một trẻ em dưới 6 tuổi. Từ trẻ thứ 2 trở lên, mỗi em đóng bằng giá trẻ em từ 6-11 tuổi<br>
+                - Trẻ em từ 6 - 11 tuổi: tiêu chuẩn gồm Vé máy bay, ăn uống và tham quan theo chương trình, ngủ chung giường với phụ huynh<br>
+                - Trẻ em trên 11 tuổi: áp dụng giá và các tiêu chuẩn dịch vụ như người lớn<br>
+                
+                * Giá tour bao gồm:  <br>
+                - Vé máy bay khứ hồi của Vietnam Airlines. <br>
+                - Chi phí xe máy lạnh phục vụ theo chương trình.<br>
+                - Chi phí khách sạn theo tiêu chuẩn 2 khách/phòng. Lẻ khách ngủ giường phụ hoặc chịu chi phí phụ thu phòng đơn:<br>
+                - Chi phí ăn – uống theo chương trình.<br>
+                - Phí tham quan theo chương trình<br>
+                - Chi phí Hướng dẫn viên tiếng Việt.<br>
+                * Quà tặng: Nón, nước suối, khăn lạnh<br>
+                 
+                * Giá tour không bao gồm:   <br>
+                - Chi phí tham quan - ăn uống ngoài chương trình, giặt ủi, điện thoại và các chi phí cá nhân khác.<br>
+                - Chi phí phụ thu phòng đơn: <br>
+                
+                * Ghi chú khác:<br>
+                - Công ty xuất hóa đơn cho du khách có nhu cầu (Trong thời hạn 7 ngày sau khi kết thúc chương trình du lịch). Du khách được chọn một trong những chương trình khuyến mãi dành cho khách lẻ định kỳ (Nếu có).<br>
+                - Quý khách có mặt tại điểm đón trước 15 phút. Trong trường hợp đến trễ khi xe đã khởi hành; Không làm thủ tục đúng giờ (khi hãng hàng không đã đóng quầy, kết thúc chấp nhận hành khách); Không lên máy bay trước giờ đóng cửa lên máy bay, hoặc hủy tour không báo trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi hành</p>
+        </div>
+        <div id="thu-tuc" class="tab-content">
+            
+            <p>1/ Lữ hành Saigontourist có bố trí bữa ăn sáng ngày đầu tiên trong tour không ?<br>
+                Hầu hết các tour bay sáng với hành trình dài nên khi đáp thì đã quá giờ dùng điểm tâm nên thông thường Lữ hành Saigontourist không có bố trí bữa sáng.<br>
+                
+
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Saigontourist | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch [Hành Hương] Yên Tử - Hạ Long - Chùa Bái Đính - Tam Chúc</title>
+    <link rel="stylesheet" href="detail-tour.css" />
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            // Remove active class from all tabs and hide content
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and show corresponding content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Default to open the first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab').click();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Du Lịch [Hành Hương] Yên Tử - Hạ Long - Chùa Bái Đính - Tam Chúc</h1>
+    </section>
+
+    <!-- Tour Details -->
+    <div class="tour-details">
+        <div class="tour-image">
+            <img src="https://ik.imagekit.io/tvlk/blog/2023/06/khu-du-lich-tam-chuc-acc-9.jpeg?tr=c-at_max?tr=c-at_max" alt="Tour Image">
+        </div>
+        <div class="tour-info">
+            <h2 class="tour-title">Du Lịch [Hành Hương] Yên Tử - Hạ Long - Chùa Bái Đính - Tam Chúc</h2>
+            <p class="tour-location">TP. HỒ CHÍ MINH - Hà Nội - Hạ Long - Ninh Bình</p>
+            <p>Thời gian: 4 ngày 3 đêm</p>
+            <p>Phương tiện: Hàng không Vietnam Airlines</p>
+            <p>Khởi hành thứ 5 cách tuần:07, 21/11; 05, 19/12/2024 </p>
+            <div class="tour-price">Giá từ 9.779.000 VND</div>
+            <a href="#" class="btn-book">Đặt Tour Ngay</a>
+        </div>
+    </div>
+
+    <!-- New Table Section -->
+    <table class="tour-table">
+        <thead>
+            <tr>
+                <th>Khởi Hành</th>
+                <th>Mã Tour</th>
+                <th>Giá</th>
+                <th>Giá Trẻ Em</th>
+                <th>Giá Em Bé</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>21/11/2024</td>
+                <td>STN084-2024-03192</td>
+                <td>9.779.000 VND</td>
+                <td>6.800.000 VND</td>
+                <td>3.800.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>05/12/2024</td>
+                <td>STN084-2024-03193</td>
+                <td>9.779.000 VND</td>
+                <td>6.800.000 VND</td>
+                <td>3.800.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+          
+
+        </tbody>
+    </table>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'chuong-trinh')">Chương trình Tour</div>
+            <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
+            <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
+        </div>
+        <div id="chuong-trinh" class="tab-content active">
+            
+            <p>Ngày 1: TP.HCM – HẢI PHÒNG – YÊN TỬ – HẠ LONG (Ăn trưa, chiều)<br>
+                Buổi sáng, quý khách tập trung tại Cổng D2 – Ga đi trong nước – SB.Tân Sơn Nhất.<br>
+                Hướng dẫn viên Lữ hành Saigontourist đón quý khách và hỗ trợ làm thủ tục. Khởi hành ra Hải Phòng trên chuyến bay VN1176 lúc 9h10.<br>
+                Đáp xuống sân bay Cát Bi, xe đưa đoàn đến non thiêng Yên Tử – nơi khai sinh ra Thiền phái Trúc Lâm, đoàn lên núi bằng hệ thống cáp treo hiện đại – ngắm cảnh núi rừng Đông Bắc, viếng chùa Hoa Yên, tháp Tô – thờ vua Trần Nhân Tông và các quan đại thần đời Trần.<br>
+                Quý khách có thể tiếp tục chinh phục đỉnh Yên Tử, đến viếng chùa Đồng. Đoàn xuống núi và tiếp tục đến Hạ Long. Nghỉ đêm tại Hạ Long.<br>
+                Lựa chọn (tự túc chi phí di chuyển & tham quan):<br>
+                - Trải nghiệm xe bus 2 tầng vừa khai thác từ T2.2023, chiêm ngưỡng cảnh quan trên trục đường ven biển thành phố Hạ Long<br>
+                - Tham quan Quần thể Du lịch - Giải trí Sun World Hạ Long Park, gồm 2 khu công viên vui chơi ven biển Bãi Cháy và  trên núi Ba Đèo - được kết nối với nhau bởi hệ thống cáp treo vượt biển Nữ Hoàng đạt 2 kỷ lục thế giới (cabin có sức chứa lớn nhất thế giới và cáp treo có trụ cao nhất thế giới so với mặt đất). Trải nghiệm trò chơi mạo hiểm, Vòng quay Mặt Trời - một trong những vòng quay cao nhất thế giới,...</p>
+            <p>Ngày 2: HẠ LONG – ĐẦM VÂN LONG – NINH BÌNH (Ăn sáng, trưa, chiều)<br>
+                Buổi sáng, quý khách lên thuyền du ngoạn vịnh Hạ Long – một trong 7 kỳ quan thiên nhiên mới của thế giới, chiêm ngưỡng động Thiên Cung, các hòn Đỉnh Hương – Trống Mái (Gà Chọi) – Chó Đá.<br>
+                Đoàn khởi hành đi Ninh Bình, lên thuyền khám phá khu bảo tồn thiên nhiên đất ngập nước Vân Long hoang sơ và hữu tình của buổi chiều tà.<br>
+                Buổi tối, đoàn tự do khám phá phố cổ Hoa Lư – ngắm tháp Chùa Bạc lung linh ánh đèn soi bóng bên hồ Kỳ Lân. Nghỉ đêm tại Ninh Bình.</p>
+            <p>Ngày 3:NINH BÌNH – CHÙA BÁI ĐÍNH – ĐỊA TẠNG PHI LAI – PHỦ LÝ (Ăn sáng, trưa, chiều)<br>
+                Sau bữa sáng, đoàn trả phòng. Xe đưa đoàn đến viếng chùa Bái Đính.<br>
+                 Tiếp tục hành trình đến chùa Địa Tạng Phi Lai – ngôi cổ tự nằm nép mình dưới những tán thông cổ thụ, mang một vẻ đẹp yên bình và thanh tịnh.<br>
+                  Buổi chiều, xe đưa đoàn về thành phố Phủ Lý, nhận phòng KS Mường Thanh Luxury Hà Nam 4* nghỉ ngơi.<br>
+                   Buổi tối, đoàn tự do tham quan thành phố. Nghỉ đêm tại Phủ Lý.</p>
+            
+            <p>Ngày 4:TAM CHÚC – NỘI BÀI – TPHCM (Ăn sáng, trưa)<br>
+                Sau bữa sáng, đoàn trả phòng khởi hành đến tham quan quần thể du lịch tâm linh chùa Tam Chúc – nơi được kì vọng sẽ trở thành quần thể du lịch tâm linh lớn nhất thế giới khi hoàn thành vào năm 2048.<br>
+                Đoàn dâng hương tại các Điện thờ và leo núi đến viếng Điện Ngọc – ngắm toàn cảnh chùa Tam Chúc yên bình bên hồ Lục Nhạc giữa thung lũng núi đá vôi trầm mặc.<br>
+                Buổi chiều, xe đưa đoàn ra sân bay Nội Bài để về TPHCM trên chuyến bay VN259 lúc 18h00. Kết thúc chương trình.</p>       
+        </div>
+        <div id="chinh-sach" class="tab-content">                       
+            <p>* Vé trẻ em: <br>
+                - Trẻ em dưới 2 tuổi: thu 500.000đ/ trẻ. Gia đình tự lo cho bé ăn ngủ<br>
+                - Trẻ em từ 2 đến dưới 6 tuổi: : tiêu chuẩn gồm Vé máy bay. Gia đình tự lo cho bé ăn ngủ và phí tham quan Hai người lớn chỉ được kèm một trẻ em dưới 6 tuổi. Từ trẻ thứ 2 trở lên, mỗi em đóng bằng giá trẻ em từ 6-11 tuổi<br>
+                - Trẻ em từ 6 - 11 tuổi: tiêu chuẩn gồm Vé máy bay, ăn uống và tham quan theo chương trình, ngủ chung giường với phụ huynh<br>
+                - Trẻ em trên 11 tuổi: áp dụng giá và các tiêu chuẩn dịch vụ như người lớn<br>
+                
+                * Giá tour bao gồm:  <br>
+                - Vé máy bay khứ hồi của Vietnam Airlines. <br>
+                - Chi phí xe máy lạnh phục vụ theo chương trình.<br>
+                - Chi phí khách sạn theo tiêu chuẩn 2 khách/phòng. Lẻ khách ngủ giường phụ hoặc chịu chi phí phụ thu phòng đơn:<br>
+                - Chi phí ăn – uống theo chương trình.<br>
+                - Phí tham quan theo chương trình<br>
+                - Chi phí Hướng dẫn viên tiếng Việt.<br>
+                * Quà tặng: Nón, nước suối, khăn lạnh<br>
+                 
+                * Giá tour không bao gồm:   <br>
+                - Chi phí tham quan - ăn uống ngoài chương trình, giặt ủi, điện thoại và các chi phí cá nhân khác.<br>
+                - Chi phí phụ thu phòng đơn: <br>
+                
+                
+                THÔNG TIN HƯỚNG DẪN<br>
+                * Quy định vé máy bay: Đây là chương trình hợp tác với hãng hàng không Vietnam Airlines nên có một số lưu ý:<br>
+                - Giá vé máy bay không bao gồm suất ăn/uống trên máy bay.<br>
+                - Không được hoàn hoặc hủy vé máy bay. Nếu hủy, vui lòng chịu phạt 100% chi phí vé máy bay.<br>
+                - Khi đăng ký vé máy bay, quý khách cung cấp họ và tên, ngày tháng năm sinh (đúng từng ký tự ghi trong hộ chiếu hoặc Chứng Minh Nhân Dân).<br>
+                - Không được thay đổi thông tin đặt chỗ: họ tên hành khách, chuyến bay, ngày bay, chặng bay, tách đoàn, gia hạn vé. <br>
+                - Số lượng khách tối thiểu để tổ chức tour: 10 khách/đoàn. <br>
+                - Du khách được miễn cước 1 KIỆN (23 kg) hành lý ký gởi và 1 KIỆN (10kg) hành lý xách tay<br>
+                - Trường hợp hủy tour do sự cố khách quan như thiên tai, dịch bệnh hoặc do máy bay hoãn - hủy chuyến, Lữ hành Saigontourist sẽ không chịu trách nhiệm bồi thường thêm bất kỳ chi phí nào khác ngoài việc hoàn trả chi phí những dịch vụ chưa được sử dụng của tour đó (ngoại trừ chi phí vé máy bay)<br>
+                * Trường hợp hủy vé landtour, quý khách vui lòng thanh toán các khoản sau:<br>
+                - Quý khách chuyển đổi tour sang ngày khác và báo trước ngày khởi hành trước 15 ngày sẽ không chịu phí (không áp dụng các tour KS 4-5 sao), nếu trễ hơn sẽ căn cứ theo qui định hủy phạt phía dưới và chỉ được chuyển ngày khởi hành tour 1 lần.<br>
+                - Hủy vé trong vòng 24 giờ hoặc ngay ngày khởi hành, chịu phạt 100% tiền tour.<br>
+                - Hủy vé trước ngày khởi hành từ 2 - 7 ngày, chịu phạt 80% tiền tour.<br>
+                - Hủy vé trước ngày khởi hành từ 8 - 14 ngày, chịu phạt 50% tiền tour.<br>
+                - Hủy vé trước ngày khởi hành từ 15 ngày trở lên, chịu phạt 30% tiền tour.<br>
+                - Sau khi hủy tour, du khách vui lòng đến nhận tiền trong vòng 15 ngày kể từ ngày kết thúc tour. Chúng tôi chỉ thanh toán trong khỏang thời gian nói trên.<br>
+                * Hành lý và giấy tờ tùy thân:   <br>
+                - Du khách mang theo giấy Chứng Minh Nhân Dân / Căn Cước Công Dân hoặc Hộ chiếu (còn thời hạn sử dụng). Đối với du khách là Việt kiều, Quốc tế nhập cảnh Việt Nam bằng visa rời, vui lòng mang theo visa khi đăng ký và khi đi tour.<br>
+                - Khách lớn tuổi (từ 70 tuổi trở lên), khách tàn tật tham gia tour, phải có thân nhân đi kèm và cam kết đảm bảo đủ sức khỏe khi tham gia tour du lịch.<br>
+                - Trẻ em dưới 14 tuổi khi đi tour phải mang theo giấy khai sinh hoặc hộ chiếu. Trẻ em từ 14 tuổi trở lên phải mang theo giấy Chứng Minh Nhân Dân.<br>
+                - Tất cả giấy tờ tùy thân mang theo đều phải bản chính. <br>
+                - Du khách mang theo hành lý gọn nhẹ và phải tự bảo quản hành lý, tiền bạc, tư trang trong suốt thời gian đi du lịch. Du khách được miễn cước 1 KIỆN hành lý ký gởi (23kg) và 1 KIỆN hành lý xách tay (10kg). <br>
+                - Khách Việt Nam ở cùng phòng với khách Quốc tế  hoặc Việt kiều yêu cầu phải có giấy hôn thú.<br>
+                - Quý khách có mặt tại sân bay trước 3 tiếng so với giờ khởi hành.<br>
+                
+                * Ghi chú khác:<br>
+                - Công ty xuất hóa đơn cho du khách có nhu cầu (Trong thời hạn 7 ngày sau khi kết thúc chương trình du lịch). Du khách được chọn một trong những chương trình khuyến mãi dành cho khách lẻ định kỳ (Nếu có).<br>
+                - Quý khách có mặt tại điểm đón trước 15 phút. Trong trường hợp đến trễ khi xe đã khởi hành; Không làm thủ tục đúng giờ (khi hãng hàng không đã đóng quầy, kết thúc chấp nhận hành khách); Không lên máy bay trước giờ đóng cửa lên máy bay, hoặc hủy tour không báo trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi hành</p>
+        </div>
+        <div id="thu-tuc" class="tab-content">
+            
+            <p>1/ Lữ hành Saigontourist có bố trí bữa ăn sáng ngày đầu tiên trong tour không ?<br>
+                Hầu hết các tour bay sáng với hành trình dài nên khi đáp thì đã quá giờ dùng điểm tâm nên thông thường Lữ hành Saigontourist không có bố trí bữa sáng.<br>
+                
+                2/ Nếu tôi đã có vé máy bay thì có được trừ tiền không?<br>
+                Nếu quý khách đã có vé máy bay thì Lữ hành Saigontourist sẽ trừ chi phí này.<br>
+                
+                3/ Khi đi tour Hạ Long, tôi có thể ngủ đêm trên tàu không ?<br>
+                Hiện tại với các hành trình tour đi chung với những khách khác thì Lữ hành Saigontourist chưa bố trí ngủ đêm trên tàu ở Vịnh Hạ Long do chi phí hơi cao. Nếu quý khách có nhu cầu này vui lòng báo với nhân viên để được tư vấn.<br>
+                
+                4/ Tôi cần lưu ý gì khi đi tham quan Lăng Bác ?<br>
+                Khi đi tham quan Lăng Bác, quý khách vui lòng mặc trang phục gọn gàng lịch sự, kín đáo và tham quan theo hướng dẫn của ban quản lý Lăng<br>
+                
+                5/ Ngoài các điểm tham quan có trong tour thì tôi có thể tham quan điểm nào khác không ?<br>
+                Ngoài các điểm tham quan trong chương trình tour thì quý khách có thể tự túc tham quan thêm một số nơi khác: khu vui chơi giải trí Sun World Hạ Long Park, Khu du lịch Tuần Châu,…<br>
+                
+                6/ Ninh Bình có điểm tham quan nào nổi bật?<br>
+                Qúy khách có thể tham quan khu du lịch Tràng An, Chùa Bái Đính, cố đô Hoa Lư, đầm Vân Long, Khu du lịch Tam Cốc, Hang Múa, phố cổ Hoa Lư, …<br>
+                
+                7/ Khi đi khu du lịch Tràng An thì thuyền có đi qua các hang động không?<br>
+                Hành trình tham quan khu du lịch Tràng An bằng thuyền sẽ đi trong khoảng từ 2h -3h (tùy con nước) nên chắc chắn sẽ có đi xuyên qua các hang trong quần thể khu du lịch.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Saigontourist | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

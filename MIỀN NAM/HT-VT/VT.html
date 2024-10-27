@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch Vũng Tàu - Cần Giờ</title>
+
+    <link rel="stylesheet" href="detail-tour.css" />
+     <script>
+        // JavaScript to handle tab switching
+        function openTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            // Remove active class from all tabs and hide content
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and show corresponding content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Default to open the first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab').click();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Du Lịch Vũng Tàu - Cần Giờ</h1>
+        
+    </section>
+
+    <!-- Tour Details -->
+    <div class="tour-details">
+        <div class="tour-image">
+            <img src="https://locphatland.com/wp-content/uploads/2021/08/ba-ria-vung-tau.jpeg" alt="Tour Image">
+        </div>
+        <div class="tour-info">
+            <h2 class="tour-title">Du Lịch Vũng Tàu - Cần Giờ</h2>
+            <p class="tour-location">TP. HỒ CHÍ MINH - VŨNG TÀU</p>
+            <p>Thời gian: 2 ngày 1 đêm </p>
+            <p>Phương tiện: Đi về bằng xe </p>
+            <p>Khởi hành: 07/12/2024, 21/12/2024</p>
+            <div class="tour-price">Giá từ 2.979.000 VND</div>
+            <a href="#" class="btn-book">Đặt Tour Ngay</a>
+        </div>
+    </div>
+
+    <!-- New Table Section -->
+    <table class="tour-table">
+        <thead>
+            <tr>
+                <th>Khởi Hành</th>
+                <th>Mã Tour</th>
+                <th>Giá</th>
+                <th>Giá Trẻ Em</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>07/12/2024</td>
+                <td>STN084-2024-02492</td>
+                <td>2.979.000 VND</td>
+                <td>1.490.000 VND</td> 
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>04/12/2024</td>
+                <td>STN084-2024-02493</td>
+                <td>2.979.000 VND</td>
+                <td>1.490.000 VND</td> 
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'chuong-trinh')">Chương trình Tour</div>
+            <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
+            <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
+        </div>
+        <div id="chuong-trinh" class="tab-content active">
+            
+            <p>Ngày 1: TP. HỒ CHÍ MINH – VŨNG TÀU(Ăn sáng, trưa, chiều)<br>
+                Đón du khách tại văn phòng lữ hành Saigontourist. Khởi hành đi Vũng Tàu, HDV đưa đoàn đi tham quan Giáo xứ Song Vĩnh đây là một công trình kiến trúc Gothic Phương Tây bên ngoài với màu xám đặc trưng của đá vô cùng ân tượng đặc biệt gây chú ý cho những ai đi ngang qua bởi dáng vẻ nguy nga, diễm lệ của ngôi thánh đường. <br>
+                Xe đưa đoàn tiếp tục tham quan Bảo tàng Vũ khí cổ Robert Taylor - nơi hiện trưng bày hơn 2000 hiện vật gồm: các loại vũ khí như: súng, gươm, kiếm, mác, cung tên, quân trang, quân phục của nhiều nước có niên đại từ thế kỷ 17 đến 20 như quân đội Anh, Pháp, Hà Lan, Đức, trang phục của võ sĩ samurai Nhật Bản, quân đội La Mã, súng cạc bin của vua Napoleon Bonaparte (từ 1600 – 1620). <br>
+                Sau khi ăn trưa du khách di chuyển về khách sạn nhận phòng. Buổi chiều quý khách tự do nghỉ ngơi, tận hưởng các tiện nghi - tiện ích và dịch vụ của khách sạn. Nghỉ đêm tại Vũng Tàu.</p>
+            <p>Ngày 2: VŨNG TÀU – CẦN GIỜ(Ăn sáng, trưa,)<br>
+                Buổi sáng, du khách nghỉ dưỡng trong khách sạn, tắm biển. Du khách trả phòng. <br>
+                Đoàn lên khởi hành đi Cần Giờ bằng đường Biển qua Cần Giờ. Tham quan Khu căn cứ Rừng Sác. <br>
+                Đến đây du khách sẽ được đắm mình trong không khí trong lành, xanh mát của rừng đước ngập mặn Cần Giờ, ngắm nhìn và tiếp xúc với hàng ngàn con khỉ nơi đây và đặc biệt hơn du khách sẽ được tham quan khu căn cứ cách mạng của Đoàn 10 Rừng Sác Anh Hùng (di chuyển bằng cano). <br>
+                Tiếp tục xe đưa đoàn di chuyển xuống Bãi Biển 30/4 và dùng cơm trưa tại Nhà hàng thuộc khu Du lịch Sinh Thái Cần Giờ - Cần Giờ Resort. Tham quan chợ Hàng Dương. Về đến TP.HCM, xe đưa du khách về văn phòng lữ hành Saigontourist số 19 Hoàng Việt, Phường 4, Quận Tân Bình. Kết thúc chương trình./</p>
+           
+        </div>
+        <div id="chinh-sach" class="tab-content">
+            
+            <p>* Giá tour bao gồm:  <br>
+                -  Chi phí xe phục vụ theo chương trình. <br>
+                - Chi phí ăn – uống theo chương trình. <br>
+                - Chi phí khách sạn tiêu chuẩn 2 khách/phòng.Lẻ khách ngủ phòng 3 (kê thêm giường phụ) hoặc trả chi phí phụ thu phòng đơn: <br>
+                - Chi phí tham quan, hướng dẫn viên tiếng Việt <br>
+                - Quà tặng: Nón, nước suối, khăn lạnh,</p>
+                 
+               <p> * Giá tour không bao gồm:   <br>
+                - Ăn uống ngoài chương trình, giặt ủi, điện thoại và các chi phí cá nhân <br>
+                - Chi phí phụ thu phòng đơn: </p>
+                
+                <p>THÔNG TIN HƯỚNG DẪN <br>
+                * Vé trẻ em:   <br>
+                - Vé tour: Trẻ em từ  6 đến 11 tuổi mua một nửa giá vé người lớn, trẻ em trên 11 tuổi mua vé như người lớn. <br>
+                - Đối với trẻ em dưới 6 tuổi, gia đình tự lo cho bé ăn ngủ và tự trả phí tham quan (nếu có). Hai người lớn chỉ được kèm một trẻ em. Từ trẻ thứ 2 trở lên, mỗi em phải 50% giá vé người lớn. <br>
+                - Tiêu chuẩn 50% giá tour bao gồm: Suất ăn, ghế ngồi và ngủ ghép chung với gia đình.</p>
+                
+                <p>* Hành lý và giấy tờ tùy thân:  
+                - Du khách mang theo giấy Chứng Minh Nhân Dân hoặc Hộ chiếu. Đối với du khách là Việt kiều, Quốc tế nhập cảnh Việt Nam bằng visa rời, vui lòng mang theo visa khi đăng ký và đi tour. <br>
+                - Khách lớn tuổi (từ 70 tuổi trở lên), khách tàn tật tham gia tour, phải có thân nhân đi kèm và cam kết đảm bảo đủ sức khỏe khi tham gia tour du lịch. <br>
+                - Trẻ em dưới 14 tuổi khi đi tour phải mang theo Giấy khai sinh hoặc Hộ chiếu. Trẻ em từ 14 tuổi trở lên phải mang theo giấy Chứng Minh Nhân Dân hoặc Hộ chiếu riêng <br>
+                - Tất cả giấy tờ tùy thân mang theo đều phải bản chính <br>
+                - Du khách mang theo hành lý gọn nhẹ và phải tự bảo quản hành lý, tiền bạc, tư trang trong suốt thời gian đi du lịch. <br>
+                - Khách Việt Nam ở cùng phòng với khách Quốc tế  hoặc Việt kiều yêu cầu phải có giấy hôn thú.</p>
+        </div>
+        <div id="thu-tuc" class="tab-content">
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Saigontourist | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

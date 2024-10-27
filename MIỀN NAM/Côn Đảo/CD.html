@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch Côn Đảo [Khám Phá Côn Đảo – Bảo Vệ Rùa Biển]</title>
+    <link rel="stylesheet" href="detail-tour.css" />
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            // Remove active class from all tabs and hide content
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and show corresponding content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Default to open the first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab').click();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Du Lịch Côn Đảo [Khám Phá Côn Đảo – Bảo Vệ Rùa Biển]</h1>
+    </section>
+
+    <!-- Tour Details -->
+    <div class="tour-details">
+        <div class="tour-image">
+            <img src="https://r2.nucuoimekong.com/wp-content/uploads/di-tau-ra-con-dao.jpg" alt="Tour Image">
+        </div>
+        <div class="tour-info">
+            <h2 class="tour-title">Du Lịch Côn Đảo [Khám Phá Côn Đảo – Bảo Vệ Rùa Biển]</h2>
+            <p class="tour-location">TP. HỒ CHÍ MINH - CÔN ĐẢO</p>
+            <p>Thời gian: 3 ngày 2 đêm</p>
+            <p>Phương tiện: Tàu Cao Tốc - 1 Chiều</p>
+            <p>Khởi hành thứ 6 cách tuần: 8/11; 22/11/2024</p>
+            <div class="tour-price">Giá từ 5.999.000 VND</div>
+            <a href="#" class="btn-book">Đặt Tour Ngay</a>
+        </div>
+    </div>
+
+    <!-- New Table Section -->
+    <table class="tour-table">
+        <thead>
+            <tr>
+                <th>Khởi Hành</th>
+                <th>Mã Tour</th>
+                <th>Giá</th>
+                <th>Giá Trẻ Em</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>08/11/2024</td>
+                <td>STN084-2024-12345</td>
+                <td>5.999.000 VND</td>
+                <td>5.499.000 VND</td>
+                
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>22/11/2024</td>
+                <td>STN084-2024-12346</td>
+                <td>5.999.000 VND</td>
+                <td>5.499.000 VND</td>
+                
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+           
+        </tbody>
+    </table>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'chuong-trinh')">Chương trình Tour</div>
+            <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
+            <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
+        </div>
+        <div id="chuong-trinh" class="tab-content active">
+            
+            <p>Ngày 1:TP. HCM – Tàu cao tốc Côn Đảo(Ăn trưa, chiều)<br>
+               
+                - 05:15 (sáng) Xe của Saigontourist đón quý khách tại 102 Nguyễn Huệ. Đưa khách đến cảng Hiệp Phước (huyện Nhà Bè) để đón chuyến tàu cao tốc lúc 07:00.<br>
+                - 12:30 Đến Côn Đảo, xe và HDV đón khách di chuyển đến khách sạn. Check in khách sạn Sài Gòn- Côn Đảo 4*.<br>
+                Buổi chiều, quý khách tự do tắm biển hoặc tham quan:<br>
+                Combo Tour 1 (khách tự chọn): Xe + HDV + Tham quan Côn Đảo<br>
+                Combo Tour 2 (khách tự chọn): Dùng tiệc BBQ/Hải sản trên đảo<br>
+                - Nghỉ đêm tại Côn Đảo.</p>
+            <p>Ngày 2: Vườn QG Côn Đảo – Tham quan Hòn Bảy Cạnh (Ăn sáng, tối)<br>
+                - Dùng bữa sáng tại khách sạn, sau đó quý khách tự do tham quan, tắm biển hoặc ở khách sạn nghỉ ngơi, hoặc tham quan:<br>
+                Combo Tour 3 (khách tự chọn): Xe + HDV + Tham quan Côn Đảo<br>
+                - 14:45 Quý khách tập trung tại số 36 Tôn Đức Thắng<br>
+                - 15:00  Cano di chuyển 30 phút đưa du khách đến Hòn Bảy Cạnh. Di chuyển lên Hòn Bảy Cạnh: Tham quan rừng ngập mặn nguyên sinh, xem tiêu bản Rùa biển, tham quan Hồ ấp trứng rùa nhân tạo, nghe giới thiệu về vòng đời rùa biển và công tác bảo tồn rùa biển thành công nhất Việt Nam của Vườn quốc gia Côn Đảo.<br>
+                - 18:00 Dùng bữa tối tại trạm kiểm lâm<br>
+                - 19:30 Xem cua xe tăng kiếm ăn trong rừng ngập mặn XEM RÙA BIỂN ĐẺ TRỨNG TẠI BÃI CÁT LỚN: Xem trực tiếp quá trình Rùa mẹ đẻ trứng theo sự hướng dẫn của Kiểm lâm viên. (Không cố định thời gian, Rùa mẹ lên theo con nước lớn vào ban đêm)</p>
+            <p>Ngày 3: Côn Đảo – Thả rùa con về biển - TP. Hồ Chí Minh (Ăn sáng, trưa)<br>
+                Buổi sáng: Thả rùa con về biển, khởi đồng hành trình chinh phục đại dương của những sinh vật đáng yêu này (Nếu có). Quý khách dùng bữa sáng.<br>
+                - 8:00 Cano di chuyển 30’ đưa quý khách đến Vịnh Đầm Tre<br>
+                - 8:45 Đi bộ vào rừng, tham quan hệ sinh thái rừng, quý khách có thể dễ dàng thấy sóc đen Côn Đảo, Kì đà vân… hay dây leo cổ thụ dài hơn 100m uốn lượng giữa thiên nhiên. Hoặc lên đỉnh núi ngắm toàn cảnh Vịnh Đầm Tre<br>
+                - 10:15 Quý khách ra khỏi rừng. HDV trang bị đầy đủ cho quý khách kính lặn, ống thở để xem trai tượng và các rạn san hô tại Đầm Tre<br>
+                - 11h15  Quý khách tắm lại với nước sạch.<br>
+                - 11h45   Dùng cơm trưa tại trạm kiểm lâm. Nghỉ ngơi tại trạm kiểm lâm.<br>
+                - 12h20   Tàu đưa quý khách trở lại Côn Đảo.</p>
+        </div>
+        <div id="chinh-sach" class="tab-content">
+            
+            <p>* Tour bao gồm:
+                - Vé tàu cao tốc Hiệp Phước – Côn Đảo 01 chiều (bao gồm xe đón từ văn phòng Saigontourist -Quận 1)<br>
+                - Xe đưa đón tại cảng Côn Đảo đến khách sạn.<br>
+                - 01 đêm ở resort 4 sao (Côn Đảo), phòng tiêu chuẩn cho 2 người bao gồm bữa sáng.<br>
+                - 01 đêm ở Trạm kiểm lâm với tiện nghi cơ bản (võng, lều)<br>
+                - Tour vịnh Đầm Tre -hòn Bảy Cạnh trọn gói (bao gồm ca nô, hướng dẫn viên, phí vào Vườn Quốc gia, kính lặn,ống thở,  hướng dẫn viên nói tiếng Anh/Việt, bảo hiểm du lịch).<br>
+                * Lưu ý: xem rùa đẻ - thả rùa sẽ tuỳ theo mùa và và tuỳ thuộc thời điểm có rùa sinh sản hay không.<br>
+                - Các bữa ăn đề cập trong chương trình ( 02 ăn sáng, 01 ăn trưa, 01 ăn tối)<br>
+                - Thuốc xịt muỗi / người / chai.<br>
+                - Thuế VAT.<br>
+                
+                * Tour không bao gồm:<br>
+                - Tất cả vé máy bay, thuế sân bay, phí visa.<br>
+                - Tất cả bữa ăn và đồ uống không được nêu rõ.<br>
+                - Chi phí cá nhân, thăm quan tùy chọn và các dịch vụ khác không được đề cập.</p>
+        </div>
+        <div id="thu-tuc" class="tab-content">
+            
+           
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Saigontourist | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch Thanh Hóa [Cẩm Thủy - Lam Kinh]</title>
+    <link rel="stylesheet" href="detail-tour.css" />
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            // Remove active class from all tabs and hide content
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and show corresponding content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Default to open the first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab').click();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Du Lịch Thanh Hóa [Cẩm Thủy - Lam Kinh]</h1>
+    </section>
+
+    <!-- Tour Details -->
+    <div class="tour-details">
+        <div class="tour-image">
+            <img src="https://ktmt.vnmediacdn.com/images/2023/09/06/66-1694012852-23-09-06-thanh-hoa-1.jpg" alt="Tour Image">
+        </div>
+        <div class="tour-info">
+            <h2 class="tour-title">Du Lịch Thanh Hóa [Cẩm Thủy - Lam Kinh]</h2>
+            <p class="tour-location">Thanh Hóa - Thanh Hoá</p>
+            <p>Thời gian: 1 ngày </p>
+            <p>Phương tiện: Đi về bằng xe</p>
+            <div class="tour-price">Giá từ 1.460.000 VND</div>
+            <a href="#" class="btn-book">Đặt Tour Ngay</a>
+        </div>
+    </div>
+
+    <!-- New Table Section -->
+    <table class="tour-table">
+        <thead>
+            <tr>
+                <th>Khởi Hành</th>
+                <th>Mã Tour</th>
+                <th>Nhóm 4-5 khách</th>
+                <th>Nhóm 6-9 khách</th>
+                <th>Nhóm 10-14 khách</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20/11/2024</td>
+                <td>STN084-2024-01140</td>
+                <td>1.460.000 VND</td>
+                <td>1.090.000 VND</td>
+                <td>850.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+           
+
+        </tbody>
+    </table>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'chuong-trinh')">Chương trình Tour</div>
+            <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
+            <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
+        </div>
+        <div id="chuong-trinh" class="tab-content active">
+            
+            <p>Ngày 1:THANH HÓA – LAM KINH – CẨM THUỶ (Ăn trưa)<br>
+                08h00: Đón khách tại điểm hẹn trung tâm Tp. Thanh Hoá.  Khởi hành đi Cố đô Lam Kinh nằm tại hị trấn Lam Sơn, Thọ Xuân, Thanh Hóa cách thành phố Thanh Hóa khoảng 50km về phía Tây Bắc
+
+                09h30: Khu di tích lịch sử Lam Kinh rộng 200 ha (huyện Thọ Xuân, tỉnh Thanh Hóa) là nơi anh hùng Lê Lợi dựng cờ khởi nghĩa chống quân Minh xâm lược. Sau khi chiến thắng, năm 1428, Lê Lợi lấy niên hiệu Lê Thái Tổ, đặt tên nước là Đại Việt.
+                - Nhà vua đóng đô ở Thăng Long (Hà Nội) và dựng ở quê hương Lam Sơn một kinh thành gọi là Lam Kinh. Nơi này còn được gọi là Tây Kinh (để phân biệt với Đông Kinh - Hà Nội) có nhiều điện miếu, lăng tẩm quy mô lớn để thờ cúng tổ tiên, nơi an nghỉ của các vị vua Lê
+                - Kiến trúc Lam Kinh khá độc đáo và đặc biệt khi được xây theo địa thế “tọa sơn hướng thủy” – kiến trúc phong thủy hàng đầu của người Đông Nam Á.
+                - Phía Bắc của di tích dựa vào lưng núi dầu, phía Nam hướng ra sông Chu, phía Đông hướng ra rừng Phú Lâm, phía Tây được bao bọc bởi núi Hàm Rồng và núi Hương.
+                11h30: Ăn trưa tại nhà hàng
+                13h30: Đoàn tiếp tục hành trình đi tham quan Suối cá Thần Cẩm Thuỷ.
+                Nằm dưới chân núi Trường Sinh thuộc bản Lương Ngọc, xã Cẩm Lương, huyện Cẩm Thủy, tỉnh Thanh Hóa, khu du lịch Suối Cá Thần là điểm đến tâm linh, thắng cảnh nổi tiếng mà du khách thập phương luôn muốn ghé thăm một lần
+                18h00: Đoàn trở về lại điểm hẹn ban đầu, chai tay và kết thúc chương trình ./.</p>
+           
+        </div>
+        <div id="chinh-sach" class="tab-content">                       
+            <p>
+                * Giá tour bao gồm:  <br>
+                - Vé máy bay khứ hồi của Vietnam Airlines. <br>
+                - Chi phí xe máy lạnh phục vụ theo chương trình.<br>
+                - Chi phí khách sạn theo tiêu chuẩn 2 khách/phòng. Lẻ khách ngủ giường phụ hoặc chịu chi phí phụ thu phòng đơn:<br>
+                - Chi phí ăn – uống theo chương trình.<br>
+                - Phí tham quan theo chương trình<br>
+                - Chi phí Hướng dẫn viên tiếng Việt.<br>
+                * Quà tặng: Nón, nước suối, khăn lạnh<br>
+                 
+                * Giá tour không bao gồm:   <br>
+                - Chi phí tham quan - ăn uống ngoài chương trình, giặt ủi, điện thoại và các chi phí cá nhân khác.<br>
+                - Chi phí phụ thu phòng đơn: <br>
+                
+                * Ghi chú khác:<br>
+                - Công ty xuất hóa đơn cho du khách có nhu cầu (Trong thời hạn 7 ngày sau khi kết thúc chương trình du lịch). Du khách được chọn một trong những chương trình khuyến mãi dành cho khách lẻ định kỳ (Nếu có).<br>
+                - Quý khách có mặt tại điểm đón trước 15 phút. Trong trường hợp đến trễ khi xe đã khởi hành; Không làm thủ tục đúng giờ (khi hãng hàng không đã đóng quầy, kết thúc chấp nhận hành khách); Không lên máy bay trước giờ đóng cửa lên máy bay, hoặc hủy tour không báo trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi hành</p>
+        </div>
+        <div id="thu-tuc" class="tab-content">
+            
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Saigontourist | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

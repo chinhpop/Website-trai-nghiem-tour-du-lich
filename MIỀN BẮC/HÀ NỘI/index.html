@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Tour Đông Tây Bắc</title>
+    <link rel="stylesheet" href="ds-tour.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1> Tour HÀ NỘI </h1>
+    </section>
+
+    <!-- Danh sách tour -->
+    <section class="tour-list" id="tourList">
+       
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tour Finder</p>
+    </footer>
+
+    <script>
+        let tours = [
+            {
+                name: "Du lịch Hà Nội - Ninh Bình - Tràng An - Hạ Long - Sapa - Lào Cai - Phú Thọ",
+                image: "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/04/anh-ha-noi.jpg",
+                price: "12.439.000",
+                location: "TP. HỒ CHÍ MINH - Hà Nội - Hạ Long - Ninh Bình - Sapa",
+                duration: "6 ngày 5 đêm",
+                transport: "Hàng không Vietnam Airlines",
+                dates: ["11/11/2024","18/11/2024","25/11/2024"],
+                url: "./HN-NB-TA-PT.html"  
+            },
+            {
+                name: "Du Lịch Hà Nội - Sapa - Fansipan - Lào Cai - Hạ Long",
+                image: "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/3/9/1155741/Du-Lich-Vinh-Ha-Long-01.jpg",
+                price: "12.439.000",
+                location: "TP. HỒ CHÍ MINH - Hà Nội - Hạ Long - Sapa",
+                duration: "5 ngày 4 đêm",
+                transport: "Hàng không Vietnam Airlines",
+                dates: ["13/11/2024", "20/11/2024"],
+                url: "./HN-SP-LC-HL.html"  
+            },
+            {
+                name: "Du Lịch Hà Nội - Yên Tử - Hạ Long - Ninh Bình -Tràng An - Bái Đính",
+                image: "https://ik.imagekit.io/tvlk/blog/2022/11/khu-du-lich-trang-an-2.jpg?tr=dpr-2,w-675",
+                price: "9.939.000",
+                location: "TP. HỒ CHÍ MINH - Hà Nội - Hạ Long - Ninh Bình",
+                duration: "4 ngày 3 đêm",
+                transport: "Hàng không Vietnam Airlines",
+                dates: ["09/11/2024", "16/11/2024"],
+                url: "./HN-YT-HL-BD.html"  
+            },
+         
+        ];
+
+        function renderTours() {
+            const tourList = document.getElementById('tourList');
+            tourList.innerHTML = '';
+
+            tours.forEach(tour => {
+                const tourItem = `
+                    <div class="tour-item" onclick="window.location.href='${tour.url}'">
+                        <div class="tour-image">
+                            <img src="${tour.image}" alt="${tour.name}">
+                        </div>
+                        <div class="tour-details">
+                            <div>
+                                <h3 class="tour-title">${tour.name}</h3>
+                                <p class="tour-info">${tour.location}</p>
+                                <p class="tour-info">Thời gian: ${tour.duration}</p>
+                                <p class="tour-info">Phương tiện: ${tour.transport}</p>
+                                <div class="tour-price">Giá từ ${tour.price.toLocaleString()} VND</div>
+                                <div class="tour-dates">
+                                    ${tour.dates.map(date => `<div>${date}</div>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                tourList.innerHTML += tourItem;
+            });
+        }
+
+        // Khởi tạo hiển thị tour
+        renderTours();
+    </script>
+</body>
+
+</html>

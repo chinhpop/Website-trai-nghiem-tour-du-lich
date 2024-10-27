@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Tour Đông Tây Bắc</title>
+    <link rel="stylesheet" href="ds-tour.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1> Tour HẢI PHÒNG</h1>
+    </section>
+
+    <!-- Danh sách tour -->
+    <section class="tour-list" id="tourList">
+       
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tour Finder</p>
+    </footer>
+
+    <script>
+        let tours = [
+            {
+                name: "Du Lịch Hải Phòng [Cát Bà - Nghỉ Dưỡng Tại Flamingo Cát Bà Resort 5 Sao – Khu Di Tích Lịch Sử Bạch Đằng Giang]",
+                image: "https://cdn.tgdd.vn/Files/2021/06/20/1361753/top-10-dia-diem-du-lich-dep-noi-tieng-tai-cat-ba-hai-phong-202201141340328102.jpg",
+                price: "6.898.000",
+                location: "TP. HỒ CHÍ MINH - Hải Phòng",
+                duration: "3 ngày 2 đêm",
+                transport: "Hàng không Vietnam Airlines",
+                dates: ["3 – 5/2/2024","5 – 7/2/2024"],
+                url: "./HP-CB.html"  
+            },
+            {
+                name: "Du Lịch Hải Phòng - Hạ Long - Tràng An - Bái Đính - Tam Đảo",
+                image: "https://dulichninhbinh.com.vn/mypicture/images/2020/10/Trang-An-2.jpg",
+                price: "9.879.000",
+                location: "TP. HỒ CHÍ MINH - Hạ Long - Ninh Bình - Hải Phòng",
+                duration: "4 ngày 3 đêm",
+                transport: "Hàng không Vietnam Airlines",
+                dates: ["14/11/2024","28/11/2024","12/12/2024"],
+                url: "./HP-TD.html"  
+            },
+            
+        ];
+
+        function renderTours() {
+            const tourList = document.getElementById('tourList');
+            tourList.innerHTML = '';
+
+            tours.forEach(tour => {
+                const tourItem = `
+                    <div class="tour-item" onclick="window.location.href='${tour.url}'">
+                        <div class="tour-image">
+                            <img src="${tour.image}" alt="${tour.name}">
+                        </div>
+                        <div class="tour-details">
+                            <div>
+                                <h3 class="tour-title">${tour.name}</h3>
+                                <p class="tour-info">${tour.location}</p>
+                                <p class="tour-info">Thời gian: ${tour.duration}</p>
+                                <p class="tour-info">Phương tiện: ${tour.transport}</p>
+                                <div class="tour-price">Giá từ ${tour.price.toLocaleString()} VND</div>
+                                <div class="tour-dates">
+                                    ${tour.dates.map(date => `<div>${date}</div>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                tourList.innerHTML += tourItem;
+            });
+        }
+
+        // Khởi tạo hiển thị tour
+        renderTours();
+    </script>
+</body>
+
+</html>

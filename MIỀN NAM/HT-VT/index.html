@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Tour VŨNG TÀU </title>
+    <link rel="stylesheet" href="ds-tour.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1> Tour Vũng Tàu </h1>
+    </section>
+
+    <!-- Danh sách tour -->
+    <section class="tour-list" id="tourList">
+       
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tour Finder</p>
+    </footer>
+
+    <script>
+        let tours = [
+            {
+                name: "Du Lịch Vũng Tàu - Cần Giờ",
+                image: "https://locphatland.com/wp-content/uploads/2021/08/ba-ria-vung-tau.jpeg",
+                price: "2.979.000",
+                location: "TP. HỒ CHÍ MINH - VŨNG TÀU",
+                duration: "2 ngày 1 đêm ",
+                transport: "Đi về bằng xe",
+                dates: ["07/12/2024", "21/12/2024"],
+                url: "./VT.html"  
+            },
+           
+        ];
+
+        function renderTours() {
+            const tourList = document.getElementById('tourList');
+            tourList.innerHTML = '';
+
+            tours.forEach(tour => {
+                const tourItem = `
+                    <div class="tour-item" onclick="window.location.href='${tour.url}'">
+                        <div class="tour-image">
+                            <img src="${tour.image}" alt="${tour.name}">
+                        </div>
+                        <div class="tour-details">
+                            <div>
+                                <h3 class="tour-title">${tour.name}</h3>
+                                <p class="tour-info">${tour.location}</p>
+                                <p class="tour-info">Thời gian: ${tour.duration}</p>
+                                <p class="tour-info">Phương tiện: ${tour.transport}</p>
+                                <div class="tour-price">Giá từ ${tour.price.toLocaleString()} VND</div>
+                                <div class="tour-dates">
+                                    ${tour.dates.map(date => `<div>${date}</div>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                tourList.innerHTML += tourItem;
+            });
+        }
+
+        
+        renderTours();
+    </script>
+</body>
+
+</html>

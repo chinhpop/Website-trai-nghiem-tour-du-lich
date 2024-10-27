@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch Quy Nhơn - Tuy Hòa - Nghinh Phong - Gành Đá Dĩa - Kỳ Co - Eo Gió</title>
+    <link rel="stylesheet" href="detail-tour.css" />
+    <script>
+        // JavaScript to handle tab switching
+        function openTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            // Remove active class from all tabs and hide content
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked tab and show corresponding content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Default to open the first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab').click();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-info">
+            <span>Email: info@saigontourist.net</span> | <span>Hotline: 1900 1808</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tour Trong Nước</a></li>
+                <li><a href="#">Dịch Vụ Du Lịch</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Du Lịch Quy Nhơn - Tuy Hòa - Nghinh Phong - Gành Đá Dĩa - Kỳ Co - Eo Gió</h1>
+    </section>
+
+    <!-- Tour Details -->
+    <div class="tour-details">
+        <div class="tour-image">
+            <img src="https://saigontourist.net/uploads/destination/TrongNuoc/QuyNhon/eo-gio-bay.jpg" alt="Tour Image">
+        </div>
+        <div class="tour-info">
+            <h2 class="tour-title">Du Lịch Quy Nhơn - Tuy Hòa - Nghinh Phong - Gành Đá Dĩa - Kỳ Co - Eo Gió</h2>
+            <p class="tour-location">TP. HỒ CHÍ MINH - Tuy Hoà - Quy Nhơn</p>
+            <p>Thời gian: 4 ngày 3 đêm</p>
+            <p>Phương tiện: Hàng không Vietnam Airlines</p>
+            <p>Khởi hành thứ 5 : 14/11/2024,21/11/2024</p>
+            <div class="tour-price">Giá từ 8.279.000 VND</div>
+            <a href="#" class="btn-book">Đặt Tour Ngay</a>
+        </div>
+    </div>
+
+    <!-- New Table Section -->
+    <table class="tour-table">
+        <thead>
+            <tr>
+                <th>Khởi Hành</th>
+                <th>Mã Tour</th>
+                <th>Giá</th>
+                <th>Giá Trẻ Em</th>
+                <th>Giá Em Bé</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>14/11/2024</td>
+                <td>STN084-2024-02923</td>
+                <td>8.279.000 VND</td>
+                <td>5.500.000 VND</td>
+                <td>2.380.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            <tr>
+                <td>21/11/2024</td>
+                <td>STN084-2024-02924</td>
+                <td>8.279.000 VND</td>
+                <td>5.500.000 VND</td>
+                <td>2.380.000 VND</td>
+                <td><button class="btn-buy">Mua Online</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'chuong-trinh')">Chương trình Tour</div>
+            <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
+            <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
+        </div>
+        <div id="chuong-trinh" class="tab-content active">
+            
+            <p>Ngày 1: HCM – TUY HÒA  (Ăn trưa, chiều)<br>
+                Buổi sáng, quý khách tập trung tại Cổng D2, Ga đi trong nước, sân bay Tân Sơn Nhất. Hướng dẫn viên Lữ hành Saigontourist đón quý khách, hỗ trợ làm thủ tục. <br>
+                Khởi hành ra Tuy Hòa trên chuyến bay VN1660 lúc 7h40. Đến sân bay Tuy Hòa, xe đưa đoàn đến tham quan Hải đăng Mũi Điện – nơi đón nhận bình minh sớm nhất trên đất liền của Việt Nam, tham quan Bãi Môn. <br>
+                Trở về Tuy Hòa, đoàn tham quan tháp Nhạn – ngôi đền cổ được người Chăm xây dựng từ thế kỷ XI. <br>
+                Từ trên đỉnh núi Nhạn, ngắm toàn cảnh vùng đất “Xứ Nẫu – Chín nhớ, Mười thương”. <br>
+                Đoàn “check-in” tháp Nghinh Phong. Nghỉ đêm tại Tuy Hòa.</p>
+            <p>Ngày 2: TUY HÒA – QUY NHƠN (Ăn sáng, trưa, chiều)<br>
+                Buổi sáng, quý khách trả phòng. Đến tham quan Bãi Xép – một trong những bãi biển hoang sơ và đẹp nhất của Phú Yên, chụp ảnh lưu niệm tại Gành Ông – cảnh quay đặc sắc nhất trong bộ phim “Tôi Thấy Hoa Vàng Trên Cỏ Xanh”. <br>
+                Qua đầm Ô Loan, tham quan Gành Đá Dĩa – chiêm ngưỡng một hiện tượng địa chất độc đáo, được hình thành cách nay hàng trăm triệu năm ... <br>
+                Dừng chân viếng Nhà Thờ Mằng Lăng – một trong những nhà thờ cổ nhất ở Việt Nam, cũng là nơi còn lưu giữ cuối kinh thánh bằng chữ Quốc Ngữ đầu tiên của Việt Nam. <br>
+                Tham quan Quảng Đức Xưa – nơi thả mình vào không gian cổ kính xen kẽ với những tán cây xanh mát, chiêm ngưỡng những cổ vật được bài trí hài hòa.<br> 
+                Nhận phòng và nghỉ đêm tại Quy Nhơn.</p>
+            <p>Ngày 3: QUY NHƠN – KỲ CO – EO GIÓ(Ăn sáng, trưa, chiều)<br>
+                Buổi sáng, xe đưa đoàn qua cầu Nhơn Hội (Cầu Thị Nại) – cây cầu bắc qua biển dài nhất Việt Nam, nối liền thành phố biển Quy Nhơn xinh đẹp. <br>
+                Xe đưa đoàn đến bến tàu Nhơn Lý, đoàn đi canô đến khám phá bãi biển Kỳ Co – bãi tắm hoang sơ với màu nước trong xanh, bãi cát trắng dài và mịn. <br>
+                Buổi chiều, tham quan Eo Gió – một ghềnh đá quanh năm lộng gió và Tịnh Xá Ngọc Hòa. Tiếp tục hành trình, đoàn ngắm cánh đồng phong điện trên đường đến viếng chùa Linh Phong (chùa Ông Núi).<br>
+                Đoàn đến Ghềnh Ráng, thăm mộ và khu lưu niệm thi sĩ Hàn Mạc Tử. Nghỉ đêm tại Quy Nhơn.</p>
+            
+            <p>Ngày 4: QUY NHƠN – TPHCM(Ăn sáng, trưa)<br>
+                Buổi sáng, quý khách trả phòng. Khởi hành đi Tây Sơn. Dừng chân thưởng thức và mua đặc sản Bình Định: nem Chợ Huyện, rượu Bàu Đá, bánh ít lá gai, bánh hồng, ... <br>
+                Đến thắng cảnh Hầm Hô, khám phá vẻ đẹp hữu tình của núi rừng trùng điệp khi chèo thuyền du ngoạn trên dòng sông Kút thơ mộng, ngắm cảnh “Khúc sông trời lấp”. <br>
+                Tham quan Bảo Tàng Quang Trung, viếng di tích Điện thờ Tây Sơn Tam Kiệt, giếng nước xưa, cây me cổ thụ hơn 300 tuổi nằm trong nền nhà cũ của ba anh em nhà Tây Sơn. <br>
+                Thưởng thức màn trình diễn trống trận và võ thuật Tây Sơn hào hùng. Buổi chiều, đoàn di chuyển ra sân bay Phù Cát, trở về TPHCM trên chuyến bay VN1395 lúc 17h20.<br>
+                Kết thúc chương trình. Quý khách tự túc phương tiện từ sân bay TSN về nhà.</p>
+        </div>
+        <div id="chinh-sach" class="tab-content">
+            
+            <p>* Vé trẻ em: <br>
+                - Trẻ em dưới 2 tuổi: thu 400.000đ/ trẻ. Gia đình tự lo cho bé ăn ngủ<br>
+                - Trẻ em từ 2 đến dưới 6 tuổi: : tiêu chuẩn gồm Vé máy bay. Gia đình tự lo cho bé ăn ngủ và phí tham quan Hai người lớn chỉ được kèm một trẻ em dưới 6 tuổi. Từ trẻ thứ 2 trở lên, mỗi em đóng bằng giá trẻ em từ 6-11 tuổi<br>
+                - Trẻ em từ 6 - 11 tuổi: tiêu chuẩn gồm Vé máy bay, ăn uống và tham quan theo chương trình, ngủ chung giường với phụ huynh<br>
+                - Trẻ em trên 11 tuổi: áp dụng giá và các tiêu chuẩn dịch vụ như người lớn<br>
+                
+                * Giá tour bao gồm:  <br>
+                - Vé máy bay khứ hồi của Vietnam Airlines. <br>
+                - Chi phí xe máy lạnh phục vụ theo chương trình.<br>
+                - Chi phí khách sạn theo tiêu chuẩn 2 khách/phòng. Lẻ khách ngủ giường phụ hoặc chịu chi phí phụ thu phòng đơn:<br>
+                - Chi phí ăn – uống theo chương trình.<br>
+                - Phí tham quan theo chương trình<br>
+                - Chi phí Hướng dẫn viên tiếng Việt.<br>
+                * Quà tặng: Nón, nước suối, khăn lạnh<br>
+                 
+                * Giá tour không bao gồm:   <br>
+                - Chi phí tham quan - ăn uống ngoài chương trình, giặt ủi, điện thoại và các chi phí cá nhân khác.<br>
+                - Chi phí phụ thu phòng đơn: <br>
+                
+                
+                THÔNG TIN HƯỚNG DẪN<br>
+                * Quy định vé máy bay: Đây là chương trình hợp tác với hãng hàng không Vietnam Airlines nên có một số lưu ý:<br>
+                - Giá vé máy bay không bao gồm suất ăn/uống trên máy bay.<br>
+                - Không được hoàn hoặc hủy vé máy bay. Nếu hủy, vui lòng chịu phạt 100% chi phí vé máy bay.<br>
+                - Khi đăng ký vé máy bay, quý khách cung cấp họ và tên, ngày tháng năm sinh (đúng từng ký tự ghi trong hộ chiếu hoặc Chứng Minh Nhân Dân).<br>
+                - Không được thay đổi thông tin đặt chỗ: họ tên hành khách, chuyến bay, ngày bay, chặng bay, tách đoàn, gia hạn vé. <br>
+                - Số lượng khách tối thiểu để tổ chức tour: 10 khách/đoàn. <br>
+                - Du khách được miễn cước 1 KIỆN (23 kg) hành lý ký gởi và 1 KIỆN (10kg) hành lý xách tay<br>
+                - Trường hợp hủy tour do sự cố khách quan như thiên tai, dịch bệnh hoặc do máy bay hoãn - hủy chuyến, Lữ hành Saigontourist sẽ không chịu trách nhiệm bồi thường thêm bất kỳ chi phí nào khác ngoài việc hoàn trả chi phí những dịch vụ chưa được sử dụng của tour đó (ngoại trừ chi phí vé máy bay)<br>
+                * Trường hợp hủy vé landtour, quý khách vui lòng thanh toán các khoản sau:<br>
+                - Quý khách chuyển đổi tour sang ngày khác và báo trước ngày khởi hành trước 15 ngày sẽ không chịu phí (không áp dụng các tour KS 4-5 sao), nếu trễ hơn sẽ căn cứ theo qui định hủy phạt phía dưới và chỉ được chuyển ngày khởi hành tour 1 lần.<br>
+                - Hủy vé trong vòng 24 giờ hoặc ngay ngày khởi hành, chịu phạt 100% tiền tour.<br>
+                - Hủy vé trước ngày khởi hành từ 2 - 7 ngày, chịu phạt 80% tiền tour.<br>
+                - Hủy vé trước ngày khởi hành từ 8 - 14 ngày, chịu phạt 50% tiền tour.<br>
+                - Hủy vé trước ngày khởi hành từ 15 ngày trở lên, chịu phạt 30% tiền tour.<br>
+                - Sau khi hủy tour, du khách vui lòng đến nhận tiền trong vòng 15 ngày kể từ ngày kết thúc tour. Chúng tôi chỉ thanh toán trong khỏang thời gian nói trên.<br>
+                * Hành lý và giấy tờ tùy thân:   <br>
+                - Du khách mang theo giấy Chứng Minh Nhân Dân / Căn Cước Công Dân hoặc Hộ chiếu (còn thời hạn sử dụng). Đối với du khách là Việt kiều, Quốc tế nhập cảnh Việt Nam bằng visa rời, vui lòng mang theo visa khi đăng ký và khi đi tour.<br>
+                - Khách lớn tuổi (từ 70 tuổi trở lên), khách tàn tật tham gia tour, phải có thân nhân đi kèm và cam kết đảm bảo đủ sức khỏe khi tham gia tour du lịch.<br>
+                - Trẻ em dưới 14 tuổi khi đi tour phải mang theo giấy khai sinh hoặc hộ chiếu. Trẻ em từ 14 tuổi trở lên phải mang theo giấy Chứng Minh Nhân Dân.<br>
+                - Tất cả giấy tờ tùy thân mang theo đều phải bản chính. <br>
+                - Du khách mang theo hành lý gọn nhẹ và phải tự bảo quản hành lý, tiền bạc, tư trang trong suốt thời gian đi du lịch. Du khách được miễn cước 1 KIỆN hành lý ký gởi (23kg) và 1 KIỆN hành lý xách tay (10kg). <br>
+                - Khách Việt Nam ở cùng phòng với khách Quốc tế  hoặc Việt kiều yêu cầu phải có giấy hôn thú.<br>
+                - Quý khách có mặt tại sân bay trước 3 tiếng so với giờ khởi hành.<br>
+                
+                * Ghi chú khác:<br>
+                - Công ty xuất hóa đơn cho du khách có nhu cầu (Trong thời hạn 7 ngày sau khi kết thúc chương trình du lịch). Du khách được chọn một trong những chương trình khuyến mãi dành cho khách lẻ định kỳ (Nếu có).<br>
+                - Quý khách có mặt tại điểm đón trước 15 phút. Trong trường hợp đến trễ khi xe đã khởi hành; Không làm thủ tục đúng giờ (khi hãng hàng không đã đóng quầy, kết thúc chấp nhận hành khách); Không lên máy bay trước giờ đóng cửa lên máy bay, hoặc hủy tour không báo trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi hành</p>
+        </div>
+        <div id="thu-tuc" class="tab-content">
+            
+           
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Saigontourist | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
