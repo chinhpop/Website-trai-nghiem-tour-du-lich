@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG KÍ</title>
+    <link rel="stylesheet" href="Assets/Css/register.css">
+    <script>
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', function() {
+    const subheader = document.getElementById('subheader');
+    const mainheader = document.getElementById('mainheader');
+
+    if (window.scrollY > lastScrollY) {
+        // Cuộn xuống
+        subheader.style.transform = 'translateY(-100%)';
+        mainheader.style.position = 'fixed';
+        mainheader.style.top = '0';
+        mainheader.classList.add('scrolled'); // Thêm lớp scrolled
+    } else if (window.scrollY === 0) {
+        // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
+        subheader.style.transform = 'translateY(0)';
+        mainheader.style.position = 'relative';
+        mainheader.classList.remove('scrolled'); // Xóa lớp scrolled
+    }
+
+    lastScrollY = window.scrollY;
+});
+
+    </script>
+</head>
+<body>
+    <div class = "header">
+        <div  id="subheader" class="subheader">
+            <div class="contact-info">
+                <a href="mailto:info@saigontourist.net"> 
+                    <span class="icon">📧</span> info@saigontourist.net</a>
+                <a href="tel:19001808">
+                    <span class="icon">📞</span> Hotline: 1900 180</a>
+            </div>
+            <div class="nav-links">
+                <a href="#"><span class="icon">📍</span> Chọn điểm khởi hành</a>
+                <a href="#">Đăng nhập</a>
+            </div>
+        </div>
+        <div id="mainheader" class="mainheader">
+            <div class="logo">
+                <img src="logo.png" alt="Saigontourist" />
+            </div>
+            <nav class="navbar">
+                <a href="#">TRANG CHỦ</a>
+                <a href="#">TOUR TRONG NƯỚC</a>
+                <a href="#">TOUR NƯỚC NGOÀI</a>
+                <a href="#">DỊCH VỤ DU LỊCH</a>
+                <a href="#">LIÊN HỆ</a>
+            </nav>
+            <div class="search">
+                <button class="search-button">🔍</button>
+            </div>
+        </div>
+    </div>
+    <div class="register-container">
+        <h2>ĐĂNG KÝ</h2>
+        <div class="social-login">
+            <button class="fb">ĐĂNG KÝ VỚI FACEBOOK</button>
+            <button class="google">ĐĂNG KÝ VỚI GOOGLE</button>
+        </div>
+        <form class="register-form" action="#">
+            <label for="full-name">Full Name (*)</label>
+            <input type="text" id="full-name" placeholder="Vui lòng nhập dữ liệu">
+
+            <label for="email">Địa chỉ email (*)</label>
+            <input type="email" id="email" placeholder="Vui lòng nhập dữ liệu">
+
+            <label for="password">Mật khẩu (*)</label>
+            <input type="password" id="password" placeholder="Vui lòng nhập dữ liệu">
+
+            <label for="confirm-password">Confirm password (*)</label>
+            <input type="password" id="confirm-password" placeholder="Vui lòng nhập dữ liệu">
+
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" placeholder="">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="">
+
+            <div class="form-actions">
+                <button type="submit" class="register-btn">ĐĂNG KÝ</button>
+                <button type="reset" class="cancel-btn">HỦY</button>
+            </div>
+        </form>
+        <p>Đã có tài khoản? <a href="login.html">ĐĂNG NHẬP</a></p>
+    </div>
+    <div id = "footer">
+
+    </div>
+</body>
+</html>
