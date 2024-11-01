@@ -85,6 +85,7 @@
                     VALUES ('$UserName','$Password','$Fullname', 2,'$Email','$Phone','$Address')";
                     mysqli_query($conn, $sql);
                     echo "<h2>Add thành công</h2>";
+                    header("Location: login.php");
                 }
             }
         ?>

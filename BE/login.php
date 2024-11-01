@@ -103,6 +103,7 @@
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0){
                     echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
+                    header("Location: home_page.php");
                 }
             }
             
