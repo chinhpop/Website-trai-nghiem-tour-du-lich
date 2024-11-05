@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "Class/Tour.php" ?>
+<?php 
+    include "Class/Tour.php";
+    include "Class/Policy_Tour.php";
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -128,33 +131,17 @@
             <div class="tab" onclick="openTab(event, 'chinh-sach')">Chính sách Tour</div>
             <div class="tab" onclick="openTab(event, 'thu-tuc')">Thủ tục & Visa</div>
         </div>
+        <?php 
+        $db2 = new Policy_Tour();
+        $policy_tour = $db2->show_policy();
+        if ( $policy_tour ) {while ( $row = $policy_tour->fetch_assoc()){
+        
+        
+    ?>
+
+
         <div id="chuong-trinh" class="tab-content active">
-
-            <p>Ngày 1: TP. HCM – HÀ NỘI – CAO BẰNG – BẢN GIỐC (Ăn trưa, chiều)<br>
-                Hướng dẫn viên Lữ hành Saigontourist đón quý khách và hỗ trợ làm thủ tục. Khởi hành ra Hà Nội trên
-                chuyến bay VN206 lúc 06h00. <br>
-                Đáp xuống sân bay Nội Bài, xe đón đoàn khởi hành đi Cao Bằng di chuyển vào thác Bản Giốc nhận phòng.
-                Nghỉ đêm tại khách sạn Sài Gòn – Bản Giốc 4*. <br></p>
-            <p>Ngày 2: BẢN GIỐC – KHU DI TÍCH PÁC BÓ – CAO BẰNG (Ăn sáng, trưa, chiều)<br>
-                Buổi sáng, đoàn đến chiêm ngưỡng cảnh sắc đầy hùng vĩ và thơ mộng của thác Bản Giốc – một trong bốn thác
-                nước là đường biên giới tự nhiên giữa các quốc gia lớn nhất thế giới, quý khách tự do trải nghiệm đi bè
-                tre ngắm cận cảnh thác (tự túc chi phí). <br>
-                Tiếp tục đến Động Ngườm Ngao khám phá vẻ đẹp lung linh của một hang động đá vôi còn nguyên sơ.<br>
-                Đoàn khởi hành vào khu di tích Pác Bó – nơi chủ tịch Hồ Chí Minh từng sống, làm việc và lãnh đạo Cách
-                mạng trong suốt những năm tháng ở chiến khu Việt Bắc. <br>
-                Tham quan suối Lê Nin, núi Các Mác, hang Cốc Bó, bàn đá lịch sử. Viếng mộ anh Kim Đồng. Nghỉ đêm tại Cao
-                Bằng.</p>
-            <p>Ngày 3: CAO BẰNG – BA BỂ(Ăn sáng, trưa, chiều)<br>
-                Đoàn khởi hành về Bắc Kạn, khám phá Vườn Quốc Gia Ba Bể, quý khách lên thuyền du ngoạn dọc theo dòng
-                sông Năng, ngắm nhìn cảnh quan và đời sống của người dân tộc Tày, Nùng ở đôi bờ. <br>
-                Tham quan động Puông. Đến hồ Ba Bể - viên ngọc trong xanh giữa núi rừng Đông Bắc, thưởng ngoạn phong
-                cảnh của một trong 100 hồ nước ngọt đẹp nhất toàn cầu. Tham quan đảo An Mã. Nghỉ đêm tại KS Sài Gòn – Ba
-                Bể 3*. <br></p>
-
-            <p>Ngày 4: BA BỂ - THÁI NGUYÊN – TPHCM (Ăn sáng, trưa)<br>
-                Buổi sáng, đoàn trả phòng. Khởi hành về Hà Nội. Trên đường đến Thái Nguyên, đoàn dừng chân tham quan Bảo
-                tàng văn hóa các dân tộc Việt Nam. <br>
-                Ra sân bay Nội Bài để về TPHCM trên chuyến bay VN259 lúc 18h00. Kết thúc chương trình. <br></p>
+            <p><?php echo $row["tour_program"] ?></p>
         </div>
         <div id="chinh-sach" class="tab-content">
 
@@ -306,6 +293,7 @@
                 Hà Giang có rất nhiều đặc sản đặc trưng của vùng núi mà Quý khách có thể mua về làm quà: rượu ngô, bánh
                 tam giác mạch, thịt lợn, trâu gác bếp, chè San Tuyết, …</p>
         </div>
+        <?php }} ?>
     </div>
     <footer>
         <p>&copy; 2024 Saigontourist | All Rights Reserved</p>

@@ -12,7 +12,6 @@ class Database{
     public $error;
     public function __construct(){
         $this->connectDB();
-        
     }
     private function connectDB(){
         $this->link = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
@@ -54,6 +53,10 @@ class Database{
         }else{
             return false;
         }
+    }
+
+    public function __destruct(){
+        $this->link->close();
     }
 }
 ?>

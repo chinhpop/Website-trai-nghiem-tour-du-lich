@@ -1,0 +1,460 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.item-left-top-header {
+  color: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.top-header {
+  padding: 5px 0;
+  width: 100%;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  line-height: 21px;
+  background: #0072bc80;
+  background: rgba(87, 128, 158, 0.7);
+  top: 0;
+}
+.left-top-header {
+  gap: 30px;
+  padding-left: 160px;
+  width: 100%;
+  display: flex;
+}
+.right-top-header {
+  justify-content: flex-end;
+  gap: 30px;
+  padding-right: 170px;
+  width: 100%;
+  display: flex;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+.nav-hero {
+  position: absolute;
+  top: 20px;
+  background-color: transparent;
+  display: flex;
+  width: 100%;
+}
+.nav-hero ul {
+  padding: 10px 160px;
+  width: 90%;
+  justify-content: space-between;
+  display: flex;
+}
+.navigate-btn {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0px 10px 10px;
+  padding: 15px 0px 7px;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 10px;
+}
+
+/* drop down */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navigate-btn:hover {
+  color: orange;
+  text-decoration-color: orange;
+}
+
+.hero {
+  position: relative;
+  padding: 138px 0 30px 0;
+  height: 380px;
+  background-image: url("https://saigontourist.net/uploads/destination/NuocNgoai/NhatBan/Shirakawago_345800267.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-line-1 {
+  font-size: 27px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.hero-line-2 {
+  color: #fff;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 54px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+.hero-line-3 {
+  color: #fff;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  margin-bottom: 34px;
+}
+.hero-button {
+  width: 131px;
+  height: 34px;
+  background-color: #ff891e;
+  border-color: #0000;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 0.8px;
+  color: #fff;
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 15px;
+  line-height: 34px;
+  margin: 0px 0px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+.hero-dot {
+  width: 15px;
+  height: 15px;
+  background-color: #fff0;
+  border-color: #fff;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1.6px;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0px 10px -3px -4px;
+}
+.container-dot-hero {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 21px;
+}
+.navbar-right .btn {
+  background-color: #ff891e;
+  border-radius: 4px;
+  color: #fff;
+  display: inline;
+  font-size: 14px;
+
+  padding: 10px 12px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* General Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tour Article Styling */
+article.tour_title {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article.tour_title:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+article.tour_title figure img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+article.tour_title:hover img {
+  transform: scale(1.05);
+}
+
+/* Promotion Banner */
+.promotion-tour {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff3e3e;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Price Section */
+.box-tour-price {
+  padding: 15px;
+  text-align: center;
+}
+
+.box-tour-price .text {
+  font-size: 14px;
+  color: #777;
+}
+
+.box-tour-price .price {
+  font-size: 24px;
+  color: #ff6600;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.box-tour-price .info {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Tour Details */
+.details-kiritm {
+  padding: 15px;
+}
+
+.top-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Đảm bảo mỗi thẻ <a> nằm trên dòng riêng biệt */
+.top-details {
+  display: flex;
+  flex-direction: column; /* Các <a> sẽ nằm trên từng dòng riêng */
+  gap: 10px; /* Khoảng cách giữa các <a> */
+}
+
+/* Đặt các <span> bên trong <a> trên cùng một hàng với khoảng cách 10px */
+.tour-tag {
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  gap: 160px; /* Khoảng cách giữa các <span> */
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Đổi màu khi hover vào <a> */
+.tour-tag:hover .tag-detail {
+  color: #ff6600;
+}
+
+.name-tour-detail a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.name-tour-detail a:hover {
+  color: #ff6600;
+}
+
+/* Action Button */
+.action-tour a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.action-tour a:hover {
+  background-color: #e05500;
+}
+/* Figure Styling */
+.tour-figure {
+  position: relative;
+  width: 300px; /* Adjust this width as needed */
+  margin: 0 auto; /* Center the figure */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.tour-figure img {
+  width: 100%; /* Ensures it fills the container */
+  height: auto; /* Maintains aspect ratio */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tour-figure:hover img {
+  transform: scale(1.05); /* Adds zoom effect on hover */
+}
+
+/* Promotion Banner */
+.promotion-tour {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff3e3e;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 2;
+}
+/* Parent Row - Flexbox Container */
+.row {
+  display: flex;
+  justify-content: space-between; /* Ensures even spacing between items */
+  align-items: stretch; /* Ensures all items are of equal height */
+  gap: 20px; /* Optional spacing between items */
+  margin: 0 auto;
+  flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+  max-width: 1200px; /* Control container width */
+  padding: 20px;
+}
+
+/* Individual Slider (Child Items) */
+.slider-slick {
+  flex: 1; /* Ensure all items have equal width */
+  max-width: 30%; /* Limit width of each slider */
+  min-width: 300px; /* Prevent the slider from shrinking too much */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Tour Figure and Image Adjustments */
+.tour-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tour-figure:hover img {
+  transform: scale(1.05);
+}
+
+/* Promotion Banner */
+.promotion-tour {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff3e3e;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Additional Styling for Details */
+.box-tour-price,
+.details-kiritm {
+  padding: 10px;
+  text-align: center;
+}
+.content-title {
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.title-tour-new {
+  font-size: 20px; /* Tăng kích thước chữ */
+  font-weight: bold; /* Làm đậm chữ (nếu muốn) */
+  display: inline-block; /* Đảm bảo khoảng cách khi căn giữa */
+}
+.tittle {
+  padding: 20px;
+  margin: 0 auto;
+}
+/* footer */
+.footer {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+}
+.left-side {
+}
+.right-side {
+}
