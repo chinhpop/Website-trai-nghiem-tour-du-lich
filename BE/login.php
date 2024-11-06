@@ -99,7 +99,7 @@
                 }
                 $username = $_POST["username"];
                 $password = $_POST["password"];
-                $sql = "SELECT * FROM user_account WHERE Username = '$username' AND Password = '$password'";
+                $sql = "SELECT * FROM account_user WHERE Username = '$username' AND Password = '$password'";
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0){
                     echo "<h2 style='color: green'>Đăng nhập thành công</h2>";

@@ -54,9 +54,5 @@ class Database{
             return false;
         }
     }
-
-    public function __destruct(){
-        $this->link->close();
-    }
 }
 ?>
