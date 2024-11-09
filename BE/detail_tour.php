@@ -6,6 +6,10 @@
     include "Class/Tour_Program.php";
     include "Class/Tour_Policy.php";
     include "Class/Tour_Visa.php";
+    include "Class/Tour_Schedule.php";
+    include "Class/Tour_Price.php";
+    include "Class/Tour_Code.php";
+    include "Class/Tour_Detail.php";
 ?>
 
 <head>
@@ -41,6 +45,36 @@
     });
     </script>
 </head>
+
+<!-- Function -->
+<?php 
+    function formatCurrency($currency) {
+        $formattedAmount = number_format($currency);
+        // Thay thế dấu phẩy bằng dấu chấm 
+        $formattedAmount = str_replace(',', '.', $formattedAmount); 
+        return $formattedAmount . " VND";
+    }
+
+    function formatData($data) {
+        $items = explode(', ', $data);
+        $formmatted = "<table border = '0' class='tour-table'>";
+        foreach ($items as $item) {
+            $formmatted.= "<tr><td>". $item. "</td></tr>";
+        }
+        $formmatted .= "</table>";
+        return $formmatted;
+    }
+
+    function formatPrice($price, $data) {
+        $items = explode(', ', $data);
+        $formmatted = "<table border = '0' class='tour-table'>";
+        foreach ($items as $item) {
+            $formmatted.= "<tr><td>". $price. "</td></tr>";
+        }
+        $formmatted .= "</table>";
+        return $formmatted;
+    }
+?>
 
 <body>
 
@@ -78,11 +112,11 @@
         </div>
         <div class="tour-info">
             <h2 class="tour-title"><?php echo $row["TourName"]; ?></h2>
-            <p class="tour-location"><?php echo $row["location"]; ?></p>
+            <p class="tour-location"><?php echo $row["start_location"] . " - " . $row["end_location"]; ?></p>
             <p>Thời gian: <?php echo $row["thoigian"]; ?></p>
             <p>Phương tiện: <?php echo $row["phuongtien"]; ?></p>
-            <p>Khởi hành <?php echo $row["start_time"]; ?></p>
-            <div class="tour-price">Giá từ 9.439.000 VND</div>
+            <p>Khởi hành <?php echo $row["depart"]; ?></p>
+            <div class="tour-price">Giá từ <?php echo formatCurrency($row["tour_price"]) ?></div>
             <a href="#" class="btn-book">Đặt Tour Ngay</a>
         </div>
     </div>
@@ -101,36 +135,22 @@
         </thead>
         <tbody>
             <tr>
-                <td>09/11/2024</td>
-                <td>STN084-2024-03163</td>
-                <td>9.439.000 VND</td>
-                <td>6.700.000 VND</td>
-                <td>4.000.000 VND</td>
-                <td><button class="btn-buy">Mua Online</button></td>
-            </tr>
+                <?php 
+                    $db = new Tour_Detail();
+                    $detail_tour = $db->show_detail_tour();
+                    if ( $detail_tour ) {while ( $row = $detail_tour->fetch_assoc()){
+                        ?>
             <tr>
-                <td>23/11/2024</td>
-                <td>STN084-2024-03164</td>
-                <td>9.439.000 VND</td>
-                <td>6.700.000 VND</td>
-                <td>4.000.000 VND</td>
-                <td><button class="btn-buy">Mua Online</button></td>
+                <td><?php echo $row["start_depart"] ?></td>
+                <td><?php echo $row["Code_Tour"] ?></td>
+                <td><?php echo formatCurrency($row["adult_price"]) ?></td>
+                <td><?php echo formatCurrency($row["child_price"]) ?></td>
+                <td><?php echo formatCurrency($row["baby_price"]) ?></td>
+                <td><button class='btn-buy'>Mua Online</button></td>
             </tr>
-            <tr>
-                <td>07/12/2024</td>
-                <td>STN084-2024-03165</td>
-                <td>9.439.000 VND</td>
-                <td>6.700.000 VND</td>
-                <td>4.000.000 VND</td>
-                <td><button class="btn-buy">Mua Online</button></td>
-            </tr>
-            <tr>
-                <td>21/12/2024</td>
-                <td>STN084-2024-03166</td>
-                <td>9.439.000 VND</td>
-                <td>6.700.000 VND</td>
-                <td>4.000.000 VND</td>
-                <td><button class="btn-buy">Mua Online</button></td>
+            <?php
+                    }}
+                ?>
             </tr>
         </tbody>
     </table>
