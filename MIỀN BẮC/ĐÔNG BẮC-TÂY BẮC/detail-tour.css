@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  background-color: #0056a3;
+  background-color: rgba(0, 86, 163, 0.8);
   color: white;
   padding: 10px 0;
   text-align: center;
@@ -70,7 +70,7 @@ header nav ul li a {
   margin: 20px auto;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(87, 128, 158, 0.7);
   overflow: hidden;
 }
 
