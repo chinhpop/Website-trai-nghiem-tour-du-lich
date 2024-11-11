@@ -107,8 +107,7 @@
     <!-- Tour Details -->
     <div class="tour-details">
         <div class="tour-image">
-            <img src="https://f.hoatieu.vn/data/image/2023/02/10/viet-doan-van-ngan-cam-nhan-ve-bai-tho-tuc-canh-pac-bo.jpg"
-                alt="Tour Image">
+            <img src="<?php echo $row["image"] ?>" alt="Tour Image">
         </div>
         <div class="tour-info">
             <h2 class="tour-title"><?php echo $row["TourName"]; ?></h2>
