@@ -7,28 +7,57 @@
     <title>ĐĂNG KÍ</title>
     <link rel="stylesheet" href="Assets/Css/register.css" />
     <script>
-    let lastScrollY = window.scrollY;
+   let lastScrollY = window.scrollY;
 
-    window.addEventListener("scroll", function() {
-        const subheader = document.getElementById("subheader");
-        const mainheader = document.getElementById("mainheader");
+window.addEventListener("load", function() {
+    const mainheader = document.getElementById("mainheader");
+    const registerContainer = document.querySelector(".register-container");
 
-        if (window.scrollY > lastScrollY) {
-            // Cuộn xuống
-            subheader.style.transform = "translateY(-100%)";
-            mainheader.style.position = "fixed";
-            mainheader.style.top = "0";
-            mainheader.classList.add("scrolled"); // Thêm lớp scrolled
-        } else if (window.scrollY === 0) {
-            // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
-            subheader.style.transform = "translateY(0)";
-            mainheader.style.position = "relative";
-            mainheader.classList.remove("scrolled"); // Xóa lớp scrolled
+    // Lấy chiều cao của header và thiết lập khoảng cách cho form
+    const headerHeight = mainheader.offsetHeight;
+    registerContainer.style.paddingTop = `${headerHeight}px`;
+});
+
+window.addEventListener("scroll", function() {
+    const subheader = document.getElementById("subheader");
+    const mainheader = document.getElementById("mainheader");
+
+    if (window.scrollY > lastScrollY) {
+        // Cuộn xuống
+        subheader.style.transform = "translateY(-100%)";
+        mainheader.style.position = "fixed";
+        mainheader.style.top = "0";
+        mainheader.classList.add("scrolled");
+    } else if (window.scrollY === 0) {
+        // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
+        subheader.style.transform = "translateY(0)";
+        mainheader.style.position = "relative";
+        mainheader.classList.remove("scrolled");
+    }
+
+    lastScrollY = window.scrollY;
+});
+    document.querySelector('.register-form').addEventListener('submit', function(event) {
+        const inputs = this.querySelectorAll('input');
+        let hasEmptyField = false;
+        
+        // Kiểm tra tất cả các ô input
+        inputs.forEach(input => {
+            if (input.value.trim() === '') {
+                hasEmptyField = true;
+                input.classList.add('error'); // Thêm lớp lỗi để đánh dấu ô trống
+            } else {
+                input.classList.remove('error'); // Xóa lớp lỗi nếu ô không trống
+            }
+        });
+
+        if (hasEmptyField) {
+            event.preventDefault(); // Ngăn không cho gửi form
+            alert('Vui lòng điền đầy đủ thông tin!'); // Thông báo lỗi
         }
-
-        lastScrollY = window.scrollY;
     });
     </script>
+ 
 </head>
 
 <body>
@@ -76,13 +105,13 @@
                 $Email = $_POST["email"];
                 $Phone = $_POST["phone"];
                 $Address = $_POST["address"];     
-                $sql_search = "Select * from account_user where UserName = '$UserName' and Password = '$Password'";
+                $sql_search = "Select * from user_account where UserName = '$UserName' and Password = '$Password'";
                 $result = mysqli_query($conn, $sql_search);
                 if (mysqli_num_rows($result) > 0){
                     echo "<h2 style='color: red'>Tài khoản đã tồn tại</h2>";
                 }else{
-                    $sql = "INSERT INTO account_user (UserName, Password, level, Fullname, Email, Phone, Address) 
-                    VALUES ('$UserName','$Password', 2,'$Fullname','$Email','$Phone','$Address')";
+                    $sql = "INSERT INTO user_account (UserName, Password, level, Fullname, Email, Phone, Address) 
+                    VALUES ('$UserName','$Password','$Fullname', 2,'$Email','$Phone','$Address')";
                     mysqli_query($conn, $sql);
                     echo "<h2>Add thành công</h2>";
                     header("Location: login.php");

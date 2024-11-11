@@ -56,7 +56,6 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;
     transition: top 0.3s ease, transform 0.3s ease;
     z-index: 1000;
-    margin-bottom: 100px;
 }
 #mainheader {
     background-color: #007bff;
@@ -96,13 +95,13 @@ body {
     color: white;
 }
 .login-container {
-    margin-top: 150px;
     background-color: #fff;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 400px;
     margin: auto;
+    margin-top: 110px;
+    padding-top: 110px;
     padding:10px 10px 10px 10px;
 }
 h2 {

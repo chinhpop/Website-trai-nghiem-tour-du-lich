@@ -98,8 +98,8 @@ body {
     width: 500px;
     text-align: center;
     margin: auto;
-    margin-top: 50px;
     padding:10px 10px 10px 10px;
+    padding-top: 100px;
 }
 
 h2 {

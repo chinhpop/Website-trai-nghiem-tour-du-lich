@@ -1,3 +1,23 @@
+<?php 
+            include "Connection/connect.php";
+            session_start();
+            if (isset($_POST["login-btn"])){ 
+                // kiểm tra có remember không
+                if (isset($_POST["remember"])){
+                    // Tạo session
+                    $_SESSION["username"] = $_POST["username"];
+                }
+                $username = $_POST["username"];
+                $password = $_POST["password"];
+                $sql = "SELECT * FROM user_account WHERE Username = '$username' AND Password = '$password'";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0){
+                    echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
+                    header("Location: home_page.php");
+                }
+            }
+            
+        ?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -7,7 +27,59 @@
     <link rel="stylesheet" href="Assets/Css/login.css" />
     <title>Đăng Nhập</title>
     <script>
+    document.querySelector(".login-form").addEventListener("submit", function(event) {
+    // Lấy các giá trị nhập vào
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    let hasError = false;
+
+    // Xóa các thông báo lỗi cũ
+    document.querySelectorAll(".error-message").forEach(function(error) {
+        error.remove();
+    });
+
+    // Kiểm tra nếu tên đăng nhập để trống
+    if (username === "") {
+        const error = document.createElement("p");
+        error.className = "error-message";
+        error.style.color = "red";
+        error.textContent = "Tên đăng nhập không được để trống.";
+        document.getElementById("username").parentElement.appendChild(error);
+        hasError = true;
+    }
+
+    // Kiểm tra nếu mật khẩu để trống
+    if (password === "") {
+        const error = document.createElement("p");
+        error.className = "error-message";
+        error.style.color = "red";
+        error.textContent = "Mật khẩu không được để trống.";
+        document.getElementById("password").parentElement.appendChild(error);
+        hasError = true;
+    }
+
+    // Ngăn không cho form gửi đi nếu có lỗi
+    if (hasError) {
+        event.preventDefault();
+    }
+});
+});
     let lastScrollY = window.scrollY;
+    window.addEventListener("resize", function() {
+        // Cập nhật lại khoảng cách nếu kích thước màn hình thay đổi
+        const mainheader = document.getElementById("mainheader");
+        const loginContainer = document.querySelector(".login-container");
+        const headerHeight = mainheader.offsetHeight;
+        loginContainer.style.marginTop = `${headerHeight}px`;
+    });
+    window.addEventListener("load", function
+        const mainheader = document.getElementById("mainheader");
+        const loginContainer = document.querySelector(".login-container");
+
+        // Lấy chiều cao của header và thiết lập khoảng cách cho form
+        const headerHeight = mainheader.offsetHeight;
+        loginContainer.style.marginTop = `${headerHeight}px`; // Thêm khoảng cách ở trên
+    });
     window.addEventListener("scroll", function() {
         const subheader = document.getElementById("subheader");
         const mainheader = document.getElementById("mainheader");
@@ -19,6 +91,7 @@
             mainheader.style.top = "0";
             mainheader.classList.add("scrolled");
         } else if (window.scrollY === 0) {
+            // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
             subheader.style.transform = "translateY(0)";
             mainheader.style.position = "relative";
             mainheader.classList.remove("scrolled");
@@ -26,7 +99,7 @@
 
         lastScrollY = window.scrollY;
     });
-    </script>
+        </script>
 </head>
 
 <body>
@@ -88,26 +161,7 @@
         <div class="register">
             <span>Chưa có tài khoản <a href="register.php">ĐĂNG KÝ</a></span>
         </div>
-        <?php 
-            include "Connection/connect.php";
-            session_start();
-            if (isset($_POST["login-btn"])){ 
-                // kiểm tra có remember không
-                if (isset($_POST["remember"])){
-                    // Tạo session
-                    $_SESSION["username"] = $_POST["username"];
-                }
-                $username = $_POST["username"];
-                $password = $_POST["password"];
-                $sql = "SELECT * FROM account_user WHERE Username = '$username' AND Password = '$password'";
-                $result = mysqli_query($conn, $sql);
-                if (mysqli_num_rows($result) > 0){
-                    echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
-                    header("Location: home_page.php");
-                }
-            }
-            
-        ?>
+
     </div>
     <div id="footer"></div>
 </body>
