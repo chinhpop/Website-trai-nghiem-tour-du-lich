@@ -31,7 +31,7 @@ header {
 }
 
 .package .package-img {
-  overflow: hidden; /* Đảm bảo phẩn ảnh k bị zoom ra ngoài khung*/
+  overflow: hidden; /* Đảm bảo phần ảnh k bị zoom ra ngoài khung*/
 }
 
 .package:hover img {
