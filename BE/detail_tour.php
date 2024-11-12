@@ -10,6 +10,7 @@
     include "Class/Tour_Price.php";
     include "Class/Tour_Code.php";
     include "Class/Tour_Detail.php";
+    include "Class/FormatData.php";
 ?>
 
 <head>
@@ -46,36 +47,6 @@
     </script>
 </head>
 
-<!-- Function -->
-<?php 
-    function formatCurrency($currency) {
-        $formattedAmount = number_format($currency);
-        // Thay thế dấu phẩy bằng dấu chấm 
-        $formattedAmount = str_replace(',', '.', $formattedAmount); 
-        return $formattedAmount . " VND";
-    }
-
-    function formatData($data) {
-        $items = explode(', ', $data);
-        $formmatted = "<table border = '0' class='tour-table'>";
-        foreach ($items as $item) {
-            $formmatted.= "<tr><td>". $item. "</td></tr>";
-        }
-        $formmatted .= "</table>";
-        return $formmatted;
-    }
-
-    function formatPrice($price, $data) {
-        $items = explode(', ', $data);
-        $formmatted = "<table border = '0' class='tour-table'>";
-        foreach ($items as $item) {
-            $formmatted.= "<tr><td>". $price. "</td></tr>";
-        }
-        $formmatted .= "</table>";
-        return $formmatted;
-    }
-?>
-
 <body>
 
     <!-- Header -->
@@ -95,7 +66,8 @@
 
     <?php 
         $db = new Tour();
-        $detail_tour = $db->show_tour();
+        $id = $_GET["id"];
+        $detail_tour = $db->get_tour($id);
         if ( $detail_tour ) {while ( $row = $detail_tour->fetch_assoc()){
 
         
