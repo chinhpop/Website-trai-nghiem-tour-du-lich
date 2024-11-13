@@ -9,7 +9,101 @@ body {
   background-color: #f4f4f4;
 }
 
-header {
+/* General styling for the container and navbar */
+.container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.navbar {
+  background-color: transparent; /* Màu nền thanh điều hướng */
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar-header .navbar-brand {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-toggle {
+  background-color: transparent; /* Màu nền nút chuyển đổi */
+  border: none;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+.navbar-collapse {
+  border: none;
+}
+
+/* Styling for the dropdown menu */
+.mega-dropdown {
+  position: static !important;
+}
+
+.mega-dropdown-menu {
+  padding: 20px 0px;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  border-radius: 0;
+  background-color: #fff; /* Màu nền menu dropdown */
+}
+
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mega-dropdown-menu > li > ul > li {
+  display: inline-block;
+}
+
+.mega-dropdown-menu > li > ul > li a {
+  display: block;
+  color: #333; /* Màu chữ của các liên kết trong menu dropdown */
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+.mega-dropdown-menu > li ul > li.dropdown-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff5733; /* Màu chữ của tiêu đề */
+}
+
+.mega-dropdown-menu > li ul > li a:hover {
+  background-color: #f8f8f8; /* Màu nền khi di chuột qua liên kết */
+}
+
+/* Styling for navbar links */
+.navbar-nav > li > a {
+  color: #fff !important; /* Màu chữ của các liên kết trên thanh điều hướng */
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  background-color: #555; /* Màu nền khi di chuột qua các liên kết trên thanh điều hướng */
+  color: #fff !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mega-dropdown-menu {
+    position: static;
+  }
+}
+
+/* header {
   background-color: rgba(0, 86, 163, 0.8);
   color: white;
   padding: 10px 0;
@@ -38,7 +132,7 @@ header nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-}
+} */
 
 /* Banner */
 .banner {
