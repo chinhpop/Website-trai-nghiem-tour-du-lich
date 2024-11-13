@@ -1,236 +1,259 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
+/* Header */
 .custom-header {
-    background-color: #0056a3;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: #0072bc80;
+  background: rgba(87, 128, 158, 0.7);
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  align-items: center;
+  top: 0;
 }
 
-.custom-header .contact-info {
-    font-size: 0.9em;
-    margin-left: 20px;
+.custom-header .left-top-header {
+  gap: 30px;
+  padding-left: 120px;
+  width: 100%;
+  display: flex;
 }
 
-.custom-header nav ul {
-    list-style: none;
-    display: flex;
-    margin-right: 20px;
+.left-top-header {
+  gap: 30px;
+  padding-left: 160px;
+  width: 100%;
+  display: flex;
 }
 
-.custom-header nav ul li {
-    margin-right: 20px;
+.right-top-header {
+  justify-content: flex-end;
+  gap: 30px;
+  padding-right: 120px;
+  width: 100%;
+  display: flex;
 }
 
-.custom-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.item-left-top-header {
+  color: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
+.right-top-header .item-left-top-header a {
+  text-decoration: none;
+  color: white;
+}
+
+.login-btn :hover {
+  color: orange !important;
+  cursor: pointer;
+}
 
 /* Banner */
 .banner {
-    position: relative;
-    background-image: url('https://homepage.momocdn.net/blogscontents/momo-upload-api-210520162901-637571249418225544.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    text-align: center;
-    color: white;
+  position: relative;
+  background-image: url("https://homepage.momocdn.net/blogscontents/momo-upload-api-210520162901-637571249418225544.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  text-align: center;
+  color: white;
 }
 
 .banner h1 {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 3em;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 3em;
 }
 
 /* Tour List */
 .tour-list {
-    max-width: 1200px;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .tour-item {
-    display: flex;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    cursor: pointer;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .tour-item:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .tour-image {
-    width: 40%;
+  width: 40%;
 }
 
 .tour-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .tour-details {
-    padding: 20px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  padding: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .tour-title {
-    font-size: 1.8em;
-    color: #0056a3;
-    margin-bottom: 10px;
+  font-size: 1.8em;
+  color: #0056a3;
+  margin-bottom: 10px;
 }
 
 .tour-info {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 15px;
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .tour-price {
-    background-color: #ff9933;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
+  background-color: #ff9933;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .tour-dates {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .tour-dates div {
-    display: flex;
-    align-items: center;
-    background-color: #f4f4f4;
-    padding: 5px 10px;
-    border-radius: 5px;
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .tour-dates div:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 footer {
-    background-color: #0056a3;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+  background-color: #0056a3;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
 }
 
 /* nav */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 body {
-    font-family: 'Open Sans', 'sans-serif';
+  font-family: "Open Sans", "sans-serif";
 }
 
 /* Đổi màu nền của thanh điều hướng */
 .navbar {
-    background-color: #78848b !important; /* Màu xanh nhạt */
-    border: none; /* Bỏ viền (nếu có) */
+  background-color: #78848b !important; /* Màu xanh nhạt */
+  border: none; /* Bỏ viền (nếu có) */
 }
 
 /* Đổi màu chữ trên thanh điều hướng */
 .navbar a {
-    color: #333333 !important; /* Màu chữ tối để tương phản với nền xanh */
-    text-decoration: none;
+  color: #333333 !important; /* Màu chữ tối để tương phản với nền xanh */
+  text-decoration: none;
 }
 
 .navbar a:hover,
 .navbar a:focus {
-    color: #b9b7b7 !important; /* Đổi màu khi hover */
-    text-decoration: none;
+  color: #b9b7b7 !important; /* Đổi màu khi hover */
+  text-decoration: none;
 }
 
 .mega-dropdown {
-    position: static !important;
+  position: static !important;
 }
 
 .mega-dropdown-menu {
-    padding: 20px 0px;
-    width: 100%;
-    box-shadow: none;
-    -webkit-box-shadow: none;
+  padding: 20px 0px;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .mega-dropdown-menu > li > ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .mega-dropdown-menu > li > ul > li {
-    list-style: none;
+  list-style: none;
 }
 
 .mega-dropdown-menu > li > ul > li > a {
-    display: block;
-    color: #222;
-    padding: 3px 5px;
+  display: block;
+  color: #222;
+  padding: 3px 5px;
 }
 
 .mega-dropdown-menu > li ul > li > a:hover,
 .mega-dropdown-menu > li ul > li > a:focus {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .mega-dropdown-menu .dropdown-header {
-    font-size: 18px;
-    color: #cc3a46;
-    padding: 5px 60px 5px 5px;
-    line-height: 30px;
+  font-size: 18px;
+  color: #cc3a46;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
 }
 
 .carousel-control {
-    width: 30px;
-    height: 30px;
-    top: -35px;
+  width: 30px;
+  height: 30px;
+  top: -35px;
 }
 
 .left.carousel-control {
-    right: 30px;
-    left: inherit;
+  right: 30px;
+  left: inherit;
 }
 
 .carousel-control .glyphicon-chevron-left,
 .carousel-control .glyphicon-chevron-right {
-    font-size: 12px;
-    background-color: #fff;
-    line-height: 30px;
-    text-shadow: none;
-    color: #333;
-    border: 1px solid #ddd;
+  font-size: 12px;
+  background-color: #fff;
+  line-height: 30px;
+  text-shadow: none;
+  color: #333;
+  border: 1px solid #ddd;
 }
