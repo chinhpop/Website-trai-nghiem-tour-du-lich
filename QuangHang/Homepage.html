@@ -42,74 +42,187 @@
         </div>
       </div>
     </header>
-    <container>
-      <nav class="nav-hero">
-        <ul>
-          <li class="navbar-right"> 
-            <li>
-              <a class="navigate-btn" href="#">Trang chủ</a>
-            </li> 
-            <li class="dropdown"> 
-              <a class="navigate-btn" href="javascript:void(0)">Tour trong nước</a> 
-              <div class="dropdown-content"> 
-                <div class="dropdown-section"> 
-                  <h4>MIỀN BẮC</h4> 
-                  <a href="#">Đông Bắc - Tây Bắc</a>
-                  <a href="#">Hà Nội</a>
-                  <a href="#">Hạ Long</a> 
-                  <a href="#">Sapa</a> 
-                  <a href="#">Ninh Bình</a> 
-                  <a href="#">Hải Phòng</a> 
-                  <a href="#">Thanh Hóa</a> 
-                </div>
-                <div class="dropdown-section"> 
-                  <h4>MIỀN TRUNG</h4> 
-                  <a href="#">Phan Thiết</a> 
-                  <a href="#">Nha Trang</a> 
-                  <a href="#">Đà Lạt</a> <a href="#">Tây Nguyên</a> 
-                  <a href="#">Tuy Hòa - Quy Nhơn - Quảng Ngãi</a> 
-                  <a href="#">Huế - Quảng Bình</a> 
-                  <a href="#">Nghệ An</a> 
-                  <a href="#">Đà Nẵng</a> 
-                </div> 
-                <div class="dropdown-section"> 
-                  <h4>MIỀN NAM</h4> 
-                  <a href="#">Phú Quốc</a> 
-                  <a href="#">Miền Tây</a> 
-                  <a href="#">Côn Đảo</a> 
-                  <a href="#">Hồ Tràm - Vũng Tàu</a>
-                  <a href="#">Tour Tp. Hồ Chí Minh</a> 
-                  <a href="#">Tây Ninh</a> 
-                  <a href="#">Đông Nam Bộ</a> 
-                </div> 
-                <div class="dropdown-section"> 
-                  <h4>CHÙM TOUR</h4> 
-                  <a href="#">Về Quê Nhà</a> 
-                  <a href="#">Combo Free Easy</a>
-                  <a href="#">Người cao tuổi</a> 
-                  <a href="#">Tết Nguyên Đán 2025</a>
-                </div> 
-              </div> 
-              <li>
-                <a class="navigate-btn" href="#">Tour nước ngoài</a>
-              </li>
-              <li>
-                <a class="navigate-btn" href="#">Dịch vụ du lịch</a>
-              </li> 
-              <li>
-                <a class="navigate-btn" href="Contact.html">Liên hệ</a>
-              </li>
-              <form class="search-box" action="Contact.html" method="GET"> 
-                <input class="search-bar" type="text" placeholder="Tìm kiếm"> 
-                <input type="submit" class="submit" value="Search"> 
-              </form> 
-              <div class="btn">
-              </div>
-            </li>
-          </li>
-        </ul>
+    <div class="container">
+      <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+              <button class="navbar-toggle" type="button" data-toggle="collapse"
+                  data-target=".js-navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Trang Chủ</a>
+          </div>
+
+          <div class="collapse navbar-collapse js-navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li class="dropdown mega-dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tour trong nước <span
+                              class="caret"></span></a>
+                      <ul class="dropdown-menu mega-dropdown-menu">
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">MIỀN BẮC</li>
+                                  <li><a href="#">Đông Bắc - Tây Bắc</a></li>
+                                  <li><a href="#">Hà Nội</a></li>
+                                  <li><a href="#">Hạ Long</a></li>
+                                  <li><a href="#">Sapa</a></li>
+                                  <li><a href="#">Ninh Bình</a></li>
+                                  <li><a href="#">Hải Phòng</a></li>
+                              </ul>
+                          </li>
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">MIỀN TRUNG</li>
+                                  <li><a href="#">Phan Thiết</a></li>
+                                  <li><a href="#">Nha Trang</a></li>
+                                  <li><a href="#">Đà Lạt</a></li>
+                                  <li><a href="#">Tây Nguyên</a></li>
+                                  <li><a href="#">Tuy Hòa - Quy Nhơn - Quãng Ngãi</a></li>
+                                  <li><a href="#">Huế - Quảng Bình</a></li>
+                                  <li><a href="#">Nghệ An</a></li>
+                                  <li><a href="#">Đà Nẵng</a></li>
+                              </ul>
+                          </li>
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">Miền Nam</li>
+                                  <li><a href="#">Phú Quốc</a></li>
+                                  <li><a href="#">Miền Tây</a></li>
+                                  <li><a href="#">Côn Đảo</a></li>
+                                  <li><a href="#">Hồ Tràm - Vũng Tàu</a></li>
+                                  <li><a href="#">Tour Tp. Hồ Chí Minh</a></li>
+                                  <li><a href="#">Tây Ninh</a></li>
+                                  <li><a href="#">Đông Nam Bộ</a></li>
+                              </ul>
+                          </li>
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">CHÙM TOUR</li>
+                                  <li><a href="#">Về Quê Nhà</a></li>
+                                  <li><a href="#">Combo Free Easy</a></li>
+                                  <li><a href="#">Người Cao Tuổi</a></li>
+                                  <li><a href="#">Tết Nguyên Đán 2025</a></li>
+                              </ul>
+                          </li>
+                          
+                      </ul>
+                  </li>
+                  <li class="dropdown mega-dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tour ngoài nước <span
+                              class="caret"></span></a>
+                      <ul class="dropdown-menu mega-dropdown-menu">
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">Features</li>
+                                  <li><a href="#">Auto Carousel</a></li>
+                                  <li><a href="#">Carousel Control</a></li>
+                                  <li><a href="#">Left & Right Navigation</a></li>
+                                  <li><a href="#">Four Columns Grid</a></li>
+                                  <li class="divider"></li>
+                                  <li class="dropdown-header">Fonts</li>
+                                  <li><a href="#">Glyphicon</a></li>
+                                  <li><a href="#">Google Fonts</a></li>
+                              </ul>
+                          </li>
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">Plus</li>
+                                  <li><a href="#">Navbar Inverse</a></li>
+                                  <li><a href="#">Pull Right Elements</a></li>
+                                  <li><a href="#">Coloured Headers</a></li>
+                                  <li><a href="#">Primary Buttons & Default</a></li>
+                              </ul>
+                          </li>
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">Much more</li>
+                                  <li><a href="#">Easy to Customize</a></li>
+                                  <li><a href="#">Calls to action</a></li>
+                                  <li><a href="#">Custom Fonts</a></li>
+                                  <li><a href="#">Slide down on Hover</a></li>
+                              </ul>
+                          </li>
+                          <li class="col-sm-3">
+                              <ul>
+                                  <li class="dropdown-header">Women Collection</li>
+                                  <div id="womenCollection" class="carousel slide" data-ride="carousel">
+                                      <div class="carousel-inner">
+                                          <div class="item active">
+                                              <a href="#"><img
+                                                      src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection"
+                                                      class="img-responsive" alt="product 1"></a>
+                                              <h4><small>Summer dress floral prints</small></h4>
+                                              <button class="btn btn-primary" type="button">49,99 €</button>
+                                              <button href="#" class="btn btn-default" type="button"><span
+                                                      class="glyphicon glyphicon-heart"></span> Add to
+                                                  Wishlist</button>
+                                          </div><!-- End Item -->
+                                          <div class="item">
+                                              <a href="#"><img
+                                                      src="http://placehold.it/254x150/ff3546/f5f5f5/&text=New+Collection"
+                                                      class="img-responsive" alt="product 2"></a>
+                                              <h4><small>Gold sandals with shiny touch</small></h4>
+                                              <button class="btn btn-primary" type="button">9,99 €</button>
+                                              <button href="#" class="btn btn-default" type="button"><span
+                                                      class="glyphicon glyphicon-heart"></span> Add to
+                                                  Wishlist</button>
+                                          </div><!-- End Item -->
+                                          <div class="item">
+                                              <a href="#"><img
+                                                      src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection"
+                                                      class="img-responsive" alt="product 3"></a>
+                                              <h4><small>Denin jacket stamped</small></h4>
+                                              <button class="btn btn-primary" type="button">49,99 €</button>
+                                              <button href="#" class="btn btn-default" type="button"><span
+                                                      class="glyphicon glyphicon-heart"></span> Add to
+                                                  Wishlist</button>
+                                          </div><!-- End Item -->
+                                      </div><!-- End Carousel Inner -->
+                                      <!-- Controls -->
+                                      <a class="left carousel-control" href="#womenCollection" role="button"
+                                          data-slide="prev">
+                                          <span class="glyphicon glyphicon-chevron-left"
+                                              aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                      </a>
+                                      <a class="right carousel-control" href="#womenCollection" role="button"
+                                          data-slide="next">
+                                          <span class="glyphicon glyphicon-chevron-right"
+                                              aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                      </a>
+                                  </div><!-- /.carousel -->
+                                  <li class="divider"></li>
+                                  <li><a href="#">View all Collection <span
+                                              class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+                  <li><a href="#">Dịch vụ du lịch</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                          aria-expanded="false">My account <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="#">My cart (0) items</a></li>
+              </ul>
+          </div><!-- /.nav-collapse -->
       </nav>
-    </container>
+  </div>
+
+</div>
     <section class="whiteSection">
       <div class="container">
           <div class="tittle">
