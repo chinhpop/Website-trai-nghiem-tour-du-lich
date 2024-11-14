@@ -249,9 +249,11 @@
       $(".item-left-top-header").hover(
         function () {
           $(this).find("i").css("color", "orange");
+          $(this).find("li").css("color", "orange");
         },
         function () {
           $(this).find("i").css("color", "");
+          $(this).find("li").css("color", "");
         }
       );
     });

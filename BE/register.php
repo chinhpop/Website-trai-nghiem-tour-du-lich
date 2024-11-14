@@ -7,40 +7,40 @@
     <title>ĐĂNG KÍ</title>
     <link rel="stylesheet" href="Assets/Css/register.css" />
     <script>
-   let lastScrollY = window.scrollY;
+    let lastScrollY = window.scrollY;
 
-window.addEventListener("load", function() {
-    const mainheader = document.getElementById("mainheader");
-    const registerContainer = document.querySelector(".register-container");
+    window.addEventListener("load", function() {
+        const mainheader = document.getElementById("mainheader");
+        const registerContainer = document.querySelector(".register-container");
 
-    // Lấy chiều cao của header và thiết lập khoảng cách cho form
-    const headerHeight = mainheader.offsetHeight;
-    registerContainer.style.paddingTop = `${headerHeight}px`;
-});
+        // Lấy chiều cao của header và thiết lập khoảng cách cho form
+        const headerHeight = mainheader.offsetHeight;
+        registerContainer.style.paddingTop = `${headerHeight}px`;
+    });
 
-window.addEventListener("scroll", function() {
-    const subheader = document.getElementById("subheader");
-    const mainheader = document.getElementById("mainheader");
+    window.addEventListener("scroll", function() {
+        const subheader = document.getElementById("subheader");
+        const mainheader = document.getElementById("mainheader");
 
-    if (window.scrollY > lastScrollY) {
-        // Cuộn xuống
-        subheader.style.transform = "translateY(-100%)";
-        mainheader.style.position = "fixed";
-        mainheader.style.top = "0";
-        mainheader.classList.add("scrolled");
-    } else if (window.scrollY === 0) {
-        // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
-        subheader.style.transform = "translateY(0)";
-        mainheader.style.position = "relative";
-        mainheader.classList.remove("scrolled");
-    }
+        if (window.scrollY > lastScrollY) {
+            // Cuộn xuống
+            subheader.style.transform = "translateY(-100%)";
+            mainheader.style.position = "fixed";
+            mainheader.style.top = "0";
+            mainheader.classList.add("scrolled");
+        } else if (window.scrollY === 0) {
+            // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
+            subheader.style.transform = "translateY(0)";
+            mainheader.style.position = "relative";
+            mainheader.classList.remove("scrolled");
+        }
 
-    lastScrollY = window.scrollY;
-});
+        lastScrollY = window.scrollY;
+    });
     document.querySelector('.register-form').addEventListener('submit', function(event) {
         const inputs = this.querySelectorAll('input');
         let hasEmptyField = false;
-        
+
         // Kiểm tra tất cả các ô input
         inputs.forEach(input => {
             if (input.value.trim() === '') {
@@ -57,7 +57,7 @@ window.addEventListener("scroll", function() {
         }
     });
     </script>
- 
+
 </head>
 
 <body>
@@ -76,7 +76,7 @@ window.addEventListener("scroll", function() {
         </div>
         <div id="mainheader" class="mainheader">
             <div class="logo">
-                <img src="logo.png" alt="Saigontourist" />
+                <img src="logo.pn g" alt="Saigontourist" />
             </div>
             <nav class="navbar">
                 <a href="#">TRANG CHỦ</a>

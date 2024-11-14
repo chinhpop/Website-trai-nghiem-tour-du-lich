@@ -28,42 +28,41 @@
     <title>Đăng Nhập</title>
     <script>
     document.querySelector(".login-form").addEventListener("submit", function(event) {
-    // Lấy các giá trị nhập vào
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
-    let hasError = false;
+        // Lấy các giá trị nhập vào
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        let hasError = false;
 
-    // Xóa các thông báo lỗi cũ
-    document.querySelectorAll(".error-message").forEach(function(error) {
-        error.remove();
+        // Xóa các thông báo lỗi cũ
+        document.querySelectorAll(".error-message").forEach(function(error) {
+            error.remove();
+        });
+
+        // Kiểm tra nếu tên đăng nhập để trống
+        if (username === "") {
+            const error = document.createElement("p");
+            error.className = "error-message";
+            error.style.color = "red";
+            error.textContent = "Tên đăng nhập không được để trống.";
+            document.getElementById("username").parentElement.appendChild(error);
+            hasError = true;
+        }
+
+        // Kiểm tra nếu mật khẩu để trống
+        if (password === "") {
+            const error = document.createElement("p");
+            error.className = "error-message";
+            error.style.color = "red";
+            error.textContent = "Mật khẩu không được để trống.";
+            document.getElementById("password").parentElement.appendChild(error);
+            hasError = true;
+        }
+
+        // Ngăn không cho form gửi đi nếu có lỗi
+        if (hasError) {
+            event.preventDefault();
+        }
     });
-
-    // Kiểm tra nếu tên đăng nhập để trống
-    if (username === "") {
-        const error = document.createElement("p");
-        error.className = "error-message";
-        error.style.color = "red";
-        error.textContent = "Tên đăng nhập không được để trống.";
-        document.getElementById("username").parentElement.appendChild(error);
-        hasError = true;
-    }
-
-    // Kiểm tra nếu mật khẩu để trống
-    if (password === "") {
-        const error = document.createElement("p");
-        error.className = "error-message";
-        error.style.color = "red";
-        error.textContent = "Mật khẩu không được để trống.";
-        document.getElementById("password").parentElement.appendChild(error);
-        hasError = true;
-    }
-
-    // Ngăn không cho form gửi đi nếu có lỗi
-    if (hasError) {
-        event.preventDefault();
-    }
-});
-});
     let lastScrollY = window.scrollY;
     window.addEventListener("resize", function() {
         // Cập nhật lại khoảng cách nếu kích thước màn hình thay đổi
@@ -72,7 +71,7 @@
         const headerHeight = mainheader.offsetHeight;
         loginContainer.style.marginTop = `${headerHeight}px`;
     });
-    window.addEventListener("load", function
+    window.addEventListener("load", function() {
         const mainheader = document.getElementById("mainheader");
         const loginContainer = document.querySelector(".login-container");
 
@@ -99,7 +98,7 @@
 
         lastScrollY = window.scrollY;
     });
-        </script>
+    </script>
 </head>
 
 <body>
