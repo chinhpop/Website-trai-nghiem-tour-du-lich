@@ -56,25 +56,6 @@
                 </div>
             </ul>
         </nav>
-        <!-- <div class="hero-line-1">Thái Lan Khuyến Mãi</div>
-      <span class="hero-line-2"> Cafe Phủ Vàng - Buffet Baiyoke</span>
-      <p class="hero-line-3">Giảm 1.000.00 đ/khách</p>
-      <div class="hero-button">Xem thêm</div> -->
-        <!-- 
-      <div class="container-dot-hero">
-        <li class="hero-dot"></li>
-        <li class="hero-dot"></li>
-        <li class="hero-dot"></li>
-      </div> -->
-        <!-- </div> -->
-        <!-- <section class="tourist-box">
-      <div class="container">
-        <div class="box_tittle"><div class="content_title"><span>Summer Tour 2025</span></div></div>  
-        <div class ="tour_list">
-          <button class="left-arrow" type="button"></button>
-        </div> 
-      </div>
-    </section> -->
         <section class="whiteSection">
             <div class="container">
                 <div class="tittle">
