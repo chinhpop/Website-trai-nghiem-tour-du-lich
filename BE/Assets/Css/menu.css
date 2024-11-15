@@ -19,6 +19,7 @@ body {
   align-items: center;
   cursor: pointer;
 }
+
 .container {
   padding-left: 140px;
 }
@@ -315,15 +316,15 @@ body {
 }
 /* Image Styling */
 /* article.tour_title figure img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-article.tour_title:hover img {
-  transform: scale(1.05);
-} */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  article.tour_title:hover img {
+    transform: scale(1.05);
+  } */
 
 /* Parent Row - Flexbox Container */
 .row {

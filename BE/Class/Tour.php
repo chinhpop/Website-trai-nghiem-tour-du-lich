@@ -13,7 +13,7 @@ class Tour{
     }
 
     public function get_tour($id){
-        $query = "SELECT * FROM thongtin_tour WHERE ID_tour = '$id'";
+        $query = "SELECT * FROM thongtin_tour WHERE ID_TourRegion = '$id'";
         $result = $this->db->select($query);
         return $result;
     }
