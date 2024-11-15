@@ -76,7 +76,7 @@
                                         if ($detail_tourRegion) {while($row = $detail_tourRegion->fetch_assoc()){
                                             ?>
                                     <li><a
-                                            href="detail_tour.php?id=<?php echo $row["ID_TourRegion"] ?>"><?php echo $row["area"] ?></a>
+                                            href="List_Tour.php?id_TourRegion=<?php echo $row["ID_TourRegion"] ?>"><?php echo $row["area"] ?></a>
                                     </li>
                                     <?php 
                                     }}

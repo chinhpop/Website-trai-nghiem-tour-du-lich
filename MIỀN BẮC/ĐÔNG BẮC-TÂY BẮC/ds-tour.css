@@ -76,14 +76,16 @@ body {
 
 .tour-price {
   position: absolute;
-  bottom: 10px; /* Khoảng cách từ dưới lên */
-  left: 250px; /* Khoảng cách từ bên trái */
-  background-color: rgba(0, 0, 0, 0.7); /* Nền màu đen với độ trong suốt */
+  width: 35%;
+  top: 35%; /* Khoảng cách từ trên xuống*/
+  right: 0; /* Khoảng cách từ phải qua */
+  background-color: rgb(248, 153, 45); /* Nền màu đen với độ trong suốt */
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
+  text-align: right;
 }
 
 .tour-details {

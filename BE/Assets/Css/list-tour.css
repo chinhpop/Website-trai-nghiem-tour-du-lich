@@ -5,14 +5,6 @@ body {
   box-sizing: border-box;
   background-color: #f0f0f0;
 }
-
-header {
-  background-color: #4caf50;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-}
-
 #packages {
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +23,22 @@ header {
 }
 
 .package .package-img {
+  position: relative;
   overflow: hidden; /* Đảm bảo phần ảnh k bị zoom ra ngoài khung*/
+}
+
+.tour-price {
+  position: absolute;
+  width: 35%;
+  top: 35%; /* Khoảng cách từ trên xuống*/
+  right: 0; /* Khoảng cách từ phải qua */
+  background-color: rgb(248, 153, 45); /* Nền màu đen với độ trong suốt */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
 }
 
 .package:hover img {
@@ -66,4 +73,14 @@ header {
 
 .package button:hover {
   background-color: #45a049;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
