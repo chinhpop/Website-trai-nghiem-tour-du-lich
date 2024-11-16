@@ -24,8 +24,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Assets/Css/login.css" />
+    <link rel="stylesheet" href="./Assets/Css/login.css" />
+    <link rel="stylesheet" href="./Assets/global.css" />
     <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="./Assets/script.js"></script>
     <script>
     document.querySelector(".login-form").addEventListener("submit", function(event) {
         // Lấy các giá trị nhập vào
@@ -66,68 +71,120 @@
     let lastScrollY = window.scrollY;
     window.addEventListener("resize", function() {
         // Cập nhật lại khoảng cách nếu kích thước màn hình thay đổi
-        const mainheader = document.getElementById("mainheader");
+        const container = document.getElementById("container");
         const loginContainer = document.querySelector(".login-container");
-        const headerHeight = mainheader.offsetHeight;
+        const headerHeight = container.offsetHeight;
         loginContainer.style.marginTop = `${headerHeight}px`;
     });
     window.addEventListener("load", function() {
-        const mainheader = document.getElementById("mainheader");
+        const container = document.getElementById("container");
         const loginContainer = document.querySelector(".login-container");
 
         // Lấy chiều cao của header và thiết lập khoảng cách cho form
-        const headerHeight = mainheader.offsetHeight;
+        const headerHeight = container.offsetHeight;
         loginContainer.style.marginTop = `${headerHeight}px`; // Thêm khoảng cách ở trên
     });
     window.addEventListener("scroll", function() {
-        const subheader = document.getElementById("subheader");
-        const mainheader = document.getElementById("mainheader");
+        const topheader = document.getElementById("top-header");
+        const container = document.getElementById("container");
 
         if (window.scrollY > lastScrollY) {
             // Cuộn xuống
-            subheader.style.transform = "translateY(-100%)";
-            mainheader.style.position = "fixed";
-            mainheader.style.top = "0";
-            mainheader.classList.add("scrolled");
+            topheader.style.transform = "translateY(-100%)";
+            container.style.position = "fixed";
+            container.style.top = "0";
+            container.classList.add("scrolled");
         } else if (window.scrollY === 0) {
             // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
-            subheader.style.transform = "translateY(0)";
-            mainheader.style.position = "relative";
-            mainheader.classList.remove("scrolled");
+            topheader.style.transform = "translateY(0)";
+            container.style.position = "relative";
+            container.classList.remove("scrolled");
         }
 
         lastScrollY = window.scrollY;
     });
     </script>
 </head>
+<?php 
+    include "./Class/Region.php";
+    include "./Class/Tour_Region.php";
+?>
 
 <body>
     <div class="header">
-        <div id="subheader" class="subheader">
-            <div class="contact-info">
-                <a href="mailto:info@saigontourist.net">
-                    <span class="icon">📧</span> info@saigontourist.net</a>
-                <a href="tel:19001808">
-                    <span class="icon">📞</span> Hotline: 1900 180</a>
+        <div id="top-header" class="top-header">
+            <div class="left-top-header">
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-envelope"></i>
+                    <li>info@saigontourist.net</li>
+                </div>
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-phone"></i>
+                    <li>Hotline: 1900 1808</li>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#"><span class="icon">📍</span> Chọn điểm khởi hành</a>
+            <div class="right-top-header">
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <li>Chọn điểm khởi hành</li>
+                </div>
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <li><a href="#" class="login">Đăng nhập</a></li>
+                </div>
             </div>
         </div>
-        <div id="mainheader" class="mainheader">
-            <div class="logo">
-                <img src="logo.png" alt="Saigontourist" />
-            </div>
-            <nav class="navbar">
-                <a href="#">TRANG CHỦ</a>
-                <a href="#">TOUR TRONG NƯỚC</a>
-                <a href="#">TOUR NƯỚC NGOÀI</a>
-                <a href="#">DỊCH VỤ DU LỊCH</a>
-                <a href="#">LIÊN HỆ</a>
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-absolute">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse"
+                        data-target=".js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Trang Chủ</a>
+                </div>
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown mega-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tour trong nước <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                <?php 
+                            $region = new Region();
+                            $detail_region = $region->show_region();
+                            if ($detail_region) {while ($region = $detail_region->fetch_assoc()){
+                                ?>
+                                <li class="col-sm-3">
+                                    <ul>
+                                        <li class="dropdown-header"><?php echo $region["region"] ?></li>
+
+                                        <?php 
+                                        $tour_region = new Tour_Region();
+                                        $detail_tourRegion = $tour_region->get_tourRegion($region["ID_region"]);
+                                        if ($detail_tourRegion) {while($row = $detail_tourRegion->fetch_assoc()){
+                                            ?>
+                                        <li><a
+                                                href="List_Tour.php?id_TourRegion=<?php echo $row["ID_TourRegion"] ?>"><?php echo $row["area"] ?></a>
+                                        </li>
+                                        <?php 
+                                    }}
+                                    ?>
+                                    </ul>
+                                </li>
+                                <?php
+                            }}
+                            ?>
+                            </ul>
+                        </li>
+                        <li><a class="navigate-btn" href="#">Tour nước ngoài</a></li>
+                        <li><a class="navigate-btn" href="#">Dịch vụ du lịch</a></li>
+                        <li><a class="navigate-btn" href="Contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
             </nav>
-            <div class="search">
-                <button class="search-button">🔍</button>
-            </div>
         </div>
     </div>
     <div class="login-container">
@@ -164,5 +221,7 @@
     </div>
     <div id="footer"></div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./Assets/script.js"></script>
 
 </html>
