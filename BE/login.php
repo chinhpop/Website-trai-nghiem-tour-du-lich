@@ -188,34 +188,38 @@
         </div>
     </div>
     <div class="login-container">
-        <h2>ĐĂNG NHẬP</h2>
         <div class="social-login">
+            <p>Đăng nhập sử dụng tài khoản mạng xã hội</p>
             <button class="facebook">ĐĂNG NHẬP VỚI FACEBOOK</button>
             <button class="google">ĐĂNG NHẬP VỚI GOOGLE</button>
         </div>
-        <form class="login-form" action="login.php" method="post">
-            <div class="input-group">
-                <label for="user">Tên đăng nhập</label>
-                <input type="text" id="username" name="username" placeholder="Vui lòng nhập dữ liệu" />
+        <div class="separator"></div>
+        <div class="login">
+            <h2>ĐĂNG NHẬP</h2>
+            <form class="login-form" action="login.php" method="post">
+                <div class="input-group">
+                    <label for="user">Tên đăng nhập</label>
+                    <input type="text" id="username" name="username" placeholder="Vui lòng nhập dữ liệu" />
+                </div>
+                <div class="input-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" placeholder="Vui lòng nhập dữ liệu" />
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="remember" name="remember" />
+                    <label for="remember">Ghi nhớ</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">QUÊN MẬT KHẨU?</a>
+                </div>
+                <div class="buttons">
+                    <button class="login-btn" id="login-btn" name="login-btn">ĐĂNG NHẬP</button>
+                    <button class="cancel-btn">HỦY</button>
+                </div>
+            </form>
+            <div class="register">
+                <span>Chưa có tài khoản <a href="register.php">ĐĂNG KÝ</a></span>
             </div>
-            <div class="input-group">
-                <label for="password">Mật khẩu</label>
-                <input type="password" id="password" name="password" placeholder="Vui lòng nhập dữ liệu" />
-            </div>
-            <div class="remember">
-                <input type="checkbox" id="remember" name="remember" />
-                <label for="remember">Ghi nhớ</label>
-            </div>
-            <div class="forgot-password">
-                <a href="#">QUÊN MẬT KHẨU?</a>
-            </div>
-            <div class="buttons">
-                <button class="login-btn" id="login-btn" name="login-btn">ĐĂNG NHẬP</button>
-                <button class="cancel-btn">HỦY</button>
-            </div>
-        </form>
-        <div class="register">
-            <span>Chưa có tài khoản <a href="register.php">ĐĂNG KÝ</a></span>
         </div>
 
     </div>
