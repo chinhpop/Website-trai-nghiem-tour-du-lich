@@ -5,7 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ĐĂNG KÍ</title>
-    <link rel="stylesheet" href="Assets/Css/register.css" />
+    <link rel="stylesheet" href="./Assets/global.css">
+    <link rel="stylesheet" href="./Assets/Css/register.css" />
+    <link rel="stylesheet" href="./Assets/Css/menu-login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
     let lastScrollY = window.scrollY;
 
@@ -59,43 +64,95 @@
     </script>
 
 </head>
+<?php 
+    include "./Class/Region.php";
+    include "./Class/Tour_Region.php";
+?>
 
 <body>
     <div class="header">
-        <div id="subheader" class="subheader">
-            <div class="contact-info">
-                <a href="mailto:info@saigontourist.net">
-                    <span class="icon">📧</span> info@saigontourist.net</a>
-                <a href="tel:19001808">
-                    <span class="icon">📞</span> Hotline: 1900 180</a>
+        <div id="top-header" class="top-header">
+            <div class="left-top-header">
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-envelope"></i>
+                    <li>info@saigontourist.net</li>
+                </div>
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-phone"></i>
+                    <li>Hotline: 1900 1808</li>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#"><span class="icon">📍</span> Chọn điểm khởi hành</a>
-                <a href="#">Đăng nhập</a>
+            <div class="right-top-header">
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <li>Chọn điểm khởi hành</li>
+                </div>
+                <div class="item-left-top-header">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <li><a href="#">Đăng nhập</a></li>
+                </div>
             </div>
         </div>
-        <div id="mainheader" class="mainheader">
-            <div class="logo">
-                <img src="logo.pn g" alt="Saigontourist" />
-            </div>
-            <nav class="navbar">
-                <a href="#">TRANG CHỦ</a>
-                <a href="#">TOUR TRONG NƯỚC</a>
-                <a href="#">TOUR NƯỚC NGOÀI</a>
-                <a href="#">DỊCH VỤ DU LỊCH</a>
-                <a href="#">LIÊN HỆ</a>
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-absolute">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse"
+                        data-target=".js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Trang Chủ</a>
+                </div>
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown mega-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tour trong nước <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                <?php 
+                            $region = new Region();
+                            $detail_region = $region->show_region();
+                            if ($detail_region) {while ($region = $detail_region->fetch_assoc()){
+                                ?>
+                                <li class="col-sm-3">
+                                    <ul>
+                                        <li class="dropdown-header"><?php echo $region["region"] ?></li>
+
+                                        <?php 
+                                        $tour_region = new Tour_Region();
+                                        $detail_tourRegion = $tour_region->get_tourRegion($region["ID_region"]);
+                                        if ($detail_tourRegion) {while($row = $detail_tourRegion->fetch_assoc()){
+                                            ?>
+                                        <li><a
+                                                href="List_Tour.php?id_TourRegion=<?php echo $row["ID_TourRegion"] ?>"><?php echo $row["area"] ?></a>
+                                        </li>
+                                        <?php 
+                                    }}
+                                    ?>
+                                    </ul>
+                                </li>
+                                <?php
+                            }}
+                            ?>
+                            </ul>
+                        </li>
+                        <li><a class="navigate-btn" href="#">Tour nước ngoài</a></li>
+                        <li><a class="navigate-btn" href="#">Dịch vụ du lịch</a></li>
+                        <li><a class="navigate-btn" href="Contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
             </nav>
-            <div class="search">
-                <button class="search-button">🔍</button>
-            </div>
         </div>
     </div>
-    <div class="register-container">
-        <h2>ĐĂNG KÝ</h2>
+    <div class="login-container">
         <div class="social-login">
-            <button class="fb">ĐĂNG KÝ VỚI FACEBOOK</button>
-            <button class="google">ĐĂNG KÝ VỚI GOOGLE</button>
+            <p>Đăng nhập sử dụng tài khoản mạng xã hội</p>
+            <button class="facebook">ĐĂNG NHẬP VỚI FACEBOOK</button>
+            <button class="google">ĐĂNG NHẬP VỚI GOOGLE</button>
         </div>
+        <div class="separator"></div>
         <?php 
         include "Connection/connect.php";
             if (isset($_POST["register-btn"])){   
@@ -118,37 +175,48 @@
                 }
             }
         ?>
-        <form class="register-form" action="register.php" method="post">
-            <label for="full-name">Full Name (*)</label>
-            <input type="text" id="full-name" name="full-name" placeholder="Vui lòng nhập dữ liệu" />
+        <div class="login">
+            <h2>ĐĂNG KÝ</h2>
+            <form class="register-form" action="login.php" method="post">
+                <div class="form-group">
+                    <input type="text" id="full-name" name="full-name" class="form-input" required placeholder=" " />
+                    <label for="username" class="form-label">Nhập Họ và Tên:</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-input" required placeholder=" " />
+                    <label for="username" class="form-label">Tên Đăng Nhập</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-input" required placeholder=" " />
+                    <label for="password" class="form-label">Mật Khẩu:</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="re-password" name="re-password" class="form-input" required
+                        placeholder=" " />
+                    <label for="re-password" class="form-label">Nhập lại mật khẩu:</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" " />
+                    <label for="phone" class="form-label">Số điện thoại:</label>
+                </div>
 
-            <label for="email">Địa chỉ email (*)</label>
-            <input type="email" id="email" name="email" placeholder="Vui lòng nhập dữ liệu" />
+                <div class="form-group">
+                    <input type="text" id="address" name="address" class="form-input" required placeholder=" " />
+                    <label for="address" class="form-label">Địa Chỉ:</label>
+                </div>
 
-            <label for="full-name">Tên đăng nhập (*)</label>
-            <input type="text" id="username" name="username" placeholder="Vui lòng nhập UserName" />
-
-            <label for="password">Mật khẩu (*)</label>
-            <input type="password" id="password" name="password" placeholder="Vui lòng nhập Password" />
-
-            <label for="confirm-password">Confirm password (*)</label>
-            <input type="password" id="confirm-password" name="confirm-password"
-                placeholder="Vui lòng nhập lại Password" />
-
-            <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone" placeholder="Vui lòng nhập số điện thoại" />
-
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="Vui lòng nhập địa chỉ" />
-
-            <div class="form-actions">
-                <button type="submit" class="register-btn" name="register-btn" id="register-btn">ĐĂNG KÝ</button>
-                <button type="reset" class="cancel-btn">HỦY</button>
+                <div class="form-actions">
+                    <button type="submit" class="register-btn" name="register-btn" id="register-btn">ĐĂNG KÝ</button>
+                    <button type="reset" class="cancel-btn">HỦY</button>
+                </div>
+            </form>
+            <div class="register">
+                <span>Đã có tài khoản? <a href="login.php">ĐĂNG NHẬP</a></span>
             </div>
-        </form>
-        <p>Đã có tài khoản? <a href="login.php">ĐĂNG NHẬP</a></p>
+        </div>
     </div>
-    <div id="footer"></div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="./Assets/script.js"></script>
 
 </html>

@@ -3,6 +3,7 @@ $(document).ready(function () {
   $(".mega-dropdown").hover(
     function () {
       $(".mega-dropdown-menu", this).stop(true, true).slideDown("400");
+      $(this).find("a.dropdown-toggle").css("transition", "0.3s ease-in-out"); // Đ��i màu cam
       $(this).find("a.dropdown-toggle").css("color", "#ff5733"); // Đổi màu cam
       $(this).find("a.dropdown-toggle").css("text-decoration-color", "#ff5733");
     },

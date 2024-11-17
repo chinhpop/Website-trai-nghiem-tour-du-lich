@@ -24,8 +24,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Assets/Css/login.css" />
     <link rel="stylesheet" href="./Assets/global.css" />
+    <link rel="stylesheet" href="./Assets/Css/login.css" />
+    <link rel="stylesheet" href="./Assets/Css/menu-login.css">
     <title>Đăng Nhập</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -179,9 +180,9 @@
                             ?>
                             </ul>
                         </li>
-                        <li><a class="navigate-btn" href="#">Tour nước ngoài</a></li>
-                        <li><a class="navigate-btn" href="#">Dịch vụ du lịch</a></li>
-                        <li><a class="navigate-btn" href="Contact.html">Liên hệ</a></li>
+                        <li class="dropdown mega-dropdown"><a class="dropdown-toggle" href="#">Dịch vụ du lịch</a></li>
+                        <li class="dropdown mega-dropdown"><a class="dropdown-toggle" href="Contact.html">Liên hệ</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -197,13 +198,13 @@
         <div class="login">
             <h2>ĐĂNG NHẬP</h2>
             <form class="login-form" action="login.php" method="post">
-                <div class="input-group">
-                    <label for="user">Tên đăng nhập</label>
-                    <input type="text" id="username" name="username" placeholder="Vui lòng nhập dữ liệu" />
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-input" required placeholder=" " />
+                    <label for="username" class="form-label">Tên Đăng Nhập</label>
                 </div>
-                <div class="input-group">
-                    <label for="password">Mật khẩu</label>
-                    <input type="password" id="password" name="password" placeholder="Vui lòng nhập dữ liệu" />
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-input" required placeholder=" " />
+                    <label for="password" class="form-label">Mật Khẩu</label>
                 </div>
                 <div class="remember">
                     <input type="checkbox" id="remember" name="remember" />
