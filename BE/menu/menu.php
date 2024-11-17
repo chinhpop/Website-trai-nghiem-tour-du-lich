@@ -38,7 +38,7 @@
                     </div>
                     <div class="item-left-top-header">
                         <i class="fa-solid fa-right-to-bracket"></i>
-                        <li><a href="#" class="login">Đăng nhập</a></li>
+                        <li><a href="./login.php" class="login">Đăng nhập</a></li>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,6 @@
                             ?>
                         </ul>
                     </li>
-                    <li><a class="navigate-btn" href="#">Tour nước ngoài</a></li>
                     <li><a class="navigate-btn" href="#">Dịch vụ du lịch</a></li>
                     <li><a class="navigate-btn" href="Contact.html">Liên hệ</a></li>
                 </ul>

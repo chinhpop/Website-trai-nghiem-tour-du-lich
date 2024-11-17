@@ -4,353 +4,84 @@
   padding: 0;
 }
 
-/* General Styling */
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-}
-
-.item-left-top-header {
-  color: #fff;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  cursor: pointer;
-}
-.container {
-  padding-left: 140px;
-}
-
-.navbar {
-  background-color: transparent; /* Sử dụng màu nền với độ trong suốt */
-  border: none;
-  border-radius: 0;
-  margin-bottom: 0;
-  position: absolute;
-  display: flex;
-  top: 20px; /* Điều chỉnh vị trí của navbar */
-  width: 100%;
-  margin-top: 12px;
-  padding-top: 10px;
-  z-index: 1000; /* Đảm bảo navbar nằm trên cùng */
-}
-
-.navbar-header .navbar-brand {
-  color: #fff;
-  font-family: Montserrat;
-  font-size: 16px;
-  line-height: 20px;
-  margin: 0px 10px 10px;
-  padding: 15px 20px;
-  text-align: left;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-decoration-color: #fff;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 10px;
-}
-
-.navbar-header > a:hover {
-  color: orange;
-  text-decoration-color: orange;
-}
-
-/* Nút menu items khi màn hình bị thu nhỏ lại */
-.navbar-toggle {
-  background-color: #444;
-  border: none;
-}
-
-.navbar-nav > li {
-  display: inline-block;
-  vertical-align: top; /* Giữ các phần tử ngang hàng nhau*/
-}
-
-.navbar-toggle .icon-bar {
-  background-color: #fff;
-}
-
-.navbar-collapse {
-  border: none;
-}
-
-/* Styling for the dropdown menu */
-.mega-dropdown {
-  position: static !important;
-}
-
-.mega-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000; /*Đảm bảo position luôn nằm trên các phần tử khác*/
-  padding: 20px 0px;
-  width: 100%;
-  box-shadow: none;
-  border: none;
-  margin: 0;
-  border-radius: 0;
-  background-color: white;
-}
-
-.mega-dropdown :hover .mega-dropdown {
-  display: block;
-}
-
-.mega-dropdown-menu > li > ul {
-  padding: 0;
-  margin: 0;
-}
-
-.mega-dropdown-menu > li > ul > li {
-  display: inline;
-  color: #333;
-}
-
-.mega-dropdown-menu > li > ul > li a {
-  display: block;
-  color: #333;
-  padding: 5px 15px;
-  text-decoration: none;
-}
-
-.mega-dropdown-menu > li ul > li.dropdown-header {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff5733;
-  margin-left: 15px;
-}
-
-.mega-dropdown-menu > li ul > li a:hover {
-  background-color: #f8f8f8;
-  color: orange;
-}
-
-.navbar-nav > li > a {
-  color: #fff;
-  font-family: Montserrat;
-  font-size: 16px;
-  line-height: 20px;
-  margin: 0px 10px 10px;
-  padding: 15px 20px;
-  text-align: left;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-decoration-color: #fff;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 10px;
-}
-
-.navbar-nav > li > ul {
-  margin-top: 10px;
-}
-
-.navbar-nav > li > form {
-  display: inline-block;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .mega-dropdown-menu {
-    position: static;
-  }
-}
-
-.top-header {
-  padding: 5px 0;
-  width: 100%;
-  position: absolute;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  font-size: 12px;
-  line-height: 21px;
-  background: #0072bc80;
-  background: rgba(87, 128, 158, 0.7);
-  top: 0;
-}
-.left-top-header {
-  gap: 30px;
-  padding-left: 160px;
-  width: 100%;
-  display: flex;
-}
-.right-top-header {
-  justify-content: flex-end;
-  gap: 30px;
-  padding-right: 170px;
-  width: 100%;
-  display: flex;
-}
-.main {
-  width: 100%;
-  height: 100vh;
-  background-color: antiquewhite;
-}
-.nav-hero {
-  position: absolute;
-  top: 20px;
-  background-color: transparent;
-  display: flex;
-  width: 100%;
-}
-.nav-hero ul {
-  padding: 10px 160px;
-  width: 90%;
-  justify-content: space-between;
-  display: flex;
-}
-.navigate-btn {
-  color: #fff;
-  font-family: Montserrat;
-  font-size: 14px;
-  line-height: 20px;
-  margin: 0px 10px 10px;
-  padding: 15px 0px 7px;
-  text-align: left;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-decoration-color: #fff;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 10px;
-}
-
-.navigate-btn:hover {
-  color: orange;
-  text-decoration-color: orange;
-}
-
-.hero {
-  position: relative;
-  padding: 138px 0 30px 0;
-  height: 380px;
-  background-image: url("https://saigontourist.net/uploads/destination/NuocNgoai/NhatBan/Shirakawago_345800267.jpg");
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100vh;
+  margin: 0;
 }
-.hero-line-1 {
-  font-size: 27px;
-  line-height: 50px;
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.hero-line-2 {
-  color: #fff;
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 54px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 26px;
-}
-.hero-line-3 {
-  color: #fff;
-  font-size: 14px;
-  line-height: 21px;
-  text-align: center;
-  margin-bottom: 34px;
-}
-.hero-button {
-  width: 131px;
-  height: 34px;
-  background-color: #ff891e;
-  border-color: #0000;
-  border-radius: 4px;
-  border-style: solid;
-  border-width: 0.8px;
-  color: #fff;
-  display: inline-block;
-  font-family: Montserrat;
-  font-size: 15px;
-  line-height: 34px;
-  margin: 0px 0px 5px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 45px;
-}
-.hero-dot {
-  width: 15px;
-  height: 15px;
-  background-color: #fff0;
-  border-color: #fff;
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 1.6px;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 21px;
-  margin: 0px 10px -3px -4px;
-}
-.container-dot-hero {
-  margin-top: auto;
-  display: flex;
-  gap: 10px;
-}
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 14px;
-  line-height: 21px;
-}
-.navbar-right .btn {
-  background-color: #ff891e;
-  border-radius: 4px;
-  color: #fff;
-  display: inline;
-  font-size: 14px;
 
-  padding: 10px 12px;
-  text-align: left;
-  text-transform: uppercase;
+.login-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
-/* Image Styling */
-/* article.tour_title figure img {
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  color: #999;
+}
+
+.form-input {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-article.tour_title:hover img {
-  transform: scale(1.05);
-} */
-
-/* Parent Row - Flexbox Container */
-.row {
-  display: flex;
-  justify-content: space-between; /* Ensures even spacing between items */
-  align-items: stretch; /* Ensures all items are of equal height */
-  gap: 20px; /* Optional spacing between items */
-  margin: 0 auto;
-  flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
-  max-width: 1200px; /* Control container width */
-  padding: 20px;
-}
-
-/* footer */
-.footer {
-  text-align: center;
   padding: 10px;
-  background-color: white;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
 }
 
-.footer-top {
-  display: flex;
-  justify-content: space-around;
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  top: -15px;
+  left: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.form-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
 }
