@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.container {
+    background-color: #fff;
+}
+ .container .title{
+    height:300px;
+    background-color: red;
+    padding-top: 200px;
+}
+.container .title h1 {
+    text-align: center;
+    position: relative;
+}
+.container .title h1::after {
+    content: '';
+    display: block;
+    width: 60px; /* Length of the underline */
+    height: 5px; /* Thickness of the underline */
+    background-color: white; /* Color of the underline */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container .main-container{
+    height: 450x;
+    padding-left: 400px;
+    margin-top: 10px;
+    overflow: hidden;
+
+}
+.container .main-container .sidebar{
+    width: 20%;
+    float: left;
+}
+.container .main-container .sidebar ul{
+    background-color: #f9f9f9;
+
+}
+
+.container .main-container .sidebar h2 {
+    font-size: 30px;
+    text-align: left;
+    padding-top: 0px;
+    margin-bottom: 20px;
+}
+.container .main-container .info{
+    width: 73%; 
+    float: left;
+    padding: 20px;
+    background-color: #fff;
+}
+.container .main-container .info .my-profile{
+    padding-top: 40px;
+    margin-left: 10px;
+    width: 48%;
+    float: left;
+    
+}
+.container .main-container .info .my-profile h4{
+    font-size: 20px ;
+    margin-bottom: 10px;
+}
+.container .main-container .info  input{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #666;
+    padding: 5px;
+}
+.container .main-container .sidebar a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    background-color: #f0f0f0; /* Màu xám mặc định */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container .main-container .sidebar a:hover {
+    background-color: #ddd; 
+}
+
+.container .main-container .sidebar a.active {
+    background-color: white; 
+    color: #000; 
+    border: 1px solid #ddd;
+}
