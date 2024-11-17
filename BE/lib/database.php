@@ -31,7 +31,7 @@ class Database{
     }
     public function insert($query){
         $result = $this->link->query($query) or die($this->link->error.__LINE__);
-        if($result->num_rows > 0){
+        if($result){
             return $result;
         }else{
             return false;
@@ -40,7 +40,7 @@ class Database{
     public function update($query){
         mysqli_set_charset($this->link, "UTF8");
         $result = $this->link->query($query) or die($this->link->error.__LINE__);
-        if($result->num_rows > 0){
+        if($result){
             return $result;
         }else{
             return false;
@@ -48,7 +48,7 @@ class Database{
     }
     public function delete($query){
         $result = $this->link->query($query) or die($this->link->error.__LINE__);
-        if($result->num_rows > 0){
+        if($result){
             return $result;
         }else{
             return false;

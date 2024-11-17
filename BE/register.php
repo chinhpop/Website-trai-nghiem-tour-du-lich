@@ -1,8 +1,36 @@
 <?php 
     include "Class/Region.php";
     include "Class/Tour_Region.php";
+    include "Class/User.php";
 ?>
 
+
+<?php 
+            if (isset($_POST["register-btn"])){   
+                $UserName = $_POST["username"];
+                $Password = $_POST["password"];
+                $Fullname = $_POST["full-name"];
+                $Email = $_POST["email"];
+                $Phone = $_POST["phone"];
+                $Address = $_POST["address"];     
+                $user = new User ();
+                $row_user = $user->get_user($UserName, $Password);
+                if (mysqli_num_rows($row_user) > 0){
+                    $error = "Tài khoản đã tồn tại";
+                    header("Location: register.php?error=" . urlencode($error));
+                }else{
+                    $rs = $user->insert_user($UserName,$Password, $Fullname, $Email, $Phone, $Address);
+                    if ($rs) {
+                        header("Location: login.php");
+                    }else{
+                        $error = "Đăng kí thất bại";
+                        header("Location: register.php?error=" . urlencode($error));
+                        exit();
+                    }
+                }
+                
+            }
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,21 +38,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ĐĂNG KÍ</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="Assets/Css/register.css" />
     <link rel="stylesheet" href="./Assets/global.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script type="text/javascript" src="./Assets/script.js"></script>
-=======
-    <link rel="stylesheet" href="./Assets/global.css">
-    <link rel="stylesheet" href="./Assets/Css/register.css" />
     <link rel="stylesheet" href="./Assets/Css/menu-login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
->>>>>>> 482e6e2168debd33159e72db10d24ad092669666
+    <script type="text/javascript" src="./Assets/script.js"></script>
     <script>
     let lastScrollY = window.scrollY;
 
@@ -99,7 +119,7 @@
                 </div>
                 <div class="item-left-top-header">
                     <i class="fa-solid fa-right-to-bracket"></i>
-                    <li><a href="#">Đăng nhập</a></li>
+                    <li><a href="./login.php">Đăng nhập</a></li>
                 </div>
             </div>
         </div>
@@ -163,29 +183,14 @@
             <button class="google">ĐĂNG NHẬP VỚI GOOGLE</button>
         </div>
         <div class="separator"></div>
-        <?php 
-            if (isset($_POST["register-btn"])){   
-                $UserName = $_POST["username"];
-                $Password = $_POST["password"];
-                $Fullname = $_POST["full-name"];
-                $Email = $_POST["email"];
-                $Phone = $_POST["phone"];
-                $Address = $_POST["address"];     
-                $sql_search = "Select * from account_user where UserName = '$UserName' and Password = '$Password'";
-                $result = mysqli_query($conn, $sql_search);
-                if (mysqli_num_rows($result) > 0){
-                    echo "<h2 style='color: red'>Tài khoản đã tồn tại</h2>";
-                }else{
-                    $sql = "INSERT INTO account_user (UserName, Password, level, Fullname, Email, Phone, Address) 
-                    VALUES ('$UserName','$Password','$Fullname', 2,'$Email','$Phone','$Address')";
-                    mysqli_query($conn, $sql);
-                    header("Location: login.php");
-                }
-            }
-        ?>
         <div class="login">
             <h2>ĐĂNG KÝ</h2>
-            <form class="register-form" method="post">
+            <?php 
+                if (isset($_GET["error"])) {
+                    echo "<h2 style='color: red;'>" . $_GET["error"] ."</h2>";
+                }
+            ?>
+            <form class="register-form" action="register.php" method="post">
                 <div class="form-group">
                     <input type="text" id="full-name" name="full-name" class="form-input" required placeholder=" " />
                     <label for="username" class="form-label">Nhập Họ và Tên:</label>

@@ -76,7 +76,6 @@ body {
   width: 100%;
   margin-top: 12px;
   padding-top: 10px;
-  margin-left: 27%;
   z-index: 1000; /* Đảm bảo navbar nằm trên cùng */
 }
 

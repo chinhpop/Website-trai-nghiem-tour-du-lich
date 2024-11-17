@@ -24,10 +24,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
-    <link rel="stylesheet" href="./Assets/Css/profile.css" />
-=======
->>>>>>> 482e6e2168debd33159e72db10d24ad092669666
     <link rel="stylesheet" href="./Assets/global.css" />
     <link rel="stylesheet" href="./Assets/Css/login.css" />
     <link rel="stylesheet" href="./Assets/Css/menu-login.css">
