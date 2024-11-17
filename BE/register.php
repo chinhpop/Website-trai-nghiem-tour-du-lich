@@ -1,3 +1,8 @@
+<?php 
+    include "Class/Region.php";
+    include "Class/Tour_Region.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,10 +69,6 @@
     </script>
 
 </head>
-<?php 
-    include "./Class/Region.php";
-    include "./Class/Tour_Region.php";
-?>
 
 <body>
     <div class="header">
@@ -154,7 +155,6 @@
         </div>
         <div class="separator"></div>
         <?php 
-        include "Connection/connect.php";
             if (isset($_POST["register-btn"])){   
                 $UserName = $_POST["username"];
                 $Password = $_POST["password"];
@@ -162,22 +162,21 @@
                 $Email = $_POST["email"];
                 $Phone = $_POST["phone"];
                 $Address = $_POST["address"];     
-                $sql_search = "Select * from user_account where UserName = '$UserName' and Password = '$Password'";
+                $sql_search = "Select * from account_user where UserName = '$UserName' and Password = '$Password'";
                 $result = mysqli_query($conn, $sql_search);
                 if (mysqli_num_rows($result) > 0){
                     echo "<h2 style='color: red'>Tài khoản đã tồn tại</h2>";
                 }else{
-                    $sql = "INSERT INTO user_account (UserName, Password, level, Fullname, Email, Phone, Address) 
+                    $sql = "INSERT INTO account_user (UserName, Password, level, Fullname, Email, Phone, Address) 
                     VALUES ('$UserName','$Password','$Fullname', 2,'$Email','$Phone','$Address')";
                     mysqli_query($conn, $sql);
-                    echo "<h2>Add thành công</h2>";
                     header("Location: login.php");
                 }
             }
         ?>
         <div class="login">
             <h2>ĐĂNG KÝ</h2>
-            <form class="register-form" action="login.php" method="post">
+            <form class="register-form" method="post">
                 <div class="form-group">
                     <input type="text" id="full-name" name="full-name" class="form-input" required placeholder=" " />
                     <label for="username" class="form-label">Nhập Họ và Tên:</label>
@@ -198,6 +197,11 @@
                 <div class="form-group">
                     <input type="tel" id="phone" name="phone" class="form-input" required placeholder=" " />
                     <label for="phone" class="form-label">Số điện thoại:</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="email" name="email" class="form-input" required placeholder=" " />
+                    <label for="email" class="form-label">Email:</label>
                 </div>
 
                 <div class="form-group">
