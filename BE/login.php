@@ -24,6 +24,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+    <link rel="stylesheet" href="./Assets/Css/profile.css" />
+=======
+>>>>>>> 482e6e2168debd33159e72db10d24ad092669666
     <link rel="stylesheet" href="./Assets/global.css" />
     <link rel="stylesheet" href="./Assets/Css/login.css" />
     <link rel="stylesheet" href="./Assets/Css/menu-login.css">
@@ -68,41 +72,6 @@
         if (hasError) {
             event.preventDefault();
         }
-    });
-    let lastScrollY = window.scrollY;
-    window.addEventListener("resize", function() {
-        // Cập nhật lại khoảng cách nếu kích thước màn hình thay đổi
-        const container = document.getElementById("container");
-        const loginContainer = document.querySelector(".login-container");
-        const headerHeight = container.offsetHeight;
-        loginContainer.style.marginTop = `${headerHeight}px`;
-    });
-    window.addEventListener("load", function() {
-        const container = document.getElementById("container");
-        const loginContainer = document.querySelector(".login-container");
-
-        // Lấy chiều cao của header và thiết lập khoảng cách cho form
-        const headerHeight = container.offsetHeight;
-        loginContainer.style.marginTop = `${headerHeight}px`; // Thêm khoảng cách ở trên
-    });
-    window.addEventListener("scroll", function() {
-        const topheader = document.getElementById("top-header");
-        const container = document.getElementById("container");
-
-        if (window.scrollY > lastScrollY) {
-            // Cuộn xuống
-            topheader.style.transform = "translateY(-100%)";
-            container.style.position = "fixed";
-            container.style.top = "0";
-            container.classList.add("scrolled");
-        } else if (window.scrollY === 0) {
-            // Đưa mọi thứ về mặc định khi ở vị trí đầu trang
-            topheader.style.transform = "translateY(0)";
-            container.style.position = "relative";
-            container.classList.remove("scrolled");
-        }
-
-        lastScrollY = window.scrollY;
     });
     </script>
 </head>
