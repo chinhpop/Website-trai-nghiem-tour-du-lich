@@ -12,6 +12,49 @@ body {
   padding: 0;
 }
 
+/* Style cơ bản cho menu */
+.user-menu {
+  position: relative;
+}
+
+.user-icon {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Ẩn menu thả xuống mặc định */
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Hiển thị ngay dưới biểu tượng */
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  width: 200px;
+}
+
+/* Các mục trong menu */
+.menu-dropdown li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.menu-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hiển thị menu khi di chuột vào biểu tượng người dùng */
+.user-menu:hover .menu-dropdown {
+  display: block;
+}
+
 /* Header */
 .top-header {
   padding: 5px 0;

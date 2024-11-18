@@ -1,3 +1,10 @@
+<?php 
+    include("Class/Tour_Region.php");
+    include("Class/Region.php");
+    include "./Class/User.php";
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,15 +14,11 @@
     <title>Web Tour</title>
     <link rel="stylesheet" href="../Assets/global.css" />
     <link rel="stylesheet" href="../Assets/Css/menu.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
-<?php 
-    include("Class/Tour_Region.php");
-    include("Class/Region.php");
-?>
 
 <body>
     <header>
@@ -36,10 +39,34 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <li>Chọn điểm khởi hành</li>
                     </div>
+                    <?php
+                        if (isset($_SESSION["USER"]) && $_SESSION["PASS"]) {
+                            $user = $_SESSION["USER"];
+                            $pass = $_SESSION["PASS"];
+                            $newUser = new User();
+                            $rs = $newUser->get_user($user, $pass);
+                            if ($rs) {while($new = $rs->fetch_assoc()){
+                                $name = $new["FullName"];
+                                $id = $new["ID_User"];
+                            }}
+                            $_SESSION["NAME"] = $name;
+                            $_SESSION["ID_User"] = $id;
+                            echo "<div class='user-menu'>
+                                    <span class='user-icon'>👤 Xin Chào, ".$name."</span>
+                                    <uL class='menu-dropdown' id='menu-dropdown'>
+                                        <li>Thông tin cá nhân</li>
+                                        <li ><a href='#'>Đăng xuất</a></li>
+                                    </uL>
+                                </div>";
+                        }else{
+                            ?>
                     <div class="item-left-top-header">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         <li><a href="./login.php" class="login">Đăng nhập</a></li>
                     </div>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -95,7 +122,7 @@
         </nav>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script src="../Assets/script.js"></script>
 
 </html>

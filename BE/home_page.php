@@ -1,4 +1,3 @@
-<!-- Nhớ tạo session -->
 <!DOCTYPE html>
 <html lang="en">
 
