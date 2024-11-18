@@ -8,7 +8,7 @@ class User{
 
 
     public function get_user($username, $password){
-        $query = "SELECT * FROM account_user WHERE  Username= '$username' and Password= '$password'";
+        $query = "SELECT * FROM account_user WHERE Username = '$username' AND Password = '$password'";
         $result = $this->db->select($query);
         return $result;
     }

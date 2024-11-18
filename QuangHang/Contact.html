@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Liên hệ</title>
-        <link rel="stylesheet" href="./global.css" />
-        <link rel="stylesheet" href="./style.css" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-<body>
-    <header>
-        
-    </header>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Thanh Toán</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="steps">
+        <div class="step active" data-step="1">1. CHỌN DỊCH VỤ</div>
+        <div class="step" data-step="2">2. NHẬP THÔNG TIN HÀNH KHÁCH</div>
+        <div class="step" data-step="3">3. THANH TOÁN</div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-content active" id="step-1">
+        <h2>Chọn Dịch Vụ</h2>
+        <button class="next-btn" data-next="2">Tiếp Tục</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-content" id="step-2">
+        <h2>Nhập Thông Tin Hành Khách</h2>
+        <form>
+          <label for="name">Tên:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <button type="button" class="prev-btn" data-prev="1">Quay Lại</button>
+          <button type="button" class="next-btn" data-next="3">Tiếp Tục</button>
+        </form>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-content" id="step-3">
+        <h2>Thanh Toán</h2>
+        <form>
+          <label for="card-number">Số Thẻ:</label>
+          <input type="text" id="card-number" name="card-number" required />
+          <button type="button" class="prev-btn" data-prev="2">Quay Lại</button>
+          <button type="submit">Hoàn Tất</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
 </html>

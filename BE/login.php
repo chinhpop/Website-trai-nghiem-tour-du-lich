@@ -1,5 +1,11 @@
 <?php 
-            include "Connection/connect.php";
+    include "./Class/Region.php";
+    include "./Class/Tour_Region.php";
+    include "Class/User.php";
+?>
+
+<?php 
+            
             session_start();
             if (isset($_POST["login-btn"])){ 
                 // kiểm tra có remember không
@@ -9,11 +15,14 @@
                 }
                 $username = $_POST["username"];
                 $password = $_POST["password"];
-                $sql = "SELECT * FROM account_user WHERE Username = '$username' AND Password = '$password'";
-                $result = mysqli_query($conn, $sql);
-                if (mysqli_num_rows($result) > 0){
+                $user = new User();
+                $rs = $user->get_user($username, $password);
+                if ($rs){
                     echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
                     header("Location: home_page.php");
+                }else{
+                    $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
+                    header("Location: login.php?error=".urldecode($error));
                 }
             }
             
@@ -71,10 +80,6 @@
     });
     </script>
 </head>
-<?php 
-    include "./Class/Region.php";
-    include "./Class/Tour_Region.php";
-?>
 
 <body>
     <div class="header">
@@ -162,6 +167,13 @@
         <div class="separator"></div>
         <div class="login">
             <h2>ĐĂNG NHẬP</h2>
+            <?php 
+                if (isset($_GET["error"])){
+                    ?>
+            <h2 style="color:red"><?php echo $_GET["error"] ?></h2>
+            <?php
+            }
+            ?>
             <form class="login-form" action="login.php" method="post">
                 <div class="form-group">
                     <input type="text" id="username" name="username" class="form-input" required placeholder=" " />

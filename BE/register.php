@@ -15,7 +15,7 @@
                 $Address = $_POST["address"];     
                 $user = new User ();
                 $row_user = $user->get_user($UserName, $Password);
-                if (mysqli_num_rows($row_user) > 0){
+                if ($row_user){
                     $error = "Tài khoản đã tồn tại";
                     header("Location: register.php?error=" . urlencode($error));
                 }else{
