@@ -99,8 +99,8 @@
                                         $detail_tourRegion = $tour_region->get_tourRegion($region["ID_region"]);
                                         if ($detail_tourRegion) {while($row = $detail_tourRegion->fetch_assoc()){
                                             ?>
-                                    <li><a
-                                            href="List_Tour.php?id_TourRegion=<?php echo $row["ID_TourRegion"] ?>"><?php echo $row["area"] ?></a>
+                                    <li><a href="List_Tour.php?id_TourRegion=<?php echo $row["ID_TourRegion"] ?>"><?php echo $row["area"] ?>
+                                        </a>
                                     </li>
                                     <?php 
                                     }}

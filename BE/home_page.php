@@ -31,8 +31,8 @@
         $_SESSION["NAME"] = $name;
         $_SESSION["ID_User"] = $id;
 
-        echo $_SESSION["NAME"];
-        echo $_SESSION["ID_User"];
+        // echo $_SESSION["NAME"];
+        // echo $_SESSION["ID_User"];
     }
 ?>
     <footer>

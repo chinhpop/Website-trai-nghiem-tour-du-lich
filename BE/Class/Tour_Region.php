@@ -6,8 +6,8 @@ class Tour_Region{
         $this->db = new Database();
     }
 
-    public function show_tourRegion(){
-        $query = "SELECT * FROM tour_region";
+    public function show_tourRegion($name){
+        $query = "SELECT * FROM tour_region ";
         $result = $this->db->select($query);
         return $result;
     }
