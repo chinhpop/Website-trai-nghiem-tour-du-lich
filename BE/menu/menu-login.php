@@ -26,10 +26,31 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <li>Chọn điểm khởi hành</li>
                 </div>
+                <?php
+                        if (isset($_SESSION["USER"]) && $_SESSION["PASS"]) {
+                            $user = $_SESSION["USER"];
+                            $pass = $_SESSION["PASS"];
+                            $newUser = new User();
+                            $rs = $newUser->get_user($user, $pass);
+                            if ($rs) {while($new = $rs->fetch_assoc()){
+                                $name = $new["FullName"];
+                                $id = $new["ID_User"];
+                            }}
+                            ?>
+                <div class="item-left-top-header">
+                    <span class="info"><a href="#">Xin Chào, <?php echo $name ?></a></span>
+                    <span class="exit"><a href="#">Đăng xuất</a></span>
+                </div>
+                <?php
+                        }else{
+                            ?>
                 <div class="item-left-top-header">
                     <i class="fa-solid fa-right-to-bracket"></i>
-                    <li><a href="#" class="login">Đăng nhập</a></li>
+                    <li><a href="./login.php" class="login">Đăng nhập</a></li>
                 </div>
+                <?php
+                        }
+                    ?>
             </div>
         </div>
         <div class="container">
@@ -78,7 +99,8 @@
                             </ul>
                         </li>
                         <li class="dropdown mega-dropdown"><a class="dropdown-toggle" href="#">Dịch vụ du lịch</a></li>
-                        <li class="dropdown mega-dropdown"><a class="dropdown-toggle" href="Contact.html">Liên hệ</a>
+                        <li class="dropdown mega-dropdown"><a class="dropdown-toggle" href="./Contact_Page.php">Liên
+                                hệ</a>
                         </li>
                     </ul>
                 </div>

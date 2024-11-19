@@ -11,6 +11,7 @@
   background: #0072bc80;
   background: rgba(87, 128, 158, 0.7);
   top: 0;
+  z-index: 1000; /* Làm cho thanh header nổi lên trên các phần tử khác */
 }
 
 .left-top-header {
@@ -26,6 +27,11 @@
   padding-right: 170px;
   width: 100%;
   display: flex;
+}
+
+.item-left-top-header > span.info:hover,
+span.exit:hover {
+  color: #ff891e;
 }
 
 .item-left-top-header {

@@ -1,7 +1,7 @@
 <?php 
     include("Class/Tour_Region.php");
     include("Class/Region.php");
-    include "./Class/User.php";
+    include ("Class/User.php");
     session_start();
 ?>
 
@@ -49,15 +49,12 @@
                                 $name = $new["FullName"];
                                 $id = $new["ID_User"];
                             }}
-                            $_SESSION["NAME"] = $name;
-                            $_SESSION["ID_User"] = $id;
-                            echo "<div class='user-menu'>
-                                    <span class='user-icon'>👤 Xin Chào, ".$name."</span>
-                                    <uL class='menu-dropdown' id='menu-dropdown'>
-                                        <li>Thông tin cá nhân</li>
-                                        <li ><a href='#'>Đăng xuất</a></li>
-                                    </uL>
-                                </div>";
+                            ?>
+                    <div class="item-left-top-header">
+                        <span class="info"><a href="#">Xin Chào, <?php echo $name ?></a></span>
+                        <span class="exit"><a href="#">Đăng xuất</a></span>
+                    </div>
+                    <?php
                         }else{
                             ?>
                     <div class="item-left-top-header">
@@ -116,13 +113,12 @@
                         </ul>
                     </li>
                     <li><a class="navigate-btn" href="#">Dịch vụ du lịch</a></li>
-                    <li><a class="navigate-btn" href="Contact.html">Liên hệ</a></li>
+                    <li><a class="navigate-btn" href="./Contact_Page.php">Liên hệ</a></li>
                 </ul>
             </div>
         </nav>
     </div>
-</body>
 
-<script src="../Assets/script.js"></script>
+</body>
 
 </html>

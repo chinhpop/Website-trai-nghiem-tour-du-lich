@@ -17,6 +17,24 @@
     <?php 
         include("./menu/menu.php");
     ?>
+    <?php 
+    if (isset($_SESSION["USER"]) && $_SESSION["PASS"]) {
+        $user = $_SESSION["USER"];
+        $pass = $_SESSION["PASS"];
+        $newUser = new User();
+        $rs = $newUser->get_user($user, $pass);
+        if ($rs) {while($new = $rs->fetch_assoc()){
+            $name = $new["FullName"];
+            $id = $new["ID_User"];
+        }}
+        //Tạo session
+        $_SESSION["NAME"] = $name;
+        $_SESSION["ID_User"] = $id;
+
+        echo $_SESSION["NAME"];
+        echo $_SESSION["ID_User"];
+    }
+?>
     <footer>
         <p>&copy; 2024 Tour Finder</p>
     </footer>

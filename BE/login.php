@@ -11,6 +11,9 @@
                 if (isset($_POST["remember"])){
                     // Tạo session
                     $_SESSION["username"] = $_POST["username"];
+                    // Lưu thông tin người dùng vào session
+                    $_SESSION["USER"] = $username;
+                    $_SESSION["PASS"] = $password;
                 }
                 $username = $_POST["username"];
                 $password = $_POST["password"];
@@ -20,9 +23,8 @@
                     // Lưu thông tin người dùng vào session
                     $_SESSION["USER"] = $username;
                     $_SESSION["PASS"] = $password;
-                    
                     echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
-                    header("Location: home_page.php");
+                    header("Location: home_page.php?page=home_page");
                 }else{
                     $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
                     header("Location: login.php?error=".urldecode($error));
