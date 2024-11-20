@@ -3,6 +3,8 @@
     include "./Class/Region.php";
     include "./Class/Tour_Region.php";
     include "./Class/User.php";
+    include "./Class/Payment.php";
+    include "./Class/FormatData.php";
     session_start();
 ?>
 <!DOCTYPE html>
@@ -67,11 +69,24 @@
                             <tr>
                                 <th width="100" scope="col">Mã đặt chỗ</th>
                                 <th width="150" scope="col">Ngày đặt</th>
-                                <th width="130" scope="col">Ngày hết hạn</th>
+                                <th width="130" scope="col">Mã Tour</th>
                                 <th width="138" scope="col">Tổng số chỗ</th>
                                 <th width="138" scope="col">Tổng tiền</th>
-                                <th width="138" scope="col">Trạng thái</th>
                             </tr>
+                            <?php
+                                $id = $_SESSION["ID_User"];
+                                $payment = new Payment();
+                                $rs = $payment->get_payment($id);
+                                if ($rs) {while($row = $rs->fetch_assoc()){
+                            ?>
+                            <tr>
+                                <td><?php echo $row["ID_payment"] ?></td>
+                                <td><?php echo $row["Date"] ?></td>
+                                <td><?php echo $row["ID_CodeTour"] ?></td>
+                                <td><?php echo $row["tong"] ?></td>
+                                <td><?php echo formatCurrency($row["price_sum"]) ?></td>
+                            </tr>
+                            <?php }} ?>
                         </tbody>
                     </table>
                 </div>

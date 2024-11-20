@@ -155,7 +155,7 @@
 
     <script src="./Assets/homepage.js"></script>
     <footer>
-        <p>&copy; 2024 </p>
+        <p>&copy; 2024@Experience-Tourist | All Rights Reserved</p>
     </footer>
     <script src="./Assets/script.js"></script>
 </body>

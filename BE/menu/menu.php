@@ -52,7 +52,7 @@
                             ?>
                     <div class="item-left-top-header">
                         <span class="info"><a href="./profile.php">Xin Chào, <?php echo $name ?></a></span>
-                        <span class="exit"><a href="#">Đăng xuất</a></span>
+                        <span class="exit"><a href="./loggout.php">Đăng xuất</a></span>
                     </div>
                     <?php
                         }else{

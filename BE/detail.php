@@ -16,12 +16,12 @@
 
 <?php 
     $id = $_GET["id"]; 
-    $tour=new Tour(); $rs=$tour->get_tour($id);
+    $tour=new Tour(); $rs=$tour->get_tourByID($id);
     if ($rs){
     $row = $rs->fetch_assoc();
     $image = $row["image"];
     }
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,7 @@
     .header-image {
         width: 100%;
         height: 350px;
-        background-image: url(<?php $image ?>);
+        background-image: url("<?php echo $image ?>");
         background-position: center;
         background-size: cover;
         position: relative;

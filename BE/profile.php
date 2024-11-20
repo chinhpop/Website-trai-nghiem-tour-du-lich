@@ -53,9 +53,7 @@
                     <li><a href="changeprofile.php">Thay đổi thông tin</a></li>
                     <li><a href="changepw.php">Đổi mật khẩu</a></li>
                     <li>
-                        <form method="post" action="xuly.php">
-                            <input type="submit" name="btn-exit" id="btn-exit" value="Đăng Xuất"></input>
-                        </form>
+                        <a href="loggout.php">Đăng Xuất</a>
                     </li>
                 </ul>
 
@@ -83,10 +81,11 @@
                             <p>SĐT: <?php echo $row["Phone"] ?></p>
                         </li>
                         <li>
-                            <p>Giới tính: <?php echo $row["gender"] ?></p>
+
+                            <p>Giới tính: <?php if ($row["gender"] == "") echo ""; else echo $row["gender"] ?></p>
                         </li>
                         <li>
-                            <p>Ngày sinh: <?php echo $row["DOB"] ?></p>
+                            <p>Ngày sinh: <?php if ($row["DOB"] == "") echo ""; else echo $row["DOB"] ?></p>
                         </li>
                     </ul>
                     <button class="btn-edit" id="btn-edit">Chỉnh sửa hồ sơ</button>

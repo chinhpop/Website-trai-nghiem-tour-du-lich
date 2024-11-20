@@ -111,7 +111,6 @@
     <div class="header-image">
         <div>
             <?php 
-                $id_tour = $_GET["id_TourRegion"];
                 $tour_region = new Tour_Region();
                 $rs  = $tour_region->get_tourName($id_tour);
                 if ($rs){
