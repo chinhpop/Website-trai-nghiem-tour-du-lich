@@ -13,7 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body">
     <?php 
         include("./menu/menu.php");
     ?>
@@ -38,7 +38,7 @@
     <footer>
         <p>&copy; 2024 Tour Finder</p>
     </footer>
-</body>
-<script src="./Assets/script.js"></script>
+    bodybody>
+    <script src="./Assets/script.js"></script>
 
 </html>

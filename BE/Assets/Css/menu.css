@@ -25,6 +25,7 @@ body {
   background: #0072bc80;
   background: rgba(87, 128, 158, 0.7);
   top: 0;
+  z-index: 1000;
 }
 
 .left-top-header {

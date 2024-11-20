@@ -20,7 +20,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body style="min-width: fit-content;">
     <header>
         <div class="hero">
             <div class="top-header">
@@ -51,7 +51,7 @@
                             }}
                             ?>
                     <div class="item-left-top-header">
-                        <span class="info"><a href="#">Xin Chào, <?php echo $name ?></a></span>
+                        <span class="info"><a href="./profile.php">Xin Chào, <?php echo $name ?></a></span>
                         <span class="exit"><a href="#">Đăng xuất</a></span>
                     </div>
                     <?php
@@ -77,7 +77,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Trang Chủ</a>
+                <a class="navbar-brand" href="./home_page.php">Trang Chủ</a>
             </div>
             <div class="collapse navbar-collapse js-navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -118,7 +118,6 @@
             </div>
         </nav>
     </div>
-
 </body>
 
 </html>
