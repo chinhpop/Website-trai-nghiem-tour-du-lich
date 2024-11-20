@@ -18,6 +18,12 @@ class Tour_Region{
         return $result;
     }
 
+    public function get_tourName($id){
+        $query = "SELECT * FROM tour_region WHERE ID_TourRegion = '$id'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
     public function delete_schedule($id){
         $query = "DELETE FROM tour_region WHERE ID_TourRegion = '$id'";
         $result = $this->db->delete($query);

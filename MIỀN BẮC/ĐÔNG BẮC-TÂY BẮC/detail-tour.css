@@ -4,10 +4,185 @@
   box-sizing: border-box;
 }
 
+/* Reset styles */
+body, h1, h3, p, ul, li, table, th, td {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.main-header {
+  background-color: #ff6f3d;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.main-header h1 {
+  font-size: 24px;
+}
+
+/* Main content styling */
+.main-content {
+  flex: 3;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the tour-info section */
+.tour-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.info-left, .info-right {
+  width: 48%; /* Chia đều hai cột */
+}
+
+.info-left p, .info-right p {
+  margin-bottom: 10px; /* Khoảng cách giữa các dòng */
+}
+
+.info-left p strong, .info-right p strong {
+  color: #333; /* Màu chữ đậm */
+  font-weight: bold;
+}
+
+.info-left p, .info-right p {
+  color: #555; /* Màu chữ chung */
+}
+
+
+.tour-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff4e5;
+}
+
+.tour-table th {
+  background-color: #ffe5cc;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.tour-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn-buy {
+  background-color: #ff6f3d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-buy:hover {
+  background-color: #e95f2c;
+}
+
+/* Highlights */
+.tour-highlights {
+  margin-top: 20px;
+}
+
+.tour-highlights h3 {
+  color: #ff6f3d;
+  margin-bottom: 10px;
+}
+
+.tour-highlights ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-highlights ul li {
+  margin-bottom: 10px;
+}
+
+.btn-program {
+  background-color: #ff6f3d;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-program:hover {
+  background-color: #e95f2c;
+}
+
+/* Right section styling */
+.right-section {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-section h3 {
+  color: #ff6f3d;
+  margin-bottom: 10px;
+}
+
+.right-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.right-section ul li {
+  margin-bottom: 10px;
+}
+
+.callback-btn {
+  background-color: #ff6f3d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.callback-btn:hover {
+  background-color: #e95f2c;
+}
+
+/* Footer */
+footer {
+  background-color: #ff6f3d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
 
 /* General styling for the container and navbar */
 .container {
@@ -156,60 +331,7 @@ header nav ul li a {
   font-size: 2.5em;
 }
 
-/* Tour Details */
-.tour-details {
-  display: flex;
-  flex-direction: row;
-  max-width: 1200px;
-  margin: 20px auto;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(87, 128, 158, 0.7);
-  overflow: hidden;
-}
 
-.tour-details .tour-image {
-  width: 50%;
-}
-
-.tour-details .tour-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.tour-details .tour-info {
-  padding: 20px;
-  width: 50%;
-}
-
-.tour-title {
-  font-size: 2em;
-  color: #004a80;
-  margin-bottom: 10px;
-}
-
-.tour-location {
-  font-size: 1.1em;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.tour-info p {
-  font-size: 1em;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.tour-price {
-  background-color: #ff9933;
-  color: white;
-  padding: 15px 30px;
-  font-size: 1.5em;
-  font-weight: bold;
-  border-radius: 5px;
-  margin-top: 20px;
-}
 
 .btn-book {
   display: block;
@@ -306,13 +428,4 @@ header nav ul li a {
 
 .tab-content.active {
   display: block;
-}
-
-/* Footer */
-footer {
-  background-color: #0056a3;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 20px;
 }

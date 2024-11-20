@@ -7,7 +7,7 @@ class Tour{
     }
 
     public function show_tour(){
-        $query = "SELECT * FROM thongtin_tour";
+        $query = "SELECT * FROM thongtin_tour LIMIT 6";
         $result = $this->db->select($query);
         return $result;
     }

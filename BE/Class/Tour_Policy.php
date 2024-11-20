@@ -13,7 +13,7 @@ class Tour_Policy{
     }
 
     public function get_policy($id){
-        $query = "SELECT * FROM tour_policy WHERE ID_policy = '$id'";
+        $query = "SELECT * FROM tour_policy WHERE ID_Tour = '$id'";
         $result = $this->db->select($query);
         return $result;
     }

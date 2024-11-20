@@ -1,3 +1,18 @@
+<?php 
+    include "Class/FormatData.php";
+    include "./Class/Region.php";
+    include "./Class/Tour_Region.php";
+    include "./Class/User.php";
+    include "Class/Tour_Program.php";
+    include "Class/Tour_Policy.php";
+    include "Class/Tour_Visa.php";
+    include "Class/Tour_Schedule.php";
+    include "Class/Tour_Price.php";
+    include "Class/Tour_Code.php";
+    include "Class/Tour_Detail.php";
+    include "Class/Tour.php";
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,18 +44,17 @@
                     <h1>Số lượng hành khách</h1>
                     <div class="form-group">
                         <label for="adults">Người lớn (*)</label>
-                        <input type="number" id="adults" name="adults" value="1" min="1" max="10"
+                        <input type="number" id="adult" name="adults" value="1" min="1"
                             placeholder="Nhập số người lớn" />
                     </div>
                     <div class="form-group">
                         <label for="children">Trẻ em</label>
-                        <input type="number" id="children" name="children" value="0" min="0" max="10"
+                        <input type="number" id="children" name="children" value="1" min="1"
                             placeholder="Nhập số trẻ em" />
                     </div>
                     <div class="form-group">
                         <label for="infants">Em bé</label>
-                        <input type="number" id="infants" name="infants" value="0" min="0" max="5"
-                            placeholder="Nhập số em bé" />
+                        <input type="number" id="infant" name="infants" value="1" min="1" placeholder="Nhập số em bé" />
                     </div>
                     <h1>Phương thức thanh toán</h1>
                     <div class="radio-group">
@@ -99,17 +113,44 @@
                     </div>
                 </div>
                 <div class="right-section">
-                    <img src="https://saigontourist.net/uploads/destination/NuocNgoai/Maldives/Maldives-beach-nature_557944723.jpg"
-                        alt="Tour Image">
+                    <?php 
+                    // Get tour detail by ID
+                        $id = $_GET["id"];
+                        $db = new Tour();
+                        $tour = $db->get_tour($id);
+                        if ( $tour ) { 
+                            $row = $tour->fetch_assoc();
+                    ?>
+                    <img src="<?php echo $row["image"] ?>" alt="<?php echo $row["TourName"] ?>">
+
                     <div class="tour-info">
-                        <h3>DU LỊCH MALDIVES - TẾT NGUYÊN ĐÁN 2025 (MÙNG 1)</h3>
-                        <p><i class="fas fa-barcode"></i> Code: <strong>STSTOB-2025-00024</strong></p>
+                        <h3><?php echo $row["TourName"] ?></h3>
+
+                        <p><i class="fas fa-clock"></i> Thời gian: <strong><?php echo $row["thoigian"]; ?></strong></p>
+                        <?php }?>
+                        <?php 
+                        $db = new Tour_Detail();
+                        $detail_tour = $db->get_detail_tourID($id);
+                        if ($detail_tour){
+                            $row2 = $detail_tour->fetch_assoc();
+                        ?>
+                        <p><i class="fas fa-barcode"></i> Code: <strong><?php echo $row2["Code_Tour"] ?></strong></p>
                         <p><i class="fas fa-calendar-alt"></i> Ngày đi: <strong>29-01-2025</strong></p>
-                        <p><i class="fas fa-calendar-alt"></i> Ngày về: <strong>02-02-2025</strong></p>
-                        <p><i class="fas fa-clock"></i> Thời gian: <strong>5 ngày 3 đêm</strong></p>
-                        <p><i class="fas fa-user"></i> Giá Người lớn: <strong>69.999.000 đ X 1</strong></p>
-                        <h4>Tổng: <span class="total-price">69.999.000 đ</span></h4>
+                        <p><i class="fas fa-user"></i> Giá Người lớn:
+                            <strong><span
+                                    id="adult_price"><?php echo formatCurrency($row2["adult_price"]) ?></span></strong>
+                        </p>
+                        <p><i class="fas fa-user"></i> Giá Trẻ em:
+                            <strong><span
+                                    id="child_price"><?php echo formatCurrency($row2["child_price"]) ?></span></strong>
+                        </p>
+                        <p><i class="fas fa-user"></i> Giá Em bé:
+                            <strong><span
+                                    id="baby_price"><?php echo formatCurrency($row2["baby_price"]) ?></span></strong>
+                        </p>
+                        <h4>Tổng: <span class="total-price" id="total-price">69.999.000 đ</span></h4>
                     </div>
+                    <?php }?>
                 </div>
             </div>
             <!-- Terms and Conditions -->
@@ -216,4 +257,44 @@
         });
     })
     </script>
-    </bodybody </html>
+
+    <script>
+    // Giá cố định cho từng loại người
+
+    const adult = document.getElementById("adult_price"); // Giá cho 1 người lớn
+    const child = document.getElementById("child_price"); // Giá cho 1 trẻ em (ví dụ)
+    const infant = document.getElementById("baby_price"); // Giá cho em bé (ví dụ miễn phí)
+
+    const adultPrice = parseFloat(adult.replace(/\./g, '').replace(' VND', ''));
+    const childPrice = parseFloat(child.replace(/\./g, '').replace(' VND', ''));
+    const infantPrice = parseFloat(infant.replace(/\./g, '').replace(' VND', ''));
+    // Lấy các phần tử input và hiển thị giá
+    const adultInput = document.getElementById('adult');
+    const childInput = document.getElementById('children');
+    const infantInput = document.getElementById('infant');
+    const totalPriceElement = document.getElementById('total-price');
+
+    // Hàm tính tổng giá
+    function updateTotalPrice() {
+        const adultCount = parseInt(adultInput.value) || 0;
+        const childCount = parseInt(childInput.value) || 0;
+        const infantCount = parseInt(infantInput.value) || 0;
+
+        const totalPrice = (adultCount * adultPrice) + (childCount * childPrice) + (infantCount * infantPrice);
+
+        // Cập nhật giá tổng
+        totalPriceElement.textContent = totalPrice.toLocaleString('vi-VN');
+    }
+
+    // Lắng nghe sự kiện thay đổi trên các input
+    adultInput.addEventListener('input', updateTotalPrice);
+    childInput.addEventListener('input', updateTotalPrice);
+    infantInput.addEventListener('input', updateTotalPrice);
+
+    // Tính giá lần đầu khi tải trang
+    updateTotalPrice();
+    </script>
+
+</body>
+
+</html>

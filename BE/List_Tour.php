@@ -10,7 +10,7 @@
 <?php 
         $id_tour = $_GET["id_TourRegion"];
         $tour_region = new Tour_Region();
-        $rs  = $tour_region->get_tourRegion($id_tour);
+        $rs  = $tour_region->get_tourName($id_tour);
         if ($rs){
             $row = $rs->fetch_assoc();
             $image = $row["image"];
@@ -108,13 +108,12 @@
 
 <body>
     <?php include "./menu/menu-login.php" ?>
-
     <div class="header-image">
         <div>
             <?php 
                 $id_tour = $_GET["id_TourRegion"];
                 $tour_region = new Tour_Region();
-                $rs  = $tour_region->get_tourRegion($id_tour);
+                $rs  = $tour_region->get_tourName($id_tour);
                 if ($rs){
                     $row = $rs->fetch_assoc();
                     ?>
@@ -147,7 +146,7 @@
             $detail_tour = $db -> get_tour($id_tour);
             if ($detail_tour) {while ($row = $detail_tour->fetch_assoc()) {
                 ?>
-        <div class="package" onclick="handleClick(<?php echo $row['ID_tour'] ?>)">
+        <div class="package" onclick="handleClick(<?php echo $row['ID_tour'] ?>, <?php echo $id_tour ?>)">
             <div class="package-img">
                 <img src="<?php echo $row["image"] ?>" alt="<?php echo $row["TourName"] ?>">
                 <div class="tour-price">Giá từ: <br> <?php echo formatCurrency($row["tour_price"]) ?></div>
@@ -191,7 +190,7 @@ document
         filterTours(event.target.value);
     });
 
-function handleClick(id) {
-    window.location.href = "detail_tour.php?id=" + id;
+function handleClick(id, id_TourRegion) {
+    window.location.href = "detail.php?id=" + id + "&id_TourRegion=" + id_TourRegion;
 }
 </script>

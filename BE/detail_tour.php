@@ -2,15 +2,7 @@
 <html lang="en">
 
 <?php 
-    include "Class/Tour.php";
-    include "Class/Tour_Program.php";
-    include "Class/Tour_Policy.php";
-    include "Class/Tour_Visa.php";
-    include "Class/Tour_Schedule.php";
-    include "Class/Tour_Price.php";
-    include "Class/Tour_Code.php";
-    include "Class/Tour_Detail.php";
-    include "Class/FormatData.php";
+     
 ?>
 
 <head>
@@ -108,7 +100,7 @@
             <tr>
                 <?php 
                     $db = new Tour_Detail();
-                    $detail_tour = $db->show_detail_tour();
+                    $detail_tour = $db->get_detail_tourID($id);
                     if ( $detail_tour ) {while ( $row = $detail_tour->fetch_assoc()){
                         ?>
             <tr>
@@ -145,12 +137,12 @@
         </div>
         <div id="chinh-sach" class="tab-content">
             <?php 
-                $db = new Tour_Policy();
-                $detail_policy = $db->show_policy();
-                if ( $detail_policy ) {while($row = $detail_policy -> fetch_assoc()){
-                    echo "<p>" . nl2br($row["price_policy"]). "</p>";
-                }}
-            ?>
+                    $db = new Tour_Policy();
+                    $detail_policy = $db->show_policy();
+                    if ( $detail_policy ) {while($row = $detail_policy -> fetch_assoc()){
+                        echo "<p>" . ($row["price_policy"]). "</p>";
+                    }}
+                ?>
         </div>
         <div id="thu-tuc" class="tab-content">
             <?php 
