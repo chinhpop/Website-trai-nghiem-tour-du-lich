@@ -18,8 +18,7 @@ if (isset($_POST["btn-home"])){
     $id_CodeTour = $payment_info['codeTour'];
     $total_price = $payment_info['total_price'];
     $id_User = $_SESSION["ID_User"];
-    $currentDate = date('d/m/Y');
-    echo $currentDate;
+    $currentDate = date('d/m/Y');   
     $newPayment = new Payment();
     $rs  = $newPayment->insert_payment($id_CodeTour, $currentDate, $SL, $total_price, $id_User);
     if ($rs){
@@ -80,6 +79,7 @@ if (isset($_POST["btn-home"])){
         <p>Em bé: <span id="infant_Price"><?php echo $payment_info['infant']; ?></span></p>
         <p>Phương thức thanh toán: <?php echo $payment_info['payment_method']; ?></p>
         <p>Bạn Vui lòng chuyển tiền vào số tài khoản 5811464464 <b>BIDV</b> để được gọi điện xác nhận.</p>
+        <img src="./Assets/Image/QR-CODE.jpg" alt="QR-CODE" style="width: 30%; height:30%;">
         <h2>Tổng tiền: <?php echo number_format($payment_info['total_price'], 0, ',', '.'); ?> VND</h2>
 
         <!-- Nút trở về -->

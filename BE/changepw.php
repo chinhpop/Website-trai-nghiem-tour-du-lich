@@ -8,24 +8,26 @@
 
 <?php 
     if (isset($_SESSION["ID_User"])) {
-        $id_user = $_SESSION["ID_User"];
-        $password = $_POST["password"];
-        $newPassword = $_POST["new-password"];
-        $newUser = new User();
-        $rs = $newUser->get_userByID($id_user);
-        if ($rs) {
-            $row = $rs->fetch_assoc();
-            $oldPassword = $row["Password"];
-            if ($oldPassword != $password) {
-                echo "<script>alert('Mật khẩu không khớp!');</script>";
-            }
-            $update = $newUser->update_pw($id_user, $newPassword);
-            if ($update) {
-                //update session
-                $_SESSION["PASS"]=$newPassword;
-                echo "<script>alert('Update Thành Công!');</script>";
-            }else{
-                echo "<script>alert('Update thất bại!');</script>";
+        if(isset($_POST["btn-edit"])){
+            $id_user = $_SESSION["ID_User"];
+            $password = $_POST["password"];
+            $newPassword = $_POST["new-password"];
+            $newUser = new User();
+            $rs = $newUser->get_userByID($id_user);
+            if ($rs) {
+                $row = $rs->fetch_assoc();
+                $oldPassword = $row["Password"];
+                if ($oldPassword != $password && $oldPassword != "" || $newPassword!="") {
+                    echo "<script>alert('Mật khẩu không khớp!');</script>";
+                }
+                $update = $newUser->update_pw($id_user, $newPassword);
+                if ($update) {
+                    //update session
+                    $_SESSION["PASS"]=$newPassword;
+                    echo "<script>alert('Update Thành Công!');</script>";
+                }else{
+                    echo "<script>alert('Update thất bại!');</script>";
+                }
             }
         }
     }
@@ -104,7 +106,8 @@
                                     placeholder=" Xác nhận mật khẩu mới(*)">
                             </li>
                         </ul>
-                        <input type="submit" class="btn-edit" style="color: #fff;" value="Thay đổi"></input>
+                        <input type="submit" class="btn-edit" id="btn-edit" style="color: #fff;"
+                            value="Thay đổi"></input>
                         <p id="message"></p>
                     </div>
                 </form>

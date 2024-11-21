@@ -75,9 +75,13 @@
                             </tr>
                             <?php
                                 $id = $_SESSION["ID_User"];
+                                
                                 $payment = new Payment();
                                 $rs = $payment->get_payment($id);
                                 if ($rs) {while($row = $rs->fetch_assoc()){
+                                    if ($row["status"] == 1){
+
+                                    
                             ?>
                             <tr>
                                 <td><?php echo $row["ID_payment"] ?></td>
@@ -86,7 +90,7 @@
                                 <td><?php echo $row["tong"] ?></td>
                                 <td><?php echo formatCurrency($row["price_sum"]) ?></td>
                             </tr>
-                            <?php }} ?>
+                            <?php }}} ?>
                         </tbody>
                     </table>
                 </div>

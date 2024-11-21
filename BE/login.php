@@ -21,10 +21,18 @@
                 $rs = $user->get_user($username, $password);
                 if ($rs){
                     // Lưu thông tin người dùng vào session
+                    $row = $rs->fetch_assoc();
                     $_SESSION["USER"] = $username;
                     $_SESSION["PASS"] = $password;
-                    echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
-                    header("Location: home_page.php?page=home_page");
+                    $level = $row["level"];
+                    if ($level == '1'){
+                        echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
+                        header("Location: admin_page.php");   
+                    }else{
+                        echo "<h2 style='color: green'>Đăng nhập thành công</h2>";
+                        header("Location: home_page.php?page=home_page");
+                    }
+                    
                 }else{
                     $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
                     header("Location: login.php?error=".urldecode($error));
